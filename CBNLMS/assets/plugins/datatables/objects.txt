@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "RIFAN",
+            "position": "14,607,299.40",
+            "salary": "Due",
+            "start_date": "Rice",
+            "office": "SW, Ekiti",
+            "extn": "PRIVATE"
+        },
+        {
+            "id": "2",
+            "name": "DILIVIU LIMITED",
+            "position": "2,699,621,298.36",
+            "salary": "Due",
+            "start_date": "MAIZE",
+            "office": "NE, Borno",
+            "extn": "PRIVATE"
+        },
+        {
+            "id": "3",
+           "name": "METROVET CONSULTANTS",
+            "position": "16,737,600.98",
+            "salary": "Due",
+            "start_date": "Rice",
+            "office": "SW, Ekiti",
+            "extn": "PRIVATE"
+        },
+        {
+            "id": "8",
+           "name": "STATE ZIL",
+            "position": "74,472,560.52",
+            "salary": "Due",
+            "start_date": "Rice",
+            "office": "NW, Kaduna",
+            "extn": "PRIVATE"
+        },
+        {
+            "id": "11",
+          "name": "A.A.D. MAGAMI & COMPANY",
+            "position": "24,472,560.52",
+            "salary": "Due",
+            "start_date": "Rice",
+            "office": "NW, Zamfara",
+            "extn": "PRIVATE"
+        }
+    ]
+}
