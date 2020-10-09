@@ -923,7 +923,7 @@ colors: ['red','green'],
 
            $.ajax({
             type: "POST",
-            url: "abp_analytics.aspx/Getcollection",
+            url: "Default.aspx/Getcollection",
             data: '{}',
             contentType: "application/json; charset=utf-8",
             dataType: "json",

@@ -30,7 +30,7 @@
 			  <div class="nav-tabs-custom">
 				<ul class="nav nav-tabs">
 				  <li><a class="active" href="#activity" data-toggle="tab">Activity</a></li>
-				  <li><a href="#settings" data-toggle="tab">Settings</a></li>
+				  <li><a href="#settings" data-toggle="tab">Profile Settings</a></li>
 				</ul>
 
 				<div class="tab-content">

@@ -100,7 +100,7 @@
                                                                         <asp:Label ID="Label3" runat="server" Text='<%# Eval("loan_status") %>' />
                                                                     </td>
                                                                     <td>
-                                                                        <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_id") %>' runat="server" Text="Details" />
+                                                                        <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_id") %>' runat="server" Text="Details" OnClientClick="window.document.forms[0].target='_blank';" />
                                                                     </td>
                                                                 </tr>
                                                             </ItemTemplate>

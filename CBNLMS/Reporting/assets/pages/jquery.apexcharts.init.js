@@ -99,100 +99,7 @@ var options = {
     }]
   }
   
-  var chart = new ApexCharts(
-    document.querySelector("#apex_line1"),
-    options
-  );
-  
-  chart.render();
-
-    //line-2
-    
-var options = {
-    chart: {
-      height: 380,
-      type: 'line',
-      zoom: {
-        enabled: false
-      },
-      toolbar: {
-        show: false
-      }
-    },
-    colors: ['#f6d365', '#0acf97'],
-    dataLabels: {
-      enabled: true,
-    },
-    stroke: {
-      width: [3, 3],
-      curve: 'smooth'
-    },
-    series: [{
-      name: "High - 2018",
-      data: [28, 29, 33, 36, 32, 32, 33]
-    },
-    {
-      name: "Low - 2018",
-      data: [12, 11, 14, 18, 17, 13, 13]
-    }
-    ],
-    title: {
-      text: 'Average High & Low Temperature',
-      align: 'left'
-    },
-    grid: {
-      row: {
-        colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-        opacity: 0.2
-      },
-      borderColor: '#f1f3fa'
-    },
-    markers: {
-      style: 'inverted',
-      size: 6
-    },
-    xaxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-      axisBorder: {
-        show: true,
-        color: '#bec7e0',
-      },  
-      axisTicks: {
-        show: true,
-        color: '#bec7e0',
-      },    
-      title: {
-        text: 'Month'
-      }
-    },
-    yaxis: {
-      title: {
-        text: 'Temperature'
-      },
-      min: 5,
-      max: 40
-    },
-    legend: {
-      position: 'top',
-      horizontalAlign: 'right',
-      floating: true,
-      offsetY: -25,
-      offsetX: -5
-    },
-    responsive: [{
-      breakpoint: 600,
-      options: {
-        chart: {
-          toolbar: {
-            show: false
-          }
-        },
-        legend: {
-          show: false
-        },
-      }
-    }]
-  }
+ 
   
   var chart = new ApexCharts(
     document.querySelector("#apex_line2"),
@@ -1096,9 +1003,9 @@ var options = {
         enabled: false
     },
     series: [{
-        data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+        data: [  751476434.00,  18640970427.34, 73266538198.57,  3192100690.90,  3519057295.26,  2657704525.20,  2108134780.00,  178947780.00,  465869567.60,  238645728.00,  889593468.18,  367784832.00 ]
     }],
-    colors: ["#95a6bf"],
+    colors: ["#006400"],
     yaxis: {
         axisBorder: {
             show: true,
@@ -1110,11 +1017,11 @@ var options = {
         }, 
     },
     xaxis: {
-        categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan', 'United States', 'China', 'Germany'],        
+        categories: ['Cotton', 'Maize', 'Rice', 'Sorghum', 'Soya', 'Cassava', 'Fish', 'G/Nut', 'Poultry', 'Sesame','Tomato','Wheat'],        
     },
     states: {
         hover: {
-            filter: 'none'
+            filter: 'Amount'
         }
     },
     grid: {
@@ -2139,11 +2046,11 @@ chart.render();
   
 var options = {
   chart: {
-      height: 320,
+      height: 505,
       type: 'pie',
   }, 
-  series: [44, 55, 41, 17, 15],
-  labels: ["Series 1", "Series 2", "Series 3", "Series 4", "Series 5"],
+  series: [44, 55, 41],
+  labels: ["AADS", "CACS", "Others"],
   colors: ["#a3cae0", "#232f5b","#f06a6c", "#f1e299", "#08aeb0"],
   legend: {
       show: true,

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Inputing/2/inputer2.Master" AutoEventWireup="true" CodeBehind="aads_newloan.aspx.cs" Inherits="CBNLMS.Inputing._2.aads_newloan" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Inputing/2/inputer2.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="aads_newloan.aspx.cs" Inherits="CBNLMS.Inputing._2.aads_newloan" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
      <!-- Plugins css -->
         <link href="../assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />

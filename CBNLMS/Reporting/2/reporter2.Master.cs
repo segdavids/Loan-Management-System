@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CBNLMS.Reporting._2
 {
-    public partial class reporter2 : System.Web.UI.MasterPage
+    public partial class Reporter2 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,7 @@ namespace CBNLMS.Reporting._2
                 Response.Redirect("~/index.aspx");
             }
             else
-        if (!this.IsPostBack)
+          if (!this.IsPostBack)
             {
                 {
                     string lastlogins = string.Empty;
@@ -25,7 +25,7 @@ namespace CBNLMS.Reporting._2
                     string welcomename = string.Empty;
                     string emailz = string.Empty;
                     string role = string.Empty;
-                    username.InnerHtml = string.Empty;
+                    //username.InnerHtml = string.Empty;
                     role = Session["Role"].ToString();
                     emailz = Session["Email"].ToString();
                     welcomename = Session["Reporter_2"].ToString();
@@ -34,10 +34,13 @@ namespace CBNLMS.Reporting._2
                     phone = Session["Phone"].ToString();
                     user.InnerHtml += "<strong>" + welcomename + " </strong>";
                     lastlogin.InnerHtml += "" + lastlogins + "";
-                    username.InnerHtml = "<strong>" + welcomename + " </strong>";
+
+                    // username.InnerHtml = "<strong>" + welcomename + " </strong>";
+
 
 
                 }
+
             }
         }
     }

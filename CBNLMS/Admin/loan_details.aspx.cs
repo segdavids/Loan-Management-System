@@ -31,7 +31,7 @@ namespace CBNLMS
             }
             if (Session["Details"] == null)
             {
-                Response.Redirect("~/all_loans.aspx");
+                Response.Redirect("~/Admin/all_loans.aspx");
             }
             else
             { }

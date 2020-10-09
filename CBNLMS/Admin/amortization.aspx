@@ -52,6 +52,7 @@
 
                                                                     <thead>
                                                                         <tr>
+                                                                            <th>#</th>
                                                                             <th>CUSTOMER NAME</th>
                                                                             <th>CUSTOMER ID</th>
                                                                             <th>INTERVENTION</th>
@@ -72,6 +73,9 @@
                                                                         <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_OnItemCommand">
                                                                             <ItemTemplate>
                                                                                 <tr>
+                                                                                    <td>
+                                                                                        <%#(((RepeaterItem)Container).ItemIndex+1).ToString()%>
+                                                                                    </td>
                                                                                     <td>
                                                                                         <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("customer_name") %>' />
                                                                                     </td>
@@ -110,7 +114,7 @@
                                                                                     </td>
                                                                                    
                                                                                     <td>
-                                                                                        <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_guid") %>' runat="server" Text="Schedule" />
+                                                                                        <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_guid") %>' runat="server" Text="Schedule" OnClientClick="window.document.forms[0].target='_blank';"/>
                                                                                     </td>
                                                                                 </tr>
                                                                             </ItemTemplate>
