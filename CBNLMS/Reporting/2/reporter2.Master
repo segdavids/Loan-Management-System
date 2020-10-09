@@ -199,13 +199,13 @@
                                 </li> 
                                 <li class="treeview">
                                     <a href="#">
-                                        <i class="ti-stats-up"></i>Performance
+                                        <i class="ti-stats-up"></i>Loan Performance
 					                    <span class="pull-right-container">
                                             <i class="fa fa-angle-right pull-right"></i>
                                         </span>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <li id=""><a href="loan_performance.aspx" id=""><i class="ti-more"></i>Loan Performance</a></li>
+                                        <li id=""><a href="loan_performance.aspx" id=""><i class="ti-more"></i>Performance Report</a></li>
 
                                     </ul>
                                 </li>

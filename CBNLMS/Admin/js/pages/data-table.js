@@ -29,6 +29,7 @@ $(function () {
 			'copy', 'csv', 'excel', 'pdf', 'print'
 		]
 	} );
+
 	
 	$('#tickets').DataTable({
 	  'paging'      : true,

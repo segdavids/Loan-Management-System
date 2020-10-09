@@ -11,7 +11,54 @@
           <title>DPF LMS | New Loan</title>
 
 
+       <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style type="text/css">
+    .modal1
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        z-index: 99;
+        opacity: 0.8;
+        filter: alpha(opacity=80);
+        -moz-opacity: 0.8;
+        min-height: 100%;
+        width: 100%;
+    }
+    .loading
+    {
+        font-family: Arial;
+        font-size: 10pt;
+       // border: 5px solid green;
+        width: 200px;
+        height: 100px;
+        display: none;
+        position: fixed;
+        background-color: transparent;
+        z-index: 999;
+    }
+</style>
+         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
+<script type="text/javascript">
+    function ShowProgress() {
+        setTimeout(function () {
+            var modal1 = $('<div />');
+            modal1.addClass("modal1");
+          //  $('body').append(modal);
+            var loading = $(".loading");
+            loading.show();
+            var top = Math.max($(window).height() / 2 - loading[0].offsetHeight / 2, 0);
+            var left = Math.max($(window).width() / 2 - loading[0].offsetWidth / 2, 0);
+            loading.css({ top: top, left: left });
+        }, 100);
+    }
+    $('form').live("submit", function () {
+        ShowProgress();
+    });
+</script>
         <!-- Plugins js -->
         <script src="../assets/plugins/moment/moment.js"></script>
         <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
@@ -24,7 +71,9 @@
         <script src="../assets/pages/jquery.forms-advanced.js"></script>
 
         <!-- App js -->
+
         <script src="../assets/js/app.js"></script>
+     
    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
  $(document).ready(function() {
@@ -34,6 +83,7 @@
      $('#newloanothers').addClass('active');
  });
 </script>
+ 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <div class="content-wrapper">
@@ -75,10 +125,9 @@
                                         <asp:FileUpload ID="FileUpload1" type="file" class="form-control" runat="server" />
                                                   <span style="color:red">*Select File to Upload</span>
                                      </div>
-                                     <div class="col-lg-3">
-                                     </div>
-                                     <div class="col-lg-3">
-                                     </div>
+                                     <div class="col-md-12 " runat="server" id="Div2">
+                                    <div class="alert alert-primary col-md-3 col-xl-3 col-sm-12" style="margin-top:9px" role="alert"><span id= "Span1" runat="server">Loan records were successully uploaded</span></div>
+                                </div>
                                  </div>
                                  <div class="form-group row">
                                      <div class="col-lg-6">
@@ -662,6 +711,10 @@
                     </div>
                 </div>
                 <!--end card-body-->
+                <div class="loading" align="center">
+                       
+    <img src="../images/loader.gif" alt="" />
+</div>
             </section>
             </div>
             <!--end card-->
@@ -673,7 +726,7 @@
                                  <div class="modal-content">
                                      <div class="modal-header">
                                          <h5 class="modal-title mt-0" id="myLargeModalLabel">Customer BVN Lookup</h5>
-                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                         <a href="#" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
                                      </div>
                                      <div class="modal-body">
                                       
@@ -738,10 +791,10 @@
                                  <div class="modal-content">
                                      <div class="modal-header">
                                          <h5 class="modal-title mt-0" id="corporatecustomer">Customer Tax ID Number(TIN) Lookup</h5>
-                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                         <a href="#" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</a>
                                      </div>
                                      <div class="modal-body">
-                                         <div class="row">
+                                         <div class="row">  
                                              <div class="col-lg-12">
                                                  <div class="card">
                                                      <div class="card-body">
@@ -799,9 +852,10 @@
                                      </div>
                                  </div>
                              </div>
+
                                  
                          </div>
-        
+     
         </div>
     
         <script src="../assets/js/waves.min.js"></script>

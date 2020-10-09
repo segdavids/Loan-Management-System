@@ -348,7 +348,7 @@ namespace CBNLMS.Reporting._2
 
         private void interventiongrid()
         {
-            using (SqlCommand cmd = new SqlCommand("select intervention, sum(case when loan_amount is null then 0 else loan_amount end) as amtdis, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] group by intervention", sc))
+            using (SqlCommand cmd = new SqlCommand("select intervention, sum(case when loan_amount is null then 0 else loan_amount end) as amtdis, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] where intervention != 'ABP' group by intervention", sc))
             {
                 string ok = cmd.ToString();
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -491,6 +491,14 @@ namespace CBNLMS.Reporting._2
             string customerId = (item.FindControl("lblCustomerId") as Label).Text.Trim();
             string querey = "state=" + customerId;
             Response.Redirect("~/Reporting/2/reportdetails.aspx?" + querey);
+        }
+        protected void interventiondet(object sender, EventArgs e)
+        {
+            RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
+            string customerId = (item.FindControl("lblCustomerId") as Label).Text.Trim();
+            string querey = "intervention=" + customerId;
+            Session["Intervention"] = customerId;
+            Response.Redirect("~/Reporting/2/intervention_details.aspx?" + querey);
         }
             protected void Repeater1_OnItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -687,7 +695,7 @@ namespace CBNLMS.Reporting._2
         [WebMethod]
         public static List<object> GetChartData2()
         {
-            string query = "select intervention,sum(loan_amount) as loanamount from cbndb.dbo.all_loans group by intervention";
+            string query = "select intervention,sum(loan_amount) as loanamount from cbndb.dbo.all_loans where intervention != 'ABP' group by intervention ";
             List<object> chartData = new List<object>();
             chartData.Add(new object[]
             {

@@ -10,20 +10,36 @@ using System.Configuration;
 using System.Data;
 using System.Net;
 using System.IO;
+using System.Text;
+
+using System.Data.OleDb;
 namespace CBNLMS.Inputing._2
 {
     public partial class aads_newloan : System.Web.UI.Page
     {
+        string emailz;
         SqlConnection sc = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cbndb;Integrated Security=True;persist security info=True; User ID=sa;pwd=password1$; MultipleActiveResultSets=true");
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Email"] == null)
+            {
+                Response.Redirect("~/index.aspx");
+            }
+            else
+            {
+
+            }
+            emailz = Session["Email"].ToString();
             if (IsPostBack)
             {
+                Div2.Visible = false;
 
             }
             else
             {
-                //  popbvn();
+                string script = "$(document).ready(function () { $('[id*=btnSubmit]').click(); });";
+                ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
+                Div2.Visible = false;
                 factype();
                 //popbank();
                 fillpaymentmode();
@@ -41,7 +57,7 @@ namespace CBNLMS.Inputing._2
         {
             WebClient req = new WebClient();
             HttpResponse response = HttpContext.Current.Response;
-            string filePath = "~/assets/forms/loan_form_template.csv";
+            string filePath = "~/assets/forms/loan_form_template.xlsx";
             response.Clear();
             response.ClearContent();
             response.ClearHeaders();
@@ -54,8 +70,146 @@ namespace CBNLMS.Inputing._2
 
         protected void upload_record(object sender, EventArgs e)
         {
+            try
+            {
+                System.Threading.Thread.Sleep(1000);
+                if (!FileUpload1.HasFile)
+            {
+                Response.Write("<script>alert('Select at least 1 file');</script>");
+            }
+            else if (FileUpload1.HasFile)
+            {
+                //Upload and save the file
+                string excelPath = Server.MapPath("~/assets/uploads/") + Path.GetFileName(FileUpload1.PostedFile.FileName);
+                FileUpload1.SaveAs(excelPath);
 
+                string conString = string.Empty;
+                string extension = Path.GetExtension(FileUpload1.PostedFile.FileName);
+                switch (extension)
+                {
+                    case ".xls": //Excel 97-03
+                        conString = ConfigurationManager.ConnectionStrings["Excel03ConString"].ConnectionString;
+                        break;
+                    case ".xlsx": //Excel 07 or higher
+                        conString = ConfigurationManager.ConnectionStrings["Excel07+ConString"].ConnectionString;
+                        break;
+
+                }
+                conString = string.Format(conString, excelPath);
+                using (OleDbConnection excel_con = new OleDbConnection(conString))
+                {
+                    excel_con.Open();
+                    string sheet1 = excel_con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null).Rows[0]["TABLE_NAME"].ToString();
+                    DataTable dtExcelData = new DataTable();
+
+                    //[OPTIONAL]: It is recommended as otherwise the data will be considered as String by default.
+                    dtExcelData.Columns.AddRange(new DataColumn[33] { new DataColumn("loan_guid", typeof(string)),
+                new DataColumn("customer_unique_id", typeof(string)),
+                new DataColumn("customer_name", typeof(string)),
+                new DataColumn("customer_type", typeof(string)),
+                new DataColumn("comm_assoc_name", typeof(string)),
+                new DataColumn("anchor_type", typeof(string)),
+                new DataColumn("intervention", typeof(string)),
+                new DataColumn("bank", typeof(string)),
+                new DataColumn("bank_name", typeof(string)),
+                new DataColumn("facility_type", typeof(string)),
+                new DataColumn("bus_stat", typeof(string)),
+                new DataColumn("bus_geozone", typeof(string)),
+                new DataColumn("sector", typeof(string)),
+                new DataColumn("payment_mode", typeof(string)),
+                new DataColumn("loan_amount", typeof(double)),
+                new DataColumn("interest_rate", typeof(double)),
+                new DataColumn("num_of_yrs", typeof(double)),
+                new DataColumn("moratorium", typeof(double)),
+                new DataColumn("start_date", typeof(DateTime)),
+                new DataColumn("month_inst", typeof(double)),
+                new DataColumn("num_of_inst", typeof(double)),
+                new DataColumn("exp_date", typeof(DateTime)),
+                new DataColumn("loan_purpose", typeof(string)),
+                new DataColumn("loan_amt_out", typeof(double)),
+                new DataColumn("principal_repaid", typeof(double)),
+                new DataColumn("amt_repaid", typeof(double)),
+                new DataColumn("principal_due", typeof(double)),
+                new DataColumn("cumm_int_due", typeof(double)),
+                new DataColumn("interest_paid", typeof(double)),
+                new DataColumn("interest_due", typeof(double)),
+                new DataColumn("loan_status", typeof(string)),
+                new DataColumn("date_created", typeof(DateTime)),
+                new DataColumn("time_created", typeof(DateTime)) });
+
+                    using (OleDbDataAdapter oda = new OleDbDataAdapter("SELECT * FROM [" + sheet1 + "]", excel_con))
+                    {
+                        oda.Fill(dtExcelData);
+                    }
+                    excel_con.Close();
+
+                    string consString = ConfigurationManager.ConnectionStrings["cbndbConnectionString"].ConnectionString;
+                    using (SqlConnection con = new SqlConnection(consString))
+                    {
+                        using (SqlBulkCopy sqlBulkCopy = new SqlBulkCopy(con))
+                        {
+                            //Set the database table name
+                            sqlBulkCopy.DestinationTableName = "dbo.all_loans";
+                            //string password = generator.RandomPassword();
+                            //[OPTIONAL]: Map the Excel columns with that of the database table
+                            sqlBulkCopy.ColumnMappings.Add("loan_guid", "loan_guid");
+                            sqlBulkCopy.ColumnMappings.Add("customer_unique_id", "customer_unique_id");
+                            sqlBulkCopy.ColumnMappings.Add("customer_name", "customer_name");
+                            sqlBulkCopy.ColumnMappings.Add("customer_type", "customer_type");
+                            sqlBulkCopy.ColumnMappings.Add("comm_assoc_name", "comm_assoc_name");
+                            sqlBulkCopy.ColumnMappings.Add("anchor_type", "anchor_type");
+                            sqlBulkCopy.ColumnMappings.Add("intervention", "intervention");
+                            sqlBulkCopy.ColumnMappings.Add("bank", "bank");
+                            sqlBulkCopy.ColumnMappings.Add("bank_name", "bank_name");
+                            sqlBulkCopy.ColumnMappings.Add("facility_type", "facility_type");
+                            sqlBulkCopy.ColumnMappings.Add("bus_stat", "bus_stat");
+                            sqlBulkCopy.ColumnMappings.Add("bus_geozone", "bus_geozone");
+                            sqlBulkCopy.ColumnMappings.Add("sector", "sector");
+                            sqlBulkCopy.ColumnMappings.Add("payment_mode", "payment_mode");
+                            sqlBulkCopy.ColumnMappings.Add("loan_amount", "loan_amount");
+                            sqlBulkCopy.ColumnMappings.Add("interest_rate", "interest_rate");
+                            sqlBulkCopy.ColumnMappings.Add("num_of_yrs", "num_of_yrs");
+                            sqlBulkCopy.ColumnMappings.Add("moratorium", "moratorium");
+                            sqlBulkCopy.ColumnMappings.Add("start_date", "start_date");
+                            sqlBulkCopy.ColumnMappings.Add("month_inst", "month_inst");
+                            sqlBulkCopy.ColumnMappings.Add("num_of_inst", "num_of_inst");
+                            sqlBulkCopy.ColumnMappings.Add("exp_date", "exp_date");
+                            sqlBulkCopy.ColumnMappings.Add("loan_purpose", "loan_purpose");
+                            sqlBulkCopy.ColumnMappings.Add("loan_amt_out", "loan_amt_out");
+                            sqlBulkCopy.ColumnMappings.Add("principal_repaid", "principal_repaid");
+                            sqlBulkCopy.ColumnMappings.Add("amt_repaid", "amt_repaid");
+                            sqlBulkCopy.ColumnMappings.Add("principal_due", "principal_due");
+                            sqlBulkCopy.ColumnMappings.Add("cumm_int_due", "cumm_int_due");
+                            sqlBulkCopy.ColumnMappings.Add("interest_paid", "interest_paid");
+                            sqlBulkCopy.ColumnMappings.Add("interest_due", "interest_due");
+                            sqlBulkCopy.ColumnMappings.Add("loan_status", "loan_status");
+                            sqlBulkCopy.ColumnMappings.Add("date_created", "date_created");
+                            sqlBulkCopy.ColumnMappings.Add("time_created", "time_created");
+                            con.Open();
+                            sqlBulkCopy.WriteToServer(dtExcelData);
+
+                            string useractivity = "Creation of " + (dtExcelData.Rows.Count).ToString() + " Loans";
+                            DateTime now = DateTime.Now;
+                            SqlCommand cmd3 = new SqlCommand("insert into user_activity (user_id,activity,date_time) values(@user,@activity,@datetime)", con);
+                            cmd3.Parameters.AddWithValue("@user", emailz);
+                            cmd3.Parameters.AddWithValue("@activity", useractivity);
+                            cmd3.Parameters.AddWithValue("@datetime", now);
+                            cmd3.ExecuteNonQuery();
+                            Div2.Visible = true;
+
+                            con.Close();
+                        }
+                    }
+                }
+            }
+            }
+            catch (Exception err)
+            {
+                Div2.Visible = true;
+                Div2.InnerHtml = err.Message;
+            }
         }
+
 
         protected void save_data(object sender, EventArgs e)
         {

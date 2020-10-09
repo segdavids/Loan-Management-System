@@ -30,6 +30,31 @@ $(function () {
 		]
 	} );
 	
+	$('#example6').DataTable( {
+		dom: 'Bfrtip',
+		buttons: [
+			'copy', 'csv', 'excel', 'pdf', 'print'
+		]
+	} );
+	$('#example11').DataTable( {
+		dom: 'Bfrtip',
+		buttons: [
+			'copy', 'csv', 'excel', 'pdf', 'print'
+		]
+	} );
+	$('#example8').DataTable( {
+		dom: 'Bfrtip',
+		buttons: [
+			'copy', 'csv', 'excel', 'pdf', 'print'
+		]
+	} );
+	$('#example9').DataTable( {
+		dom: 'Bfrtip',
+		buttons: [
+			'copy', 'csv', 'excel', 'pdf', 'print'
+		]
+	} );
+	
 	$('#tickets').DataTable({
 	  'paging'      : true,
 	  'lengthChange': true,

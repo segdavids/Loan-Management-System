@@ -11615,6 +11615,7 @@
     <Content Include="Inputing\images\img1.jpg" />
     <Content Include="Inputing\images\img2.jpg" />
     <Content Include="Inputing\images\img3.jpg" />
+    <Content Include="Inputing\images\loader.gif" />
     <Content Include="Inputing\images\login-register.jpg" />
     <Content Include="Inputing\images\logo-dark-text.png" />
     <Content Include="Inputing\images\logo-lieght-text.png" />
@@ -13066,8 +13067,10 @@
     <Content Include="Reporting\2\Decline_report.aspx" />
     <Content Include="Reporting\2\Default.aspx" />
     <Content Include="Reporting\2\disbursement.aspx" />
+    <Content Include="Reporting\2\disbursevsrepayment.aspx" />
     <Content Include="Reporting\2\emails.aspx" />
     <Content Include="Reporting\2\email_template_1.aspx" />
+    <Content Include="Reporting\2\intervention_details.aspx" />
     <Content Include="Reporting\2\js\demo.js" />
     <Content Include="Reporting\2\js\pages\advanced-form-element.js" />
     <Content Include="Reporting\2\js\pages\app-chat.js" />
@@ -13140,6 +13143,7 @@
     <Content Include="Reporting\2\js\template.min.js" />
     <Content Include="Reporting\2\js\vendors.min.js" />
     <Content Include="Reporting\2\loan_details.aspx" />
+    <Content Include="Reporting\2\loan_performance.aspx" />
     <Content Include="Reporting\2\notification.aspx" />
     <Content Include="Reporting\2\other_reports.aspx" />
     <Content Include="Reporting\2\photo_album.aspx" />
@@ -19457,6 +19461,13 @@
     <Compile Include="Reporting\2\disbursement.aspx.designer.cs">
       <DependentUpon>disbursement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\2\disbursevsrepayment.aspx.cs">
+      <DependentUpon>disbursevsrepayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\2\disbursevsrepayment.aspx.designer.cs">
+      <DependentUpon>disbursevsrepayment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\2\emails.aspx.cs">
       <DependentUpon>emails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -19471,12 +19482,26 @@
     <Compile Include="Reporting\2\email_template_1.aspx.designer.cs">
       <DependentUpon>email_template_1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\2\intervention_details.aspx.cs">
+      <DependentUpon>intervention_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\2\intervention_details.aspx.designer.cs">
+      <DependentUpon>intervention_details.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\2\loan_details.aspx.cs">
       <DependentUpon>loan_details.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Reporting\2\loan_details.aspx.designer.cs">
       <DependentUpon>loan_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\2\loan_performance.aspx.cs">
+      <DependentUpon>loan_performance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\2\loan_performance.aspx.designer.cs">
+      <DependentUpon>loan_performance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reporting\2\notification.aspx.cs">
       <DependentUpon>notification.aspx</DependentUpon>
