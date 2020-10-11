@@ -155,7 +155,20 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="abp_newcustomer.aspx" id="newcustomerabp"><i class="ti-user"></i>New Customer</a></li>
-                                <li><a href="abp_newloan.aspx"><i class="ti-new-window"></i>New Loan</a></li>
+                                  <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>New Loan
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                <li><a href="abp_newloan.aspx" id="abpanchor"><i class="ti-more"></i>Anchor</a></li>
+                                <li><a href="comm_assc_loan.aspx" id="commass"><i class="ti-more"></i>Comm. Association</a></li>
+                                <li><a href="abp_state_loan.aspx" id="stateabp"><i class="ti-more"></i>State</a></li>
+
+                                    </ul>
+                                </li>
                                 <li><a href="abp_newrepayment.aspx"><i class="ti-file"></i>New Repayment</a></li>
                             </ul>
                         </li>
@@ -169,7 +182,23 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="aads_newcustomer.aspx" id="newcustomerothers"><i class="ti-user"></i>New Customer</a></li>
-                                <li><a href="aads_newloan.aspx" id="newloanothers"><i class="ti-new-window"></i>New Loan</a></li>
+
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>New Loan
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                <li><a href="aads_newloan.aspx" id="newloanothers"><i class="ti-more"></i>Individual</a></li>
+                                <li><a href="corporate_loan.aspx" id="corporate"><i class="ti-more"></i>Corporate</a></li>
+                                <li><a href="state_loan.aspx" id="state"><i class="ti-more"></i>State</a></li>
+
+                                    </ul>
+                                </li>
+
+
                                 <li><a href="aads_newrepayment.aspx"><i class="ti-file"></i>New Repayment</a></li>
                             </ul>
                         </li>

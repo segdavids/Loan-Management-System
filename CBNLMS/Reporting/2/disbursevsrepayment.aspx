@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reporting/2/Reporter2.Master" AutoEventWireup="true" CodeBehind="disbursevsrepayment.aspx.cs" Inherits="CBNLMS.Reporting._2.disbursevsrepayment" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <title>DFD LMS | Disbursement vs Repayment Ratio</title>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
               <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <style type="text/css">
     .modal
@@ -30,7 +30,7 @@
         z-index: 999;
     }
 </style>
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
     function ShowProgress() {
         setTimeout(function () {

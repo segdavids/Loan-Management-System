@@ -104,7 +104,7 @@ domain) have been included in the examples directory.  They are used in
 examples/axes-time-zones/index.html.
 
 
-[excanvas]: http://code.google.com/p/explorercanvas/
-[flashcanvas]: http://code.google.com/p/flashcanvas/
+[excanvas]: https://code.google.com/p/explorercanvas/
+[flashcanvas]: https://code.google.com/p/flashcanvas/
 [timezone-js]: https://github.com/mde/timezone-js
 [olson]: http://ftp.iana.org/time-zones

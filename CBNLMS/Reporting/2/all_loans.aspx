@@ -14,7 +14,7 @@
 
         <script src="../assets/pages/jquery.forms-advanced.js"></script>
 
-     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

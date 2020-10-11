@@ -62,7 +62,7 @@ var wysihtml5 = {
 };
 ;/**
  * Rangy, a cross-browser JavaScript range and selection library
- * http://code.google.com/p/rangy/
+ * https://code.google.com/p/rangy/
  *
  * Copyright 2014, Tim Down
  * Licensed under the MIT license.
@@ -2476,7 +2476,7 @@ var wysihtml5 = {
             };
 
             // Gets the boundary of a TextRange expressed as a node and an offset within that node. This function started
-            // out as an improved version of code found in Tim Cameron Ryan's IERange (http://code.google.com/p/ierange/)
+            // out as an improved version of code found in Tim Cameron Ryan's IERange (https://code.google.com/p/ierange/)
             // but has grown, fixing problems with line breaks in preformatted text, adding workaround for IE TextRange
             // bugs, handling for inputs and images, plus optimizations.
             var getTextRangeBoundaryPosition = function(textRange, wholeRangeContainerElement, isStart, isCollapsed, startInfo) {
@@ -2631,7 +2631,7 @@ var wysihtml5 = {
 
             // Returns a TextRange representing the boundary of a TextRange expressed as a node and an offset within that
             // node. This function started out as an optimized version of code found in Tim Cameron Ryan's IERange
-            // (http://code.google.com/p/ierange/)
+            // (https://code.google.com/p/ierange/)
             var createBoundaryTextRange = function(boundaryPosition, isStart) {
                 var boundaryNode, boundaryParent, boundaryOffset = boundaryPosition.offset;
                 var doc = dom.getDocument(boundaryPosition.node);
@@ -2655,7 +2655,7 @@ var wysihtml5 = {
                 workingNode.innerHTML = "&#feff;";
 
                 // insertBefore is supposed to work like appendChild if the second parameter is null. However, a bug report
-                // for IERange suggests that it can crash the browser: http://code.google.com/p/ierange/issues/detail?id=12
+                // for IERange suggests that it can crash the browser: https://code.google.com/p/ierange/issues/detail?id=12
                 if (boundaryNode) {
                     boundaryParent.insertBefore(workingNode, boundaryNode);
                 } else {
@@ -3798,7 +3798,7 @@ var wysihtml5 = {
  * Saves and restores user selections using marker invisible elements in the DOM.
  *
  * Part of Rangy, a cross-browser JavaScript range and selection library
- * http://code.google.com/p/rangy/
+ * https://code.google.com/p/rangy/
  *
  * Depends on Rangy core.
  *
@@ -9546,7 +9546,7 @@ wysihtml5.quirks.ensureProperClearing = (function() {
 })(wysihtml5);
 ;/**
  * Inspired by the rangy CSS Applier module written by Tim Down and licensed under the MIT license.
- * http://code.google.com/p/rangy/
+ * https://code.google.com/p/rangy/
  *
  * changed in order to be able ...
  *    - to use custom tags
@@ -12570,8 +12570,8 @@ wysihtml5.views.View = Base.extend(
 
       if (win.scrollTo) {
         // Some browser extensions unset this method to prevent annoyances
-        // "Better PopUp Blocker" for Chrome http://code.google.com/p/betterpopupblocker/source/browse/trunk/blockStart.js#100
-        // Issue: http://code.google.com/p/betterpopupblocker/issues/detail?id=1
+        // "Better PopUp Blocker" for Chrome https://code.google.com/p/betterpopupblocker/source/browse/trunk/blockStart.js#100
+        // Issue: https://code.google.com/p/betterpopupblocker/issues/detail?id=1
         win.scrollTo(originalScrollLeft, originalScrollTop);
       }
     }

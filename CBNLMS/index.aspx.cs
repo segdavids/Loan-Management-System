@@ -158,7 +158,7 @@ namespace CBNLMS
                         cmd3.Parameters.AddWithValue("@datetime", now);
                         cmd3.ExecuteNonQuery();
                         constr.Close();
-                        Response.Redirect("~/Inputing/2/Default.aspx");
+                        Response.Redirect("~/Inputing/2/");
                     }
                      if (role == "Inputer_3")
                     {
@@ -284,7 +284,7 @@ namespace CBNLMS
                         cmd3.Parameters.AddWithValue("@datetime", now);
                         cmd3.ExecuteNonQuery();
                         constr.Close();
-                        Response.Redirect("~/Reporting/2/Default.aspx");
+                        Response.Redirect("~/Reporting/2/");
                     }
                      if (role == "Reporter_3")
                     {

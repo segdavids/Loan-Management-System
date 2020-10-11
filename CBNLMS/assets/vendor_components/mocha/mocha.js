@@ -396,7 +396,7 @@ var JsDiff = (function() {
       return ret.join('');
     },
 
-    // See: http://code.google.com/p/google-diff-match-patch/wiki/API
+    // See: https://code.google.com/p/google-diff-match-patch/wiki/API
     convertChangesToDMP: function(changes){
       var ret = [], change;
       for ( var i = 0; i < changes.length; i++) {

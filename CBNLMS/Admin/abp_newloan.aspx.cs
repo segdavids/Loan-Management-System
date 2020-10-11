@@ -21,10 +21,17 @@ namespace CBNLMS
            
                if(IsPostBack)
             {
-                
+                repaymentwindow.Visible = false;
+                repaymentwindowstate.Visible = false;
+                repaymentwindowcommassoc.Visible = false;
             }
             else
             {
+                repaymentwindow.Visible = false;
+                repaymentwindowstate.Visible = false;
+                repaymentwindowcommassoc.Visible = false;
+                string script = "$(document).ready(function () { $('[id*=btnSubmit]').click(); });";
+                ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
                 popanchor();
                 //   popbvn();
                 factype();
@@ -293,6 +300,7 @@ namespace CBNLMS
 
         protected void add_corp(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(1000);
             if (string.IsNullOrWhiteSpace(Number6.Value))
             {
                 Response.Write("<script>alert('Loan Amount Required!');</script>");
@@ -318,11 +326,7 @@ namespace CBNLMS
                 Response.Write("<script>alert('Date Disbursed Required!');</script>");
                 goto end;
             }
-            if (string.IsNullOrWhiteSpace(Date3.Value))
-            {
-                Response.Write("<script>alert('Expiry Date Required!');</script>");
-                goto end;
-            }
+          
             if (string.IsNullOrWhiteSpace(Number8.Value))
             {
                 Response.Write("<script>alert('Moratorium Required!');</script>");
@@ -372,7 +376,8 @@ namespace CBNLMS
             double moratorium = 0;
             double PaymentAmount = 0;
             double LoanAmount = Convert.ToDouble(Number6.Value);
-            double NumberOfYears = Convert.ToDouble(TextBox2.Text);
+            double tenure = Convert.ToDouble(TextBox2.Text);
+            double NumberOfYears = tenure / 12;
             moratorium = Convert.ToDouble(Number8.Value)/12;
             double NumberOfPayments = (NumberOfYears - moratorium) * 12;
             PaymentAmount = (LoanAmount) / (NumberOfPayments);
@@ -381,8 +386,7 @@ namespace CBNLMS
             DateTime entrydate = DateTime.Now;
             TimeSpan entrytim = DateTime.Now.TimeOfDay;
             DateTime disdate = DateTime.Parse(Date2.Value.ToString());
-            DateTime expdate = DateTime.Parse(Date3.Value.ToString());
-            sc.Open();
+            DateTime expdate = disdate.AddMonths(Convert.ToInt32(tenure)); sc.Open();
             SqlCommand check = new SqlCommand("select assoc_name,email_add, phone from all_customer where customer_type = @custype and phone=@customerid", sc);
             check.Parameters.AddWithValue("@custype", custype);
             check.Parameters.AddWithValue("@customerid", customerid);
@@ -408,10 +412,10 @@ namespace CBNLMS
                 cmd3.Parameters.AddWithValue("@busstate", stateofbus);
                 cmd3.Parameters.AddWithValue("@buszone", geozone);
                 cmd3.Parameters.AddWithValue("@sector", sector);
-                cmd3.Parameters.AddWithValue("@pmode", DropDownList12.SelectedItem.Text);
+                cmd3.Parameters.AddWithValue("@pmode", DropDownList10.SelectedItem.Text);
                 cmd3.Parameters.AddWithValue("@lamt", LoanAmount);
                 cmd3.Parameters.AddWithValue("@intr", Convert.ToDouble(Number7.Value));
-                cmd3.Parameters.AddWithValue("@tenure", Convert.ToDouble(TextBox2.Text));
+                cmd3.Parameters.AddWithValue("@tenure", NumberOfYears);
                 cmd3.Parameters.AddWithValue("@mora", Convert.ToDouble(Number8.Value));
                 cmd3.Parameters.AddWithValue("@sd", disdate);
                 cmd3.Parameters.AddWithValue("@payamt", PaymentAmount);
@@ -482,7 +486,7 @@ namespace CBNLMS
             TextBox2.Text = string.Empty;
             Number8.Value = string.Empty;
             Date2.Value = string.Empty;
-            Date3.Value = string.Empty;
+           // Date3.Value = string.Empty;
             TextBox4.Text = string.Empty;
             Textarea1.Value = string.Empty;
             Number9.Text = string.Empty;
@@ -497,13 +501,15 @@ namespace CBNLMS
             TextBox2.Text = string.Empty;
             Number8.Value = string.Empty;
             Date2.Value = string.Empty;
-            Date3.Value = string.Empty;
+           // Date3.Value = string.Empty;
             Number6.Value = string.Empty;
 
         }
 
         protected void add_state(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(1000);
+
             if (string.IsNullOrWhiteSpace(Number11.Value))
             {
                 Response.Write("<script>alert('Loan Amount Required!');</script>");
@@ -524,11 +530,7 @@ namespace CBNLMS
                 Response.Write("<script>alert('Date Disbursed Required!');</script>");
                 goto end;
             }
-            if (string.IsNullOrWhiteSpace(Date6.Value))
-            {
-                Response.Write("<script>alert('Expiry Date Required!');</script>");
-                goto end;
-            }
+            
             if (string.IsNullOrWhiteSpace(Number13.Value))
             {
                 Response.Write("<script>alert('Moratorium Required!');</script>");
@@ -578,7 +580,8 @@ namespace CBNLMS
             double moratorium = 0;
             double PaymentAmount = 0;
             double LoanAmount = Convert.ToDouble(Number11.Value);
-            double NumberOfYears = Convert.ToDouble(TextBox3.Text);
+            double tenure = Convert.ToDouble(TextBox3.Text);
+            double NumberOfYears = tenure / 12;
             moratorium = Convert.ToDouble(Number13.Value)/12;
             double NumberOfPayments = (NumberOfYears - moratorium) * 12;
             PaymentAmount = (LoanAmount) / (NumberOfPayments);
@@ -587,7 +590,7 @@ namespace CBNLMS
             DateTime entrydate = DateTime.Now;
             TimeSpan entrytim = DateTime.Now.TimeOfDay;
             DateTime disdate = DateTime.Parse(Date5.Value.ToString());
-            DateTime expdate = DateTime.Parse(Date6.Value.ToString());
+            DateTime expdate = disdate.AddMonths(Convert.ToInt32(tenure));
             sc.Open();
             SqlCommand check = new SqlCommand("select state_name, customer_type from all_customer where state_name = @bvn", sc);
             check.Parameters.AddWithValue("@bvn", cust_id);
@@ -613,7 +616,7 @@ namespace CBNLMS
                 cmd3.Parameters.AddWithValue("@pmode", DropDownList18.SelectedItem.Text);
                 cmd3.Parameters.AddWithValue("@lamt", LoanAmount);
                 cmd3.Parameters.AddWithValue("@intr", Convert.ToDouble(Number12.Value));
-                cmd3.Parameters.AddWithValue("@tenure", Convert.ToDouble(TextBox3.Text));
+                cmd3.Parameters.AddWithValue("@tenure", NumberOfYears);
                 cmd3.Parameters.AddWithValue("@mora", Convert.ToDouble(Number13.Value));
                 cmd3.Parameters.AddWithValue("@sd", disdate);
                 cmd3.Parameters.AddWithValue("@payamt", PaymentAmount);
@@ -684,7 +687,7 @@ namespace CBNLMS
             TextBox3.Text = string.Empty;
             Number13.Value = string.Empty;
             Date5.Value = string.Empty;
-            Date6.Value = string.Empty;
+           // Date6.Value = string.Empty;
             Number11.Value = string.Empty;
             Textarea2.Value = string.Empty;
             end:
@@ -697,12 +700,14 @@ namespace CBNLMS
             TextBox3.Text = string.Empty;
             Number13.Value = string.Empty;
             Date5.Value = string.Empty;
-            Date6.Value = string.Empty;
+          //  Date6.Value = string.Empty;
             Number11.Value = string.Empty;
         }
 
         protected void add_ind(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(1000);
+
             if (string.IsNullOrWhiteSpace(Number1.Value))
             {
                 Response.Write("<script>alert('Loan Amount Required!');</script>");
@@ -728,11 +733,7 @@ namespace CBNLMS
                 Response.Write("<script>alert('Date Disbursed Required!');</script>");
                 goto end;
             }
-            if (string.IsNullOrWhiteSpace(Date4.Value))
-            {
-                Response.Write("<script>alert('Expiry Date Required!');</script>");
-                goto end;
-            }
+           
             if (string.IsNullOrWhiteSpace(Number3.Value))
             {
                 Response.Write("<script>alert('Moratorium Required!');</script>");
@@ -780,7 +781,8 @@ namespace CBNLMS
             double moratorium = 0;
             double PaymentAmount = 0;
             double LoanAmount = Convert.ToDouble(Number1.Value);
-            double NumberOfYears = Convert.ToDouble(TextBox1.Value);
+            double tenure = Convert.ToDouble(TextBox1.Value);
+            double NumberOfYears = tenure / 12;
             moratorium = Convert.ToDouble(Number3.Value) / 12;
             double NumberOfPayments = (NumberOfYears - moratorium) * 12;
             PaymentAmount = (LoanAmount) / (NumberOfPayments);
@@ -791,7 +793,7 @@ namespace CBNLMS
             DateTime entrydate = DateTime.Now;
             TimeSpan entrytim = DateTime.Now.TimeOfDay;
             DateTime disdate = DateTime.Parse(Date1.Value.ToString());
-            DateTime expdate = DateTime.Parse(Date4.Value.ToString());
+            DateTime expdate = disdate.AddMonths(Convert.ToInt32(tenure));
             sc.Open();
             SqlCommand check = new SqlCommand("select organization_name,tin_no, customer_type,anchor_type from all_customer where customer_type = @custype and anchor_type=@anchor_type and tin_no=@tn", sc);
             check.Parameters.AddWithValue("@custype", custype);
@@ -822,7 +824,7 @@ namespace CBNLMS
                 cmd3.Parameters.AddWithValue("@pmode", DropDownList12.SelectedItem.Text);
                 cmd3.Parameters.AddWithValue("@lamt", LoanAmount);
                 cmd3.Parameters.AddWithValue("@intr", Convert.ToDouble(Number2.Value));
-                cmd3.Parameters.AddWithValue("@tenure", Convert.ToDouble(TextBox1.Value));
+                cmd3.Parameters.AddWithValue("@tenure", NumberOfYears);
                 cmd3.Parameters.AddWithValue("@mora", Convert.ToDouble(Number3.Value));
                 cmd3.Parameters.AddWithValue("@sd", disdate);
                 cmd3.Parameters.AddWithValue("@payamt", PaymentAmount);
@@ -893,7 +895,7 @@ namespace CBNLMS
                         Number2.Value = string.Empty;
                         TextBox1.Value = string.Empty;
                         Date1.Value = string.Empty;
-                        Date4.Value = string.Empty;
+                        //Date4.Value = string.Empty;
                         Number3.Value = string.Empty;
                         Number4.Text = string.Empty;
                         Number5.Text = string.Empty;
@@ -907,6 +909,8 @@ namespace CBNLMS
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(1000);
+
             if (string.IsNullOrWhiteSpace(Number1.Value))
             {
                 Response.Write("<script>alert('Loan Amount Required!');</script>");
@@ -928,7 +932,7 @@ namespace CBNLMS
             double moratorium = 0;
             double PaymentAmount = 0;
             double LoanAmount = Convert.ToDouble(Number1.Value);
-            double NumberOfYears = Convert.ToDouble(TextBox1.Value);
+            double NumberOfYears = Convert.ToDouble(TextBox1.Value)/12;
 
 
             moratorium = Convert.ToDouble(Number3.Value)/12;
@@ -959,7 +963,8 @@ namespace CBNLMS
                 PaymentAmount = Math.Round(PaymentAmount, 2);
 
 
-
+                repaymentwindow.Visible = true;
+             
                 Number4.Visible = true;
                 Number5.Visible = true;
                 string naira = "₦" + String.Format("{0:#,##0.000}", PaymentAmount);
@@ -977,6 +982,8 @@ namespace CBNLMS
 
         protected void cal_corp(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(1000);
+
             if (string.IsNullOrWhiteSpace(Number6.Value))
             {
                 Response.Write("<script>alert('Loan Amount Required!');</script>");
@@ -998,7 +1005,7 @@ namespace CBNLMS
             double moratorium = 0;
             double PaymentAmount = 0;
             double LoanAmount = Convert.ToDouble(Number6.Value);
-            double NumberOfYears = Convert.ToDouble(TextBox2.Text);
+            double NumberOfYears = Convert.ToDouble(TextBox2.Text)/12;
             moratorium = Convert.ToDouble(Number8.Value)/12;
             double NumberOfPayments = (NumberOfYears - moratorium) * 12;
             PaymentAmount = (LoanAmount) / (NumberOfPayments);
@@ -1032,10 +1039,8 @@ namespace CBNLMS
                 PaymentAmount = (LoanAmount) / (NumberOfPayments);
                 PaymentAmount = Math.Round(PaymentAmount, 1);
 
-
-
-                Number4.Visible = true;
-                Number5.Visible = true;
+                repaymentwindowcommassoc.Visible = true;
+              
                 string naira = "₦" + String.Format("{0:#,##0.00}", PaymentAmount);
                 Number9.Text = naira;
                 Number10.Text = NumberOfPayments.ToString();
@@ -1051,6 +1056,8 @@ namespace CBNLMS
 
         protected void cal_state(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(1000);
+
             if (string.IsNullOrWhiteSpace(Number11.Value))
             {
                 Response.Write("<script>alert('Loan Amount Required!');</script>");
@@ -1072,7 +1079,7 @@ namespace CBNLMS
             double moratorium = 0;
             double PaymentAmount = 0;
             double LoanAmount = Convert.ToDouble(Number11.Value);
-            double NumberOfYears = Convert.ToDouble(TextBox3.Text);
+            double NumberOfYears = Convert.ToDouble(TextBox3.Text)/12;
             moratorium = Convert.ToDouble(Number13.Value)/12;
             double NumberOfPayments = (NumberOfYears - moratorium) * 12;
             PaymentAmount = (LoanAmount) / (NumberOfPayments);
@@ -1101,9 +1108,9 @@ namespace CBNLMS
                 PaymentAmount = Math.Round(PaymentAmount, 2);
 
 
-
-                Number4.Visible = true;
-                Number5.Visible = true;
+                repaymentwindowstate.Visible = true;
+                Number14.Visible = true;
+                Number15.Visible = true;
                 string naira = "₦" + String.Format("{0:#,##0.000}", PaymentAmount);
                 Number14.Text = naira;
                 Number15.Text = NumberOfPayments.ToString();

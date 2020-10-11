@@ -13,15 +13,6 @@ namespace CBNLMS.Admin {
     public partial class all_summary {
         
         /// <summary>
-        /// totalogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl totalogin;
-        
-        /// <summary>
         /// totalact control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace CBNLMS.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl totalact;
+        
+        /// <summary>
+        /// totalogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl totalogin;
         
         /// <summary>
         /// failedlogin control.

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" CodeBehind="disbursement.aspx.cs" Inherits="CBNLMS.disbursement1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>DFD LMS | Disbursement Report</title>
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
  $(document).ready(function() {
      $('#MetricaCRM').addClass('active');

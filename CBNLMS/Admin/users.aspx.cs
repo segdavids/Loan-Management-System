@@ -158,7 +158,7 @@ namespace CBNLMS
                                    "" + password + " ",
                                    "" + role + " ",
                                    "DFD Login Console ",
-                                   "http://www.dfdlms.net ",
+                                   "https://dfdlms.net ",
                                   
                                     " You can Change your password in the Profile tab after first login. Click the button link below to Login");
                     this.SendHtmlFormattedEmail(""+email+"", "Welcome to DFD LMS", body);

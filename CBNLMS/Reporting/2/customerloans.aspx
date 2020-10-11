@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reporting/2/Reporter2.Master" AutoEventWireup="true" CodeBehind="customerloans.aspx.cs" Inherits="CBNLMS.Reporting._2.customerloans" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
  $(document).ready(function() {
    

@@ -18,15 +18,7 @@ namespace CBNLMS.Inputing._2
         {
             if (!this.IsPostBack)
             {
-                if (Session["ID"] == null && Session["Email"] == null)
-                {
-                    Response.Redirect("~/index.aspx");
-                }
-                else
-                {
-                   
-
-                }
+               
                 this.BindGrid();
 
                 //degree.Visible = false;
@@ -120,6 +112,8 @@ namespace CBNLMS.Inputing._2
                 Session["Details"] = loandetails;
                 string amortdet = e.CommandArgument.ToString();
                 Session["ViewSchedule"] = amortdet;
+                string url = "~/Inputing/2/viewschedule.aspx ? " + querey;
+               
                 Response.Redirect("~/Inputing/2/viewschedule.aspx?" + querey);
             }
         }
@@ -166,7 +160,6 @@ namespace CBNLMS.Inputing._2
                     string amortdet = e.CommandArgument.ToString();
                     Session["ViewSchedule"] = amortdet;
                     Response.Redirect("~/Inputing/2/viewschedule.aspx?" + querey);
-
                 }
                 sc.Close();
                

@@ -90,7 +90,7 @@
                                                                         <asp:Label ID="Label3" class="form-control" runat="server" Text='<%# Eval("loan_status") %>' />
                                                                     </td>
                                                                     <td>
-                                                                        <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_guid") %>' runat="server" Text="Schedule" />
+                                                                        <asp:Button ID="linkbutton" class="btn btn-primary px-5 py-2" dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_guid") %>' runat="server" Text="Schedule" OnClientClick="window.document.forms[0].target='_blank';" />
                                                                     </td>
                                                                 </tr>
                                                             </ItemTemplate>
@@ -124,14 +124,15 @@
                                          
                                     </div>
                                 </div>
-                            </div>
+                      </div>
+            
+                       </section>
                         </div>
             
         
-       </div>
-            </section>
+       
+           
             </div>
-             </div>
 
                          <script src="../assets/js/jquery.min.js"></script>
         <script src="../assets/js/bootstrap.bundle.min.js"></script>

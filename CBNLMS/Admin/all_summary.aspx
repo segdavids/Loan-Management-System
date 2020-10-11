@@ -317,17 +317,44 @@
 
             <div class="col-xl-3 col-md-6 col-12">
 					<div class="box">
+                        <ul class="box-controls pull-right">
+						  <li class="dropdown">
+							<a data-toggle="dropdown" href="#" class="px-10 pt-5"><i class="ti-more-alt"></i></a>
+						
+						  </li>
+						</ul>
 						<ul class="box-controls pull-right">
 						 
 						</ul>
 						<div class="box-body pt-0">
 							<div class="d-flex align-items-center justify-content-between">
 								<div class="icon bg-primary-light rounded-circle">
-									<i class="text-primary mr-0 font-size-20 fa fa-heartbeat"></i>
+									<i class="text-primary mr-0 font-size-20 fa fa-money"></i>
 								</div>
 								<div>
-									<h3 class="mb-0 font-weight-500" >4,235</h3>
-									<p class="text-mute mb-0">Total Patients</p>
+									<h3 class="mb-0 font-weight-500" ></h3>
+									<p class="text-mute mb-0">Disbursed </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+                            <div class="col-xl-3 col-md-6 col-12">
+					<div class="box">
+						<ul class="box-controls pull-right">
+						  <li class="dropdown">
+							<a data-toggle="dropdown" href="#" class="px-10 pt-5"><i class="ti-more-alt"></i></a>
+						
+						  </li>
+						</ul>
+						<div class="box-body pt-0">
+							<div class="d-flex align-items-center justify-content-between">
+								<div class="icon bg-warning-light rounded-circle">
+									<i class="text-warning mr-0 font-size-20 fa fa-money"></i>
+								</div>
+								<div>
+									<h3 class="mb-0 font-weight-500" id="totalact" runat="server"></h3>
+									<p class="text-mute mb-0">Oustanding Amount</p>
 								</div>
 							</div>
 						</div>
@@ -343,17 +370,18 @@
 						</ul>
 						<div class="box-body pt-0">
 							<div class="d-flex align-items-center justify-content-between">
-								<div class="icon bg-info-light rounded-circle">
-									<i class="text-info mr-0 font-size-20 fa fa-user-md"></i>
+								<div class="icon bg-primary-light rounded-circle">
+									<i class="text-primary mr-0 font-size-20 fa fa-user-md"></i>
 								</div>
 								<div>
 									<h3 class="mb-0 font-weight-500" id="totalogin" runat="server"></h3>
-									<p class="text-mute mb-0">Available Staff</p>
+									<p class="text-mute mb-0">Farmers</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				
 				<div class="col-xl-3 col-md-6 col-12">
 					<div class="box">
 						<ul class="box-controls pull-right">
@@ -364,33 +392,12 @@
 						</ul>
 						<div class="box-body pt-0">
 							<div class="d-flex align-items-center justify-content-between">
-								<div class="icon bg-warning-light rounded-circle">
-									<i class="text-warning mr-0 font-size-20 fa fa-money"></i>
-								</div>
-								<div>
-									<h3 class="mb-0 font-weight-500" id="totalact" runat="server">Total Activities</h3>
-									<p class="text-mute mb-0">Avg Treat. Costs</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-md-6 col-12">
-					<div class="box">
-						<ul class="box-controls pull-right">
-						  <li class="dropdown">
-							<a data-toggle="dropdown" href="#" class="px-10 pt-5"><i class="ti-more-alt"></i></a>
-						
-						  </li>
-						</ul>
-						<div class="box-body pt-0">
-							<div class="d-flex align-items-center justify-content-between">
-								<div class="icon bg-danger-light rounded-circle">
-									<i class="text-danger mr-0 font-size-20 fa fa-ambulance"></i>
+								<div class="icon bg-primary-light rounded-circle">
+									<i class="text-primary mr-0 font-size-20 fa fa-home"></i>
 								</div>
 								<div>
 									<h3 class="mb-0 font-weight-500" id="failedlogin" runat="server">35</h3>
-									<p class="text-mute mb-0">Failed Logins</p>
+									<p class="text-mute mb-0">PFIs</p>
 								</div>
 							</div>
 						</div>

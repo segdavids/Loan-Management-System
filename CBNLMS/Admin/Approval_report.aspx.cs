@@ -63,8 +63,8 @@ namespace CBNLMS.Admin
                     disamount.InnerHtml = " ₦" + String.Format("{0:#,##0.00}", sdrpopulate["loan_amount"] == DBNull.Value ? 0 : Convert.ToDouble(sdrpopulate["loan_amount"]));
                     DateTime tempd = Convert.ToDateTime(sdrpopulate["start_date"].ToString());
                     DateTime tempd1 = Convert.ToDateTime(sdrpopulate["exp_date"].ToString());
-                    disbursementdate.InnerHtml = " " + tempd1.ToString("dd/MM/yyyy");
-                    expirydate.InnerHtml = " " + tempd.ToString("dd/MM/yyyy");
+                    disbursementdate.InnerHtml = " " + tempd.ToString("dd/MM/yyyy");
+                    expirydate.InnerHtml = " " + tempd1.ToString("dd/MM/yyyy");
 
                     
                    

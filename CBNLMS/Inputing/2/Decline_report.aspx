@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Inputing/2/inputer2.Master" AutoEventWireup="true" CodeBehind="Decline_report.aspx.cs" Inherits="CBNLMS.Inputing._2.Decline_report" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <title>DFD LMS | Loan Denied Report</title>
-       <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+       <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
      <script type="text/javascript">
        
         $(document).ready(function () {

@@ -148,13 +148,13 @@ namespace CBNLMS {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Date1;
         
         /// <summary>
-        /// Date4 control.
+        /// Number3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Date4;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number3;
         
         /// <summary>
         /// DropDownList12 control.
@@ -166,15 +166,6 @@ namespace CBNLMS {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList12;
         
         /// <summary>
-        /// Number3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number3;
-        
-        /// <summary>
         /// loan_purpose control.
         /// </summary>
         /// <remarks>
@@ -182,6 +173,15 @@ namespace CBNLMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea loan_purpose;
+        
+        /// <summary>
+        /// repaymentwindow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl repaymentwindow;
         
         /// <summary>
         /// Number4 control.
@@ -328,13 +328,13 @@ namespace CBNLMS {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Date2;
         
         /// <summary>
-        /// Date3 control.
+        /// Number8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Date3;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number8;
         
         /// <summary>
         /// DropDownList10 control.
@@ -346,15 +346,6 @@ namespace CBNLMS {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList10;
         
         /// <summary>
-        /// Number8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number8;
-        
-        /// <summary>
         /// Textarea1 control.
         /// </summary>
         /// <remarks>
@@ -362,6 +353,15 @@ namespace CBNLMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea Textarea1;
+        
+        /// <summary>
+        /// repaymentwindowcommassoc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl repaymentwindowcommassoc;
         
         /// <summary>
         /// Number9 control.
@@ -508,13 +508,13 @@ namespace CBNLMS {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Date5;
         
         /// <summary>
-        /// Date6 control.
+        /// Number13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Date6;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number13;
         
         /// <summary>
         /// DropDownList18 control.
@@ -526,15 +526,6 @@ namespace CBNLMS {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList18;
         
         /// <summary>
-        /// Number13 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number13;
-        
-        /// <summary>
         /// Textarea2 control.
         /// </summary>
         /// <remarks>
@@ -542,6 +533,15 @@ namespace CBNLMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea Textarea2;
+        
+        /// <summary>
+        /// repaymentwindowstate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl repaymentwindowstate;
         
         /// <summary>
         /// Number14 control.
