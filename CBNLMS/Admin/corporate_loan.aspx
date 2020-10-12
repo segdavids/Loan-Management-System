@@ -33,7 +33,7 @@
      $('#newloanothers').addClass('active');
  });
 </script>
-    <style type="text/css">
+   <style type="text/css">
     .modal1
     {
         position: fixed;
@@ -60,7 +60,7 @@
         z-index: 999;
     }
 </style>
-    <script type="text/javascript" src="https://googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
     function ShowProgress() {
         setTimeout(function () {
@@ -78,6 +78,7 @@
         ShowProgress();
     });
 </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <div class="content-wrapper">
@@ -344,7 +345,7 @@
                         </div>
                     </div>
                 </div>
-              <div class="loading" align="center">
+                <div id="loader" class="loading" align="center">
                        
     <img src="../images/loader.gif" alt="" />
 </div>

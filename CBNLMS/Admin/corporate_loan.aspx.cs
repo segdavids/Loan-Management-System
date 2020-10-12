@@ -26,9 +26,10 @@ namespace CBNLMS.Admin
             }
             else
             {
-                alert.Visible = false;
                 string script = "$(document).ready(function () { $('[id*=btnSubmit]').click(); });";
                 ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
+                alert.Visible = false;
+               
                 repaymentwindow.Visible = false;
                 factype();
                 //popbank();
@@ -420,6 +421,8 @@ namespace CBNLMS.Admin
 
         protected void clear_corp(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(1000);
+
             Number7.Value = string.Empty;
             TextBox2.Text = string.Empty;
             Number8.Value = string.Empty;

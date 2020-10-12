@@ -39,7 +39,7 @@
         z-index: 999;
     }
 </style>
-    <script type="text/javascript" src="https://googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
     function ShowProgress() {
         setTimeout(function () {
@@ -439,8 +439,10 @@
         
       }
     </script>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+ 
           <div class="content-wrapper">
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
@@ -516,9 +518,9 @@
 			  <div class="nav-tabs-custom">
 					<ul class="nav nav-tabs nav-fill" role="tablist">
                         <li class="nav-item waves-effect waves-light">
-                      <a href="#perint" class="active" data-toggle="tab">Disbursement Report</a></li>
+                      <a href="#perint" class="active" data-toggle="tab">DISBURSEMENT REPORT</a></li>
                         <li class="nav-item waves-effect waves-light">
-                      <a href="#usertimeline" class="" data-toggle="tab">Disbursement Analytics</a>
+                      <a href="#usertimeline" class="" data-toggle="tab">DISBURSEMENT ANALYTICS</a>
 
                         </li>
 				  

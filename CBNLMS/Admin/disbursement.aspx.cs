@@ -8,29 +8,40 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Configuration;
 using System.Data;
-
-namespace CBNLMS
+using System.Web.Services;
+using System.Web.Script.Services;
+using System.Globalization;
+namespace CBNLMS.Admin
 {
     public partial class disbursement1 : System.Web.UI.Page
     {
         SqlConnection sc = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cbndb;Integrated Security=True;persist security info=True; User ID=sa;pwd=password1$; MultipleActiveResultSets=true");
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["ID"] == null && Session["Email"] == null)
+            bybank.Visible = false;
+            all.Visible = false;
+            interventiongridinner.Visible = false;
+            geozone.Visible = false;
+            bysector.Visible = false;
+            byyear.Visible = false;
+            bystate.Visible = false;
+            stateana.Visible = false;
+            geoana.Visible = false;
+            sectorana.Visible = false;
+            yearana.Visible = false;
+            intana.Visible = false;
+            modelana.Visible = false;
+
+
+            if (!IsPostBack)
             {
-                Response.Redirect("~/index.aspx");
+                string script = "$(document).ready(function () { $('[id*=btnSubmit]').click(); });";
+                ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
+                // Add Fake Delay to simulate long running process.
+               // System.Threading.Thread.Sleep(5000);
+              //  getWhileLoopData();
+               // getWhileLoopDatahead();
             }
-            else
-            {
-                String welcomename = String.Empty;
-                string emailz = string.Empty;
-                emailz = Session["Email"].ToString();
-                welcomename = Session["ID"].ToString();
-                string lastlogins = Session["lastlogin"].ToString();
-    
-            }
-            getWhileLoopData();
-            getWhileLoopDatahead();
         }
 
         protected void upload_btn(object sender, EventArgs e)
@@ -40,10 +51,149 @@ namespace CBNLMS
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            fillselet();
-            getWhileLoopDatahead2();
+            // fillselet();
+            // getWhileLoopDatahead2();
             // return htmlStr1;
+            // Add Fake Delay to simulate long running process.
+            System.Threading.Thread.Sleep(1000);
+            string droptext = DropDownList2.Text.ToString();
+            if (droptext == "All")
+            {
+                all.Visible = true;
+                stateana.Visible = true;
+                geoana.Visible = true;
+                sectorana.Visible = true;
+                yearana.Visible = true;
+                intana.Visible = true;
+                modelana.Visible = true;
+                bybank.Visible = false;
+                interventiongridinner.Visible = false;
+                geozone.Visible = false;
+                bysector.Visible = false;
+                byyear.Visible = false;
+                bystate.Visible = false;
+                interventiongrid();
 
+            }
+            if (droptext == "Intervention")
+            {
+                interventiongridinner.Visible = true;
+                intana.Visible = true;
+                stateana.Visible = false;
+                geoana.Visible = false;
+                sectorana.Visible = false;
+                yearana.Visible = false;
+                modelana.Visible = false;
+                bybank.Visible = false;
+                all.Visible = false;
+                geozone.Visible = false;
+                bysector.Visible = false;
+                bystate.Visible = false;
+                interventiongrid();
+                byyear.Visible = false;
+
+            }
+            if (droptext == "Bank")
+            {
+                bybank.Visible = true;
+                all.Visible = false;
+                interventiongridinner.Visible = false;
+                geozone.Visible = false;
+                bysector.Visible = false;
+                byyear.Visible = false;
+                bystate.Visible = false;
+                intana.Visible = false;
+                stateana.Visible = false;
+                geoana.Visible = false;
+                sectorana.Visible = false;
+                yearana.Visible = false;
+                modelana.Visible = false;
+                BindGrid();
+            }
+           
+            else if (droptext == "Geopolitical zone")
+            {
+                geozone.Visible = true;
+                all.Visible = false;
+                interventiongridinner.Visible = false;
+                bybank.Visible = false;
+                bysector.Visible = false;
+                byyear.Visible = false;
+                bystate.Visible = false;
+                intana.Visible = false;
+                stateana.Visible = false;
+                geoana.Visible = true;
+                sectorana.Visible = false;
+                yearana.Visible = false;
+                modelana.Visible = false;
+                geozonegrid();
+            }
+            else if (droptext == "Sector")
+            {
+                bysector.Visible = true; ;
+                geozone.Visible = false;
+                all.Visible = false;
+                interventiongridinner.Visible = false;
+                bybank.Visible = false;
+                byyear.Visible = false;
+                bystate.Visible = false;
+                intana.Visible = false;
+                stateana.Visible = false;
+                geoana.Visible = false;
+                sectorana.Visible = true;
+                yearana.Visible = false;
+                modelana.Visible = false;
+                sectorgrid();
+            }
+            else if (droptext == "Commodity")
+            {
+                droptext = "commodity";
+            }
+            else if (droptext == "Year")
+            {
+                byyear.Visible = true;
+                bysector.Visible = false; ;
+                geozone.Visible = false;
+                all.Visible = false;
+                interventiongridinner.Visible = false;
+                bybank.Visible = false;
+                bystate.Visible = false;
+                intana.Visible = false;
+                stateana.Visible = false;
+                geoana.Visible = false;
+                sectorana.Visible = false;
+                yearana.Visible = true;
+                modelana.Visible = false;
+                yeargrid();
+            }
+            else if (droptext == "Anchor")
+            {
+                droptext = "anchor";
+            }
+            else if (droptext == "Projects")
+            {
+                byyear.Visible = false;
+
+                droptext = "project";
+            }
+            else if (droptext == "State")
+            {
+                bystate.Visible = true;
+                byyear.Visible = false;
+                bysector.Visible = false; ;
+                geozone.Visible = false;
+                all.Visible = false;
+                interventiongridinner.Visible = false;
+                bybank.Visible = false;
+                intana.Visible = false;
+                stateana.Visible = true;
+                geoana.Visible = false;
+                sectorana.Visible = false;
+                yearana.Visible = false;
+                modelana.Visible = false;
+                stategrid();
+            }
+            
 
         }
         public string fillselet()
@@ -104,6 +254,117 @@ namespace CBNLMS
             return htmlStr3;
 
         }
+        private void BindGrid()
+        {
+            using (SqlCommand cmd = new SqlCommand("select bank_name, sum(case when loan_amount is null then 0 else loan_amount end) as amtdis, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] group by bank_name", sc))
+            {
+                string ok = cmd.ToString();
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    cmd.Connection = sc;
+                    using (DataTable dt = new DataTable())
+                    {
+                        sda.Fill(dt);
+                        Repeater1.DataSource = dt;
+                        Repeater1.DataBind();
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void geozonegrid()
+        {
+            using (SqlCommand cmd = new SqlCommand("select bus_geozone, sum(case when loan_amount is null then 0 else loan_amount end) as amtdis, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] group by bus_geozone", sc))
+            {
+                string ok = cmd.ToString();
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    cmd.Connection = sc;
+                    using (DataTable dt = new DataTable())
+                    {
+                        sda.Fill(dt);
+                        Repeater3.DataSource = dt;
+                        Repeater3.DataBind();
+                        return;
+                    }
+                }
+            }
+        }
+        private void sectorgrid()
+        {
+            using (SqlCommand cmd = new SqlCommand("select sector, sum(case when loan_amount is null then 0 else loan_amount end) as amtdis, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] group by sector", sc))
+            {
+                string ok = cmd.ToString();
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    cmd.Connection = sc;
+                    using (DataTable dt = new DataTable())
+                    {
+                        sda.Fill(dt);
+                        Repeater4.DataSource = dt;
+                        Repeater4.DataBind();
+                        return;
+                    }
+                }
+            }
+        }
+        private void stategrid()
+        {
+            using (SqlCommand cmd = new SqlCommand("select bus_stat, sum(case when loan_amount is null then 0 else loan_amount end) as amtdis, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] group by bus_stat", sc))
+            {
+                string ok = cmd.ToString();
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    cmd.Connection = sc;
+                    using (DataTable dt = new DataTable())
+                    {
+                        sda.Fill(dt);
+                        Repeater6.DataSource = dt;
+                        Repeater6.DataBind();
+                        return;
+                    }
+                }
+            }
+        }
+        private void yeargrid()
+        {
+            using (SqlCommand cmd = new SqlCommand(" select (case when DATEPART(YYYY, start_date) is null then DATEPART(YYYY, 1900) else DATEPART(YYYY, start_date) end) as year, sum(case when loan_amount is null then 0 else loan_amount end) as amtdis, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] group by (case when DATEPART(YYYY, start_date) is null then DATEPART(YYYY, 1900) else DATEPART(YYYY, start_date) end) order by year desc", sc))
+            {
+                string ok = cmd.ToString();
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    cmd.Connection = sc;
+                    using (DataTable dt = new DataTable())
+                    {
+                        sda.Fill(dt);
+                        Repeater5.DataSource = dt;
+                        Repeater5.DataBind();
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void interventiongrid()
+        {
+            using (SqlCommand cmd = new SqlCommand("select intervention, sum(case when loan_amount is null then 0 else loan_amount end) as amtdis, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] where intervention != 'ABP' group by intervention", sc))
+            {
+                string ok = cmd.ToString();
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    cmd.Connection = sc;
+                    using (DataTable dt = new DataTable())
+                    {
+                        sda.Fill(dt);
+                        Repeater2.DataSource = dt;
+                        Repeater2.DataBind();
+                        return;
+                    }
+                }
+            }
+        }
+
         public string getWhileLoopData()
         {
             string htmlStr = "";
@@ -213,5 +474,287 @@ namespace CBNLMS
             getWhileLoopData();
             getWhileLoopDatahead();
         }
+
+        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void statedetails(object sender, EventArgs e)
+        {
+            RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
+            string customerId = (item.FindControl("lblCustomerId") as Label).Text.Trim();
+            string querey = "state=" + customerId;
+            Response.Redirect("~/Admin/reportdetails.aspx?" + querey);
+        }
+        protected void interventiondet(object sender, EventArgs e)
+        {
+            RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
+            string customerId = (item.FindControl("lblCustomerId") as Label).Text.Trim();
+            string querey = "intervention=" + customerId;
+            Session["Intervention"] = customerId;
+            Response.Redirect("~/Admin/intervention_details.aspx?" + querey);
+        }
+            protected void Repeater1_OnItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+
+        protected void Repeater2_OnItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+
+        protected void Repeater3_OnItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+        protected void Repeater4_OnItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+        protected void Repeater5_OnItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+
+        protected void Repeater6_OnItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+        [WebMethod]
+        public static List<object> GetMapData()
+        {
+            string query = "select bus_stat, sum(case when loan_amount is null then 0 else loan_amount end) as loanamount, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] group by bus_stat";
+            List<object> chartData = new List<object>();
+            chartData.Add(new object[]
+            {
+        "State", "LoanAmount","Beneficiaries"
+            });
+            using (SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cbndb;Integrated Security=True;persist security info=True; User ID=sa;pwd=password1$; MultipleActiveResultSets=true"))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            chartData.Add(new object[]
+                            {
+                        sdr["bus_stat"], sdr["loanamount"], sdr["noofrec"]
+                            });
+                        }
+                    }
+                    con.Close();
+                    return chartData;
+                }
+            }
+        }
+        [WebMethod]
+        public static List<object> GetBarData()
+        {
+            string query = "select bus_stat, sum(case when loan_amount is null then 0 else loan_amount end) as loanamount, count(loan_id) as noofrec from [cbndb].[dbo].[all_loans] group by bus_stat order by loanamount desc";
+
+            List<object> chartData = new List<object>();
+            chartData.Add(new object[]
+            {
+        "State", "Loan Disbursed(N)"
+            });
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+            using (SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cbndb;Integrated Security=True;persist security info=True; User ID=sa;pwd=password1$; MultipleActiveResultSets=true"))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            //string newer = textInfo.ToTitleCase(sdr["bank_name"].ToString().ToLower());
+                            chartData.Add(new object[]
+                            {
+                          sdr["bus_stat"], sdr["loanamount"]
+                            });
+                        }
+                    }
+                    con.Close();
+                    return chartData;
+                }
+            }
+        }
+        [WebMethod]
+        public static List<object> GetPieZone()
+        {
+            string query = "select (case when bus_geozone='SOUTH EAST' then 'SE' when bus_geozone='SOUTH WEST' then 'SW' when bus_geozone='SOUTH SOUTH' then 'SS' when bus_geozone='NORTH EAST' then 'NE' when bus_geozone='NORTH WEST' then 'NW' when bus_geozone='NORTH CENTRAL' then 'NC' else bus_geozone end) as bus_geozone, sum(loan_amount) as sumamount from cbndb.dbo.all_loans where bus_geozone is not null group by bus_geozone";
+            List<object> chartData = new List<object>();
+            chartData.Add(new object[]
+            {
+        "Geo-Zone", "LoanAmount"
+            });
+            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+            using (SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cbndb;Integrated Security=True;persist security info=True; User ID=sa;pwd=password1$; MultipleActiveResultSets=true"))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            string newer = textInfo.ToTitleCase(sdr["bus_geozone"].ToString().ToLower());
+                            chartData.Add(new object[]
+                            {
+
+                            sdr["bus_geozone"], sdr["sumamount"]
+                            });
+
+                        }
+                    }
+                    con.Close();
+                    return chartData;
+                }
+            }
+        }
+
+        [WebMethod]
+        public static List<object> GetSector()
+        {
+            string query = "select sector, sum(loan_amount) as sumloan from cbndb.dbo.all_loans group by sector order by sumloan desc";
+            List<object> chartData = new List<object>();
+            chartData.Add(new object[]
+            {
+        "Sector", "Disbursement Amount"
+            });
+            using (SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cbndb;Integrated Security=True;persist security info=True; User ID=sa;pwd=password1$; MultipleActiveResultSets=true"))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            chartData.Add(new object[]
+                            {
+                        sdr["sector"], sdr["sumloan"]
+                            });
+                        }
+                    }
+                    con.Close();
+                    return chartData;
+                }
+            }
+        }
+
+        [WebMethod]
+        public static List<object> GetChartData()
+        {
+            string query = "select (case when DATEPART(YYYY, start_date) is null then DATEPART(YYYY, 1900) else DATEPART(YYYY, start_date) end) as year, sum(loan_amount) as loanamount from cbndb.dbo.all_loans group by DATEPART(YYYY, start_date)";
+            List<object> chartData = new List<object>();
+            chartData.Add(new object[]
+            {
+        "Year", "LoanAmount"
+            });
+            using (SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cbndb;Integrated Security=True;persist security info=True; User ID=sa;pwd=password1$; MultipleActiveResultSets=true"))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            chartData.Add(new object[]
+                            {
+                        sdr["year"].ToString(), sdr["loanamount"]
+                            });
+                        }
+                    }
+                    con.Close();
+                    return chartData;
+                }
+            }
+        }
+        [WebMethod]
+        public static List<object> GetChartData2()
+        {
+            string query = "select intervention,sum(loan_amount) as loanamount from cbndb.dbo.all_loans where intervention != 'ABP' group by intervention ";
+            List<object> chartData = new List<object>();
+            chartData.Add(new object[]
+            {
+        "Intervention", "LoanAmount"
+            });
+            using (SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cbndb;Integrated Security=True;persist security info=True; User ID=sa;pwd=password1$; MultipleActiveResultSets=true"))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            chartData.Add(new object[]
+                            {
+                        sdr["Intervention"], sdr["loanamount"]
+                            });
+                        }
+                    }
+                    con.Close();
+                    return chartData;
+                }
+            }
+        }
+        [WebMethod]
+        public static List<object> getmodel()
+        {
+            string query = "select customer_type, sum(loan_amount) as sume from cbndb.dbo.all_loans group by customer_type";
+            List<object> chartData = new List<object>();
+            chartData.Add(new object[]
+            {
+        "Model", "LoanAmount"
+            });
+            using (SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=cbndb;Integrated Security=True;persist security info=True; User ID=sa;pwd=password1$; MultipleActiveResultSets=true"))
+            {
+                using (SqlCommand cmd = new SqlCommand(query))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            chartData.Add(new object[]
+                            {
+                        sdr["customer_type"].ToString(), sdr["sume"]
+                            });
+                        }
+                    }
+                    con.Close();
+                    return chartData;
+                }
+            }
+        }
+
+
     }
 }

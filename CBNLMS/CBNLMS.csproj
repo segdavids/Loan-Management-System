@@ -112,6 +112,7 @@
     <Content Include="Admin\aads_newcustomer.aspx" />
     <Content Include="Admin\aads_newloan.aspx" />
     <Content Include="Admin\aads_newrepayment.aspx" />
+    <Content Include="Admin\abpreport.aspx" />
     <Content Include="Admin\abp_analyticsw.aspx" />
     <Content Include="Admin\abp_newcustomer.aspx" />
     <Content Include="Admin\abp_newloan.aspx" />
@@ -130,10 +131,14 @@
     <Content Include="Admin\corporate_loan.aspx" />
     <Content Include="Admin\customerloans.aspx" />
     <Content Include="Admin\customer_upload.aspx" />
+    <Content Include="Admin\disbursement.aspx" />
+    <Content Include="Admin\disbursevsrepayment.aspx" />
     <Content Include="Admin\emails.aspx" />
     <Content Include="Admin\email_template_1.aspx" />
+    <Content Include="Admin\intervention_details.aspx" />
     <Content Include="Admin\js\Filter.css" />
     <Content Include="Admin\js\Filter.js" />
+    <Content Include="Admin\loan_performance.aspx" />
     <Content Include="Admin\manage_pictures.aspx" />
     <Content Include="Admin\newuseremail.html" />
     <Content Include="Admin\notification.aspx" />
@@ -8188,9 +8193,10 @@
     <Content Include="Admin\audit.aspx" />
     <Content Include="Admin\cifi_analytics.aspx" />
     <Content Include="Admin\customeremail.aspx" />
+    <Content Include="Common\loadingImage.gif" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Admin\Details.aspx" />
-    <Content Include="Admin\disbursement.aspx" />
+    <Content Include="Admin\disbursement_old.aspx" />
     <Content Include="Admin\loan_details.aspx" />
     <Content Include="Admin\loan_form.aspx" />
     <Content Include="Admin\new_edis.aspx" />
@@ -18432,6 +18438,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\abpreport.aspx.cs">
+      <DependentUpon>abpreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\abpreport.aspx.designer.cs">
+      <DependentUpon>abpreport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\abp_state_loan.aspx.cs">
       <DependentUpon>abp_state_loan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -18621,6 +18634,20 @@
     <Compile Include="Admin\customer_upload.aspx.designer.cs">
       <DependentUpon>customer_upload.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\disbursement.aspx.cs">
+      <DependentUpon>disbursement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\disbursement.aspx.designer.cs">
+      <DependentUpon>disbursement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\disbursevsrepayment.aspx.cs">
+      <DependentUpon>disbursevsrepayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\disbursevsrepayment.aspx.designer.cs">
+      <DependentUpon>disbursevsrepayment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\emails.aspx.cs">
       <DependentUpon>emails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -18634,6 +18661,20 @@
     </Compile>
     <Compile Include="Admin\email_template_1.aspx.designer.cs">
       <DependentUpon>email_template_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\intervention_details.aspx.cs">
+      <DependentUpon>intervention_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\intervention_details.aspx.designer.cs">
+      <DependentUpon>intervention_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\loan_performance.aspx.cs">
+      <DependentUpon>loan_performance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\loan_performance.aspx.designer.cs">
+      <DependentUpon>loan_performance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\manage_pictures.aspx.cs">
       <DependentUpon>manage_pictures.aspx</DependentUpon>
@@ -18712,12 +18753,12 @@
     <Compile Include="Admin\Details.aspx.designer.cs">
       <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\disbursement.aspx.cs">
-      <DependentUpon>disbursement.aspx</DependentUpon>
+    <Compile Include="Admin\disbursement_old.aspx.cs">
+      <DependentUpon>disbursement_old.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\disbursement.aspx.designer.cs">
-      <DependentUpon>disbursement.aspx</DependentUpon>
+    <Compile Include="Admin\disbursement_old.aspx.designer.cs">
+      <DependentUpon>disbursement_old.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\loan_details.aspx.cs">
       <DependentUpon>loan_details.aspx</DependentUpon>

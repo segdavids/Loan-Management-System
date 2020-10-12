@@ -26,9 +26,57 @@
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+       <script type="text/javascript">
+
+
+        $(window).on('load', function () {
+            $("#coverScreen").hide();
+        });
+
+
+        $(document).ready(function () {
+
+
+            $("#btnClickMe").click(function () {
+                $("#coverScreen").show();
+            });
+
+        })
+    </script>
+
+    <style type="text/css">
+        .LockOn {
+            display: block;
+            visibility: visible;
+            position: absolute;
+            z-index: 999;
+            top: 0px;
+            left: 0px;
+            width: 105%;
+            height: 105%;
+            background-color: transparent;
+            vertical-align: bottom;
+            padding-top: 20%;
+            filter: alpha(opacity=75);
+            opacity: 0.75;
+            font-size: large;
+            color: blue;
+            font-style: italic;
+            font-weight: 400;
+            background-image: url("../images/loader.gif");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
 </head>
 <body class="hold-transition dark-skin sidebar-mini theme-success">
+    
     <form id="form1" runat="server">
+         <div id="coverScreen" class="LockOn">
+    </div>
         <div class="wrapper">
             <header class="main-header">
                 <div class="d-flex align-items-center logo-box justify-content-between">
@@ -263,8 +311,44 @@
                             <ul class="treeview-menu" id="reports">
                                 <li><a href="all_summary.aspx"><i class="ti-dashboard"></i>Summary(All)</a></li>
                                 <li><a href="all_loans.aspx"><i class="ti-files"></i>All Loan Report</a></li>
-                                <li id="amoreportp"><a href="amortization.aspx" id="amortiztionreport"><i class="ti-menu-alt"></i>Amortization Report</a></li>
-                                <li id="disreport"><a href="disbursement.aspx" id="disreportahref"><i class="ti-calendar"></i>Disbursement Report</a></li>
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>Amortization
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id=""><a href="amortization.aspx" id="amortiztionreport"><i class="ti-more"></i>Amortization Report</a></li>
+
+                                    </ul>
+                                </li> 
+                                 <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-calendar"></i>Disbursement
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id="disreport"><a href="disbursement.aspx" id="disreportahref"><i class="ti-more"></i>Disbursement Report</a></li>
+                                        <li id="disreport"><a href="abpreport.aspx" id="disreportahref"><i class="ti-more"></i>ABP Disbursement</a></li>
+                                        <li id=""><a href="disbursevsrepayment.aspx" id=""><i class="ti-more"></i>Recovery Ratio</a></li>
+
+                                    </ul>
+                                </li> 
+                                  <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-stats-up"></i>Loan Performance
+					                    <span class="pull-right-container">
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id=""><a href="loan_performance.aspx" id=""><i class="ti-more"></i>Performance Report</a></li>
+
+                                    </ul>
+                                </li>
                                 <li><a href="other_reports.aspx"><i class="ti-bar-chart-alt"></i>Other Special Reports</a></li>
                                 <li><a href="photo_album.aspx"><i class="ti-image"></i>Photo Album</a></li>
                                 <li><a href="audit.aspx"><i class="ti-check-box"></i>Audit Report</a></li>
@@ -409,5 +493,6 @@
 	<!-- Florence Admin App -->
 	<script src="js/demo.js"></script>
 	<script src="js/pages/data-table.js"></script>
+    
     
 </html>

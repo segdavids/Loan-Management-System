@@ -78,6 +78,7 @@
         ShowProgress();
     });
 </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    <div class="content-wrapper">
@@ -237,98 +238,92 @@
                                         <!--end col-->
                                                 </div>
                                             <div class="row">
-                                          <div class="col-md-6">
-                                            <div class="form-group ">
-                                              <label>State of Business</label>
-                                                <asp:DropDownList ID="DropDownList20" runat="server" class="select2 form-control mb-3 custom-select">
-                                                    </asp:DropDownList>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                        <div class="col-md-6">
-                                            <div class="form-group ">
-                                                <label>Amount Disbursed</label>
-                                                    <input type="number" class="form-control" runat="server" step="0.01" id="Number1" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                                </div>
-                                                <div class="row">
-                                         <div class="col-md-6">
-                                            <div class="form-group ">
-                                               <label>Interest Rate</label>
-                                                <input type="number" class="form-control" runat="server" id="Number2" step="0.01" placeholder="CBN Intererst Rate in %" aria-describedby="inputGroupPrepend" >
-                                            </div>
-                                        </div>
-                                          <div class="col-md-6">
-                                            <div class="form-group ">
-                                               <label>Loan Tenure(Months)</label>
-                                                  <input id="TextBox1" runat="server" step="0.01"  class="form-control" type="number" style="color:white" Placeholder="Tenure in Months" TextMode="Number" ValidateRequestMode="Inherit" >
-                                                </div>
-                                            </div>
-                                        <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>State of Business</label>
+                                                        <asp:DropDownList ID="DropDownList20" runat="server" class="select2 form-control mb-3 custom-select">
+                                                        </asp:DropDownList>
                                                     </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>Amount Disbursed</label>
+                                                        <input type="number" required class="form-control" runat="server" step="0.01" id="Number1" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                            </div>
                                             <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group ">
-                                           <label>Date Disbursed</label>
-                                                                <input class="form-control" runat="server" type="date" placeholder="Date Disbursed" id="Date1">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>Interest Rate</label>
+                                                        <input type="number" class="form-control" runat="server" id="Number2" step="0.01" placeholder="CBN Intererst Rate in %" aria-describedby="inputGroupPrepend">
+                                                    </div>
                                                 </div>
-                                        </div>
-                                        <!--end col-->
-                                       <div class="col-md-6">
-                                            <div class="form-group ">
-                                                <label>Moratorium(Months)</label>
-                                                  <input type="number" class="form-control" runat="server" step="0.01" id="Number3" placeholder="Moratorium in months" aria-describedby="inputGroupPrepend">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>Loan Tenure(Months)</label>
+                                                        <input id="TextBox1" required runat="server" step="0.01" class="form-control" type="number" style="color: white" placeholder="Tenure in Months" textmode="Number" validaterequestmode="Inherit">
+                                                    </div>
                                                 </div>
-                                        </div>
-                                       </div>
-                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group ">
-                                           <label>Repayment Mode</label>
-                                                    <asp:DropDownList ID="DropDownList12" runat="server" class="custom-select">
-                                                    </asp:DropDownList>
+                                                <!--end col-->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>Date Disbursed</label>
+                                                        <input class="form-control" runat="server" type="date" placeholder="Date Disbursed" id="Date1">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>Moratorium(Months)</label>
+                                                        <input type="number" required class="form-control" runat="server" step="0.01" id="Number3" placeholder="Moratorium in months" aria-describedby="inputGroupPrepend">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        <!--end col-->
-                                       
-                                           <div class="col-md-6">
-                                            <div class="form-group row">
-                                                <label>Purpose of Loan</label>
-                                                  <textarea type="text" class="form-control" runat="server" id="loan_purpose" placeholder="Purpose of the Loan" aria-describedby="inputGroupPrepend" ></textarea>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>Repayment Mode</label>
+                                                        <asp:DropDownList ID="DropDownList12" runat="server" class="custom-select">
+                                                        </asp:DropDownList>
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
 
+                                                <div class="col-md-6">
+                                                    <div class="form-group row">
+                                                        <label>Purpose of Loan</label>
+                                                        <textarea type="text" class="form-control" runat="server" id="loan_purpose" placeholder="Purpose of the Loan" aria-describedby="inputGroupPrepend"></textarea>
+
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
                                             </div>
-                                        </div>
-                                        <!--end col-->
-                                         </div>
                                             <div class="row" id="repaymentwindow" runat="server">
-                                            
-                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                             <label>Monthly Installment</label>
-                                                                <asp:TextBox type="text" class="form-control" runat="server" id="Number4" placeholder="" aria-describedby="inputGroupPrepend" ReadOnly="True" ></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                                                 <div class="col-md-6">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
-                                                <label>No. of Repayment</label>
-                                                                <asp:TextBox type="number" class="form-control" runat="server" step="0.01" id="Number5" placeholder="" aria-describedby="inputGroupPrepend" ReadOnly="True"></asp:TextBox>
-
-                                            </div>
-                                        </div>
-                                        <!--end col--> 
+                                                        <label>Monthly Installment</label>
+                                                        <asp:TextBox type="text" class="form-control" runat="server" ID="Number4" placeholder="" aria-describedby="inputGroupPrepend" ReadOnly="True"></asp:TextBox>
+                                                    </div>
                                                 </div>
-                                            <div class="row">
-                                               
-                                 </div>
-                                       
-                                        <div class="box-footer">
-                                             <div class="col-md-12 " runat="server" id="alert">
-                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>No. of Repayment</label>
+                                                        <asp:TextBox type="number" class="form-control" runat="server" step="0.01" ID="Number5" placeholder="" aria-describedby="inputGroupPrepend" ReadOnly="True"></asp:TextBox>
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <div class="box-footer">
+                                                <div class="col-md-12 " runat="server" id="alert">
+                                                </div>
                                                 <asp:Button ID="Button3" runat="server" type="submit" class="btn btn-primary" Text="Submit Loan" OnClick="add_ind" />
-                                                 <asp:Button ID="Button9" runat="server" class="btn btn-primary" Text="Calculate Repayment" OnClick="Button2_Click" />
+                                                <asp:Button ID="Button9" runat="server" class="btn btn-primary" Text="Calculate Repayment" OnClick="Button2_Click" />
                                                 <asp:Button ID="Button4" runat="server" type="submit" class="btn btn-primary" Text="Clear Form" OnClick="clear_ind" />
 
                                             </div>
@@ -344,7 +339,7 @@
                     </div>
                 </div>
                 <!--end card-body-->
-            <div class="loading" align="center">
+            <div id="loader" class="loading" align="center">
                        
     <img src="../images/loader.gif" alt="" />
 </div>
@@ -434,4 +429,19 @@
 
         <!-- App js -->
         <script src="../assets/js/app.js"></script>
+    <script> 
+        document.onreadystatechange = function() { 
+            if (document.readyState !== "complete") { 
+                document.querySelector( 
+                  "body").style.visibility = "hidden"; 
+                document.querySelector( 
+                  "#loader").style.visibility = "visible"; 
+            } else { 
+                document.querySelector( 
+                  "#loader").style.display = "none"; 
+                document.querySelector( 
+                  "body").style.visibility = "visible"; 
+            } 
+        }; 
+    </script> 
 </asp:Content>

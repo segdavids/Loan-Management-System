@@ -23,9 +23,56 @@
 	<link rel="stylesheet" href="css/skin_color.css">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+       <script type="text/javascript">
+
+
+        $(window).on('load', function () {
+            $("#coverScreen").hide();
+        });
+
+
+        $(document).ready(function () {
+
+
+            $("#btnClickMe").click(function () {
+                $("#coverScreen").show();
+            });
+
+        })
+    </script>
+
+    <style type="text/css">
+        .LockOn {
+            display: block;
+            visibility: visible;
+            position: absolute;
+            z-index: 999;
+            top: 0px;
+            left: 0px;
+            width: 105%;
+            height: 105%;
+            background-color: transparent;
+            vertical-align: bottom;
+            padding-top: 20%;
+            filter: alpha(opacity=75);
+            opacity: 0.75;
+            font-size: large;
+            color: blue;
+            font-style: italic;
+            font-weight: 400;
+            background-image: url("../images/loader.gif");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
 </head>
 <body class="hold-transition dark-skin sidebar-mini theme-success">
     <form id="form1" runat="server">
+             <div id="coverScreen" class="LockOn">
+    </div>
         <div class="wrapper">
             <header class="main-header">
                 <div class="d-flex align-items-center logo-box justify-content-between">
