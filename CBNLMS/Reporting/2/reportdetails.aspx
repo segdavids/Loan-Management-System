@@ -618,7 +618,7 @@ $(this).animate({ width: "200px" }, 'slow');
                                 </div>
                                 <div class="box-body">
                                     <div class="table-responsive" style="height: ">
-                                        <table id="complex_header" class="table table-hover table-striped table-bordered display" style="width: 100%">
+                                        <table id="example5" class="table table-hover table-striped table-bordered display" style="width: 100%">
                                             <thead>
                                                 <tr>
                                                     <th>PFI</th>
@@ -645,7 +645,7 @@ $(this).animate({ width: "200px" }, 'slow');
                                 </div>
                                 <div class="box-body">
                                     <div class="table-responsive" style="height: ">
-                                        <table class="table table-hover table-striped table-bordered display" style="width: 100%">
+                                        <table id="example6" class="table table-hover table-striped table-bordered display" style="width: 100%">
                                             <thead>
                                                 <tr>
                                                     <th>PFI Type</th>
@@ -672,7 +672,7 @@ $(this).animate({ width: "200px" }, 'slow');
                                 </div>
                                 <div class="box-body">
                                     <div class="table-responsive" style="height: ">
-                                        <table class="table table-hover table-striped table-bordered display" style="width: 100%">
+                                        <table id="example8" class="table table-hover table-striped table-bordered display" style="width: 100%">
                                             <thead>
                                                 <tr>
                                                     <th>Sector</th>
@@ -699,7 +699,7 @@ $(this).animate({ width: "200px" }, 'slow');
                                 </div>
                                 <div class="box-body">
                                       <div class="table-responsive" style="height: ">
-                                        <table class="table table-hover table-striped table-bordered display" style="width: 100%">
+                                        <table id="example9" class="table table-hover table-striped table-bordered display" style="width: 100%">
                                             <thead>
                                                 <tr>
                                                     <th>Season</th>
@@ -725,7 +725,7 @@ $(this).animate({ width: "200px" }, 'slow');
                                 </div>
                                 <div class="box-body">
                                     <div class="table-responsive" style="height: ">
-                                        <table class="table table-hover table-striped table-bordered display" style="width: 100%">
+                                        <table id="example12" class="table table-hover table-striped table-bordered display" style="width: 100%">
                                             <thead>
                                                 <tr>
                                                     <th>Commodity</th>
@@ -751,7 +751,7 @@ $(this).animate({ width: "200px" }, 'slow');
                                 </div>
                                 <div class="box-body">
                                     <div class="table-responsive" style="height: ">
-                                        <table class="table table-hover table-striped table-bordered display" style="width: 100%">
+                                        <table id="example11" class="table table-hover table-striped table-bordered display" style="width: 100%">
                                             <thead>
                                                 <tr>
                                                     <th>Anchor</th>

@@ -10,7 +10,7 @@
 namespace CBNLMS.Admin {
     
     
-    public partial class disbursement1 {
+    public partial class disbursevsrepayment {
         
         /// <summary>
         /// DropDownList2 control.
@@ -164,6 +164,24 @@ namespace CBNLMS.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater Repeater6;
+        
+        /// <summary>
+        /// allview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl allview;
+        
+        /// <summary>
+        /// Repeater7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater7;
         
         /// <summary>
         /// stateana control.
