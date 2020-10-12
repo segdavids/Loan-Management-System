@@ -30,7 +30,7 @@ namespace CBNLMS
                 factype();
                 //popbank();
                 fillpaymentmode();
-               // poptin();
+             
            
                 getWhileLoopDataind();
                 popintervention();
