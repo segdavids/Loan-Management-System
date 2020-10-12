@@ -28,7 +28,6 @@ namespace CBNLMS
                 ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
                 repaymentwindow.Visible = false;
                 factype();
-                //popbank();
                 fillpaymentmode();
              
            
