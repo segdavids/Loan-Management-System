@@ -68,6 +68,34 @@
             background-position: center;
         }
     </style>
+      <script type="text/javascript">
+  $(document).ready(function(){
+
+    $('input.number').keyup(function(event){
+      // skip for arrow keys
+      if(event.which >= 37 && event.which <= 40){
+          event.preventDefault();
+      }
+      var $this = $(this);
+      var num = $this.val().replace(/,/gi, "").split("").reverse().join("");
+
+      var num2 = RemoveRougeChar(num.replace(/(.{3})/g,"$1,").split("").reverse().join(""));
+
+      // the following line has been simplified. Revision history contains original.
+      $this.val(num2);});});
+
+    function RemoveRougeChar(convertString){
+
+
+    if(convertString.substring(0,1) == ","){
+
+        return convertString.substring(1, convertString.length)            
+
+    }
+    return convertString;
+
+}
+</script>
 </head>
 <body class="hold-transition dark-skin sidebar-mini theme-success">
     <form id="form1" runat="server">
@@ -245,6 +273,21 @@
                             </a>
                             <ul class="treeview-menu">
                                  <li><a href="picture_upload.aspx"><i class="ti-camera"></i>Picture Upload</a></li>
+                            </ul>
+                        </li>
+                           <li class="header" id="amortization">Amortization</li>
+                        <li class="treeview" id="amortizationchild">
+                            <a href="#">
+                                <i class="ti-timer"></i>
+                                <span>Schedule</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="schedule_loans.aspx" id="scheduleloan"><i class="ti-wallet"></i>By Loan</a></li>
+
+                                <li><a href="customerloans.aspx" id="schedulecustomer"><i class="ti-user"></i>By Customer</a></li>
                             </ul>
                         </li>
                            <li class="header">Reporting</li>

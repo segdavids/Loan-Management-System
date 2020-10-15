@@ -78,6 +78,7 @@
         ShowProgress();
     });
 </script>
+ 
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -249,7 +250,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group ">
                                                         <label>Amount Disbursed</label>
-                                                        <input type="number" required class="form-control" runat="server" step="0.01" id="Number1" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
+                                                        <input required class="number form-control" type="text" runat="server" step="0.01" id="Number1" onfocus="javascript:removeSeparator();" onblur="javascript:showSeparator();" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
                                                     </div>
                                                 </div>
                                                 <!--end col-->
@@ -444,4 +445,5 @@
             } 
         }; 
     </script> 
+  
 </asp:Content>

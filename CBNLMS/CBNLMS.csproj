@@ -145,6 +145,7 @@
     <Content Include="Admin\photo_album.aspx" />
     <Content Include="Admin\picture_upload.aspx" />
     <Content Include="Admin\reportdetails.aspx" />
+    <Content Include="Admin\schedule_loans.aspx" />
     <Content Include="Admin\seasons.aspx" />
     <Content Include="Admin\states.aspx" />
     <Content Include="Admin\state_loan.aspx" />
@@ -8202,7 +8203,6 @@
     <Content Include="Admin\new_edis.aspx" />
     <Content Include="Admin\other_reports.aspx" />
     <Content Include="Admin\Repayment_Form.aspx" />
-    <Content Include="Admin\schedule_loans.aspx" />
     <Content Include="Admin\statedetails.aspx" />
     <Content Include="Admin\commassocdetails.aspx" />
     <Content Include="Admin\corporatedetails.aspx" />
@@ -10366,6 +10366,7 @@
     <Content Include="Inputing\2\picture_upload.aspx" />
     <Content Include="Inputing\2\reportdetails.aspx" />
     <Content Include="Inputing\2\schedule_loans.aspx" />
+    <Content Include="Inputing\2\statedetails.aspx" />
     <Content Include="Inputing\2\state_loan.aspx" />
     <Content Include="Inputing\2\viewschedule.aspx" />
     <Content Include="Inputing\3\aads_newcustomer.aspx" />
@@ -18711,6 +18712,13 @@
     <Compile Include="Admin\reportdetails.aspx.designer.cs">
       <DependentUpon>reportdetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\schedule_loans.aspx.cs">
+      <DependentUpon>schedule_loans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\schedule_loans.aspx.designer.cs">
+      <DependentUpon>schedule_loans.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\seasons.aspx.cs">
       <DependentUpon>seasons.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -18794,13 +18802,6 @@
     </Compile>
     <Compile Include="Admin\Repayment_Form.aspx.designer.cs">
       <DependentUpon>Repayment_Form.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\schedule_loans.aspx.cs">
-      <DependentUpon>schedule_loans.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\schedule_loans.aspx.designer.cs">
-      <DependentUpon>schedule_loans.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\statedetails.aspx.cs">
       <DependentUpon>statedetails.aspx</DependentUpon>
@@ -19205,6 +19206,13 @@
     </Compile>
     <Compile Include="Inputing\2\schedule_loans.aspx.designer.cs">
       <DependentUpon>schedule_loans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\2\statedetails.aspx.cs">
+      <DependentUpon>statedetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\2\statedetails.aspx.designer.cs">
+      <DependentUpon>statedetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inputing\2\state_loan.aspx.cs">
       <DependentUpon>state_loan.aspx</DependentUpon>

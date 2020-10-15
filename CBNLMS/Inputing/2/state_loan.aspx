@@ -247,7 +247,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Amount Disbursed</label>
-                                                    <input type="number" class="form-control" runat="server" step="0.01" id="Number11" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
+                                                    <input type="text" class="number form-control" required runat="server" step="0.01" id="Number11" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
                                                 </div>
                                             </div>
                                         </div>

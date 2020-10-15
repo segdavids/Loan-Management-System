@@ -10,7 +10,7 @@ using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Drawing;
-namespace CBNLMS
+namespace CBNLMS.Admin
 {
     public partial class all_loans1 : System.Web.UI.Page
     {
@@ -19,20 +19,8 @@ namespace CBNLMS
         {
             if (!this.IsPostBack)
             {
-                if (Session["ID"] == null && Session["Email"] == null)
-                {
-                    Response.Redirect("~/index.aspx");
-                }
-                else
-                {
-                    String welcomename = String.Empty;
-                    string emailz = string.Empty;
-                    emailz = Session["Email"].ToString();
-                    welcomename = Session["ID"].ToString();
-                    string lastlogins = Session["lastlogin"].ToString();
-                   
-                }
-                this.BindGrid();
+                interventionfilter();
+               // this.BindGrid();
 
                 //degree.Visible = false;
                 //university.Visible = false;
@@ -143,6 +131,42 @@ namespace CBNLMS
                 //}, RegexOptions.IgnoreCase);
             }
         }
+        private void interventionfilter()
+        {
+            sc.Open();
+            SqlCommand com = new SqlCommand("select a.acronym from [cbndb].[dbo].[interventions] as a UNION  select  b.acronym from [cbndb].[dbo].[intervention_filter] as b", sc);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable ds = new DataTable();
+            da.Fill(ds);  // fill dataset
+            DropDownList2.DataSource = ds;
+            DropDownList2.DataBind();
+            DropDownList2.DataTextField = "acronym";
+            DropDownList2.DataValueField = "acronym";
+
+            DropDownList2.DataBind();
+            sc.Close();
+
+        }
+        private void dointerventions()
+        {
+            string drop = DropDownList2.SelectedItem.Value;
+            using (SqlCommand cmd = new SqlCommand("select * from all_loans where intervention = '" + drop + "'", sc))
+            {
+                string ok = cmd.ToString();
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    cmd.Connection = sc;
+                    using (DataTable dt = new DataTable())
+                    {
+                        sda.Fill(dt);
+                        Repeater1.DataSource = dt;
+                        Repeater1.DataBind();
+                        return;
+                    }
+                }
+            }
+
+        }
 
         protected void Repeater1_OnItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -152,6 +176,18 @@ namespace CBNLMS
                 string loandetails = e.CommandArgument.ToString();
                 Session["Details"] = loandetails;
                 Response.Redirect("~/Admin/loan_details.aspx?" + querey);
+            }
+        }
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string droptext = DropDownList2.SelectedItem.Value.ToString();
+            if (droptext == "ALL INTERVENTIONS")
+            {
+                BindGrid();
+            }
+            else
+            {
+                dointerventions();
             }
         }
     }

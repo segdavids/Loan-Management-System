@@ -85,9 +85,9 @@
 				<div class="box-body">
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs nav-fill" role="tablist">
-						<li class="nav-item" style=""> <a class="nav-link active" data-toggle="tab" href="#home11" role="tab"><span></span> <span class="hidden-xs-down ml-15">Anchor</span></a> </li>
-						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile11" role="tab"><span></span> <span class="hidden-xs-down ml-15">Commodity Assoc.</span></a> </li>
-						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages11" role="tab"><span></span> <span class="hidden-xs-down ml-15">State Government</span></a> </li>
+						<li class="nav-item" style=""> <a class="nav-link active" data-toggle="tab" href="#home11" role="tab"><span></span> <span class="hidden-xs-down ml-15">ANCHOR</span></a> </li>
+						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile11" role="tab"><span></span> <span class="hidden-xs-down ml-15">COMMODITY ASSOCIATION</span></a> </li>
+						<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#messages11" role="tab"><span></span> <span class="hidden-xs-down ml-15">STATE GOVERNMENT</span></a> </li>
 					</ul>
 					<!-- Tab panes -->
 					<div class="tab-content tabcontent-border">
@@ -97,7 +97,7 @@
                                     <div class="box">
                                         <!-- /.box-header -->
                                         <div class="box-body">
-                                            <h4 class="box-title text-info"><i class="ti-briefcase"></i> Anchor Information</h4>
+                                            <h4 class="box-title text-primary"><i class="ti-briefcase"></i> Anchor Information</h4>
                                             <hr class="my-15">
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -152,7 +152,7 @@
                                     <div class="box">
                                         <!-- /.box-header -->
                                         <div class="box-body">
-                                            <h4 class="box-title text-info"><i class="ti-briefcase"></i> Commodity Assoc. Information</h4>
+                                            <h4 class="box-title text-primary"><i class="ti-briefcase"></i> Commodity Assoc. Information</h4>
                                             <hr class="my-15">
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -198,7 +198,7 @@
                                     <div class="box">
                                         <!-- /.box-header -->
                                         <div class="box-body">
-                                            <h4 class="box-title text-info"><i class="ti-briefcase"></i> State Information</h4>
+                                            <h4 class="box-title text-primary"><i class="ti-briefcase"></i> State Information</h4>
                                             <hr class="my-15">
                                             <div class="row">
                                                 <div class="col-md-6">

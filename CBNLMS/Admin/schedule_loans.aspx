@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" CodeBehind="schedule_loans.aspx.cs" Inherits="CBNLMS.schedule_loans" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" CodeBehind="schedule_loans.aspx.cs" Inherits="CBNLMS.Admin.schedule_loans" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <title>DFD LMS | All Loan List</title>
 
@@ -35,6 +35,50 @@
 
 		<!-- Main content -->
 		<section class="content">
+
+                  <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title">Filter</h4>
+                                    <p class="text-muted mb-3">
+                                        Use the dropdown to filter Result. 
+                                    </p>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="form-group row">
+                                                            <label class="col-sm-3 col-form-label text-right">Select Filter</label>
+                                                            <div class="col-sm-9">
+                                                                <asp:DropDownList ID="DropDownList2" runat="server" class="select2 form-control mb-3 custom-select" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" OnTextChanged="DropDownList2_SelectedIndexChanged">
+                                                                    <asp:ListItem>All</asp:ListItem>
+                                                                    <asp:ListItem>Intervention</asp:ListItem>
+                                                                    <asp:ListItem>State</asp:ListItem>
+                                                                    <asp:ListItem>Bank</asp:ListItem>
+                                                                    <asp:ListItem>Geopolitical zone</asp:ListItem>
+                                                                    <asp:ListItem>Sector</asp:ListItem>
+                                                                    <asp:ListItem>Anchor</asp:ListItem>
+                                                                    <asp:ListItem>Commodity</asp:ListItem>
+                                                                    <asp:ListItem>Year</asp:ListItem>
+                                                                    <asp:ListItem>Projects</asp:ListItem>
+
+                                                        </asp:DropDownList>
+                                                         
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                         <div class="col-lg-6">
+                                              <div class="custom-file mb-6">
+                                             <asp:Button ID="Button1" runat="server" type="submit" class="btn btn-primary px-5 py-2" Text="Apply Filter" OnClick="Button3_Click" />
+                                              </div>
+                                             
+                                        </div>
+                                         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   <div class="row">
                  <div class="col-12">
                            <div class="box">
@@ -90,7 +134,7 @@
                                                                         <asp:Label ID="Label3" class="form-control" runat="server" Text='<%# Eval("loan_status") %>' />
                                                                     </td>
                                                                     <td>
-                                                                        <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_guid") %>' runat="server" Text="Schedule" />
+                                                                        <asp:Button ID="linkbutton" class="btn btn-primary px-5 py-2" BackColor="#009900"  dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_guid") %>' runat="server" Text="Schedule" OnClientClick="window.document.forms[0].target='_blank';" />
                                                                     </td>
                                                                 </tr>
                                                             </ItemTemplate>
@@ -124,14 +168,15 @@
                                          
                                     </div>
                                 </div>
-                            </div>
+                      </div>
+            
+                       </section>
                         </div>
             
         
-       </div>
-            </section>
+       
+           
             </div>
-             </div>
 
                          <script src="../assets/js/jquery.min.js"></script>
         <script src="../assets/js/bootstrap.bundle.min.js"></script>

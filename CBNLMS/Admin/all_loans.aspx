@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" CodeBehind="all_loans.aspx.cs" Inherits="CBNLMS.all_loans1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeBehind="all_loans.aspx.cs" Inherits="CBNLMS.Admin.all_loans1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
       <!-- Plugins css -->
        
-
+    <title>DFD LMS | All Loans</title>
         <!-- Plugins js -->
         <script src="../assets/plugins/moment/moment.js"></script>
         <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
@@ -41,6 +41,49 @@
 
 		<!-- Main content -->
 		<section class="content">
+             <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title">Filter</h4>
+                                    <p class="text-muted mb-3">
+                                        Use the dropdown to filter Result. 
+                                    </p>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="form-group row">
+                                                            <label class="col-sm-3 col-form-label text-right">Select Filter</label>
+                                                            <div class="col-sm-9">
+                                                                <asp:DropDownList ID="DropDownList2" runat="server" class="select2 form-control mb-3 custom-select" >
+                                                                    <asp:ListItem>All</asp:ListItem>
+                                                                    <asp:ListItem>Intervention</asp:ListItem>
+                                                                    <asp:ListItem>State</asp:ListItem>
+                                                                    <asp:ListItem>Bank</asp:ListItem>
+                                                                    <asp:ListItem>Geopolitical zone</asp:ListItem>
+                                                                    <asp:ListItem>Sector</asp:ListItem>
+                                                                    <asp:ListItem>Anchor</asp:ListItem>
+                                                                    <asp:ListItem>Commodity</asp:ListItem>
+                                                                    <asp:ListItem>Year</asp:ListItem>
+                                                                    <asp:ListItem>Projects</asp:ListItem>
+
+                                                        </asp:DropDownList>
+                                                         
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                         <div class="col-lg-6">
+                                              <div class="custom-file mb-6">
+                                             <asp:Button ID="Button1" runat="server" type="submit" class="btn btn-primary px-5 py-2" Text="Apply Filter" OnClick="Button3_Click" />
+                                              </div>
+                                             
+                                        </div>
+                                         
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   <div class="row">
                  <div class="col-12">
                             <div class="card">
@@ -55,10 +98,11 @@
 
                                             <label for="example-text-input" class="col-sm-3 col-form-label text-right"></label>
                                             <div class="col-sm-12 col-lg-12">
-                                                <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                                <table id="example5" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
 
                                                     <thead>
                                                         <tr>
+                                                            <th>#</th>
                                                             <th>CUSTOMER NAME</th>
                                                             <th>CUSTOMER TYPE</th>
                                                             <th>CUSTOMER ID</th>
@@ -75,6 +119,9 @@
                                                         <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_OnItemCommand">
                                                             <ItemTemplate>
                                                                 <tr>
+                                                                     <td>
+                                                                    <%#(((RepeaterItem)Container).ItemIndex+1).ToString()%>
+                                                                </td>
                                                                     <td>
                                                                         <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("customer_name") %>' />
                                                                     </td>
@@ -100,12 +147,26 @@
                                                                         <asp:Label ID="Label3" runat="server" Text='<%# Eval("loan_status") %>' />
                                                                     </td>
                                                                     <td>
-                                                                        <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_id") %>' runat="server" Text="Details" OnClientClick="window.document.forms[0].target='_blank';" />
+                                                                        <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("loan_id") %>' runat="server" Text="Details" OnClientClick="window.document.forms[0].target='_blank';"/>
                                                                     </td>
                                                                 </tr>
                                                             </ItemTemplate>
                                                         </asp:Repeater>
                                                     </tbody>
+                                                       <tfoot>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>CUSTOMER NAME</th>
+                                                            <th>CUSTOMER TYPE</th>
+                                                            <th>CUSTOMER ID</th>
+                                                            <th>ASSOC. NAME</th>
+                                                            <th>ANCHOR TYPE</th>
+                                                            <th>INTERVENTION</th>
+                                                            <th>LOAN AMT(N)</th>
+                                                            <th>STATUS</th>
+                                                            <th>Details</th>
+                                                        </tr>
+						</tfoot>
                                                 </table>
                                             </div>
                                         </div>

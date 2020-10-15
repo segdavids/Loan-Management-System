@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Inputing/2/inputer2.Master" AutoEventWireup="true" CodeBehind="customerdetails.aspx.cs" Inherits="CBNLMS.Inputing._2.customerdetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <title>DFD LMS | Customer Loan Details</title>
     <script type="text/javascript">
  $(document).ready(function() {
      $('#amortization').addClass('active');

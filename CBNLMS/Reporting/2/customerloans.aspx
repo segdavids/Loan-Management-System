@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reporting/2/Reporter2.Master" AutoEventWireup="true" CodeBehind="customerloans.aspx.cs" Inherits="CBNLMS.Reporting._2.customerloans" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+     <title>DFD LMS | Customer List</title>
     <script type="text/javascript">
  $(document).ready(function() {
    

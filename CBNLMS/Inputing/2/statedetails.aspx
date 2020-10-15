@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reporting/2/Reporter2.Master" AutoEventWireup="true" CodeBehind="customerdetails.aspx.cs" Inherits="CBNLMS.Reporting._2.customerdetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Inputing/2/inputer2.Master" AutoEventWireup="true" CodeBehind="statedetails.aspx.cs" Inherits="CBNLMS.Inputing._2.anchordetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <title>DFD LMS | Customer Loan Details</title>
     <script type="text/javascript">
  $(document).ready(function() {
      $('#amortization').addClass('active');
@@ -39,18 +38,18 @@
                               <div class="col-12">
                      <div class="box box-default">
                          <div class="box-header with-border">
-                             <h4 class="box-title">Customer Details</h4>
+                             <h4 class="box-title">State Deatails</h4>
                          </div>
                          <!-- /.box-header -->
                          <div class="box-body">
                              <div class="box-body">
-                                                              <div class="met-profile">
+                                    <div class="met-profile">
                                         <div class="row">
                                             <div class="col-lg-4 align-self-center mb-3 mb-lg-0">
                                                 <div class="met-profile-main">
                                                     <div class="met-profile-main-pic">
                                                         <img src="../assets/images/users/user-4.jpg" alt="" class="rounded-circle">
-                                                      
+                                                     
                                                     </div>
                                                     <div class="met-profile_user-detail">
                                                         <h5 class="met-user-name" id="obligname" runat="server"></h5>                                                        
@@ -96,7 +95,7 @@
                                                     <div class="row">
                                                         <div class="card">
                                                             <div class="card-body">
-                                                                <h4 class="mt-0 header-title">All Customer Loans </h4>
+                                                                <h4 class="mt-0 header-title">All Customer Loans for </h4 ><h4 ><span id="customername" runat="server"></span></h4>
                                                                 <p class="text-muted mb-3">
                                                                 </p>
 
@@ -116,7 +115,7 @@
                                                                                 <asp:BoundField DataField="loan_amount" HeaderText="Amount Disbursed" SortExpression="loan_amount" DataFormatString="{0:n2}"/>
                                                                                 <asp:BoundField DataField="interest_rate" HeaderText="Rate" SortExpression="interest_rate" />
                                                                                 <asp:BoundField DataField="num_of_yrs" HeaderText="Tenure" SortExpression="num_of_yrs" />
-                                                                                <asp:BoundField DataField="start_date" HeaderText="Date Disbursed" SortExpression="start_date" DataFormatString="{0:MM/dd/yyyy }" HtmlEncode=false />
+                                                                                <asp:BoundField DataField="start_date" HeaderText="Start Date" SortExpression="start_date" DataFormatString="{0:MM/dd/yyyy }" HtmlEncode=false />
                                                                                 <asp:BoundField DataField="exp_date" HeaderText="Exp Date" SortExpression="exp_date" DataFormatString="{0:MM/dd/yyyy }" HtmlEncode=false />
                                                                                 <asp:TemplateField HeaderText="MORE DETAILS" SortExpression="BVN">
                                                                                     <EditItemTemplate>
@@ -172,9 +171,8 @@
 </div>
                     
                         </div><!--end col-->
-         </div>
+                 </div>
             </section>
             </div>
          </div>
-    
 </asp:Content>

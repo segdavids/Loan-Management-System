@@ -270,7 +270,7 @@ namespace CBNLMS.Admin
                 double PaymentAmount = 0;
                 double LoanAmount = Convert.ToDouble(Number11.Value);
                 double tenure = Convert.ToDouble(TextBox3.Text);
-                double NumberOfYears = tenure / 12;
+                double NumberOfYears = Math.Round((tenure / 12), 2); ;
                 moratorium = Convert.ToDouble(Number13.Value) / 12;
                 double NumberOfPayments = (NumberOfYears - moratorium) * 12;
                 PaymentAmount = (LoanAmount) / (NumberOfPayments);

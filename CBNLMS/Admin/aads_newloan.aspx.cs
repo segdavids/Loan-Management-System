@@ -276,8 +276,11 @@ namespace CBNLMS
             double moratorium = 0;
             double PaymentAmount = 0;
             double LoanAmount = Convert.ToDouble(Number1.Value);
+              //string tenurestring = String.Format("{0:#,##0.00}", TextBox1.Value.ToString().Trim());
             double tenure = Convert.ToDouble(TextBox1.Value);
-            double NumberOfYears = tenure / 12;
+                double NumberOfYears = Math.Round((tenure/12), 2); ;
+               // string temp = String.Format("{0:#,##0.00}", tempyear.ToString());
+           // double NumberOfYears = Convert.ToDouble(temp);
             moratorium = Convert.ToDouble(Number3.Value)/12;
             double NumberOfPayments = (NumberOfYears - moratorium) * 12;
             PaymentAmount = (LoanAmount) / (NumberOfPayments);

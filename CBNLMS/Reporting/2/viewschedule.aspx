@@ -68,7 +68,7 @@
                                                 <address class="font-13">
                                                      <strong class="font-12"><b>FACILTY TYPE :</b></strong><span id="ftype" runat="server"> </span><br>
                                                     <strong class="font-12"><b>TENOR (YEARS) :</b></strong><span id="tenor" runat="server">  </span><br>
-                                                    <strong class="font-12"><b>MORATORIUM (YEARS) :</b></strong><span id="mora" runat="server"> </span><br>
+                                                    <strong class="font-12"><b>MORATORIUM (MONTHS) :</b></strong><span id="mora" runat="server"> </span><br>
                                                     <strong class="font-12"><b>PAYMENT MODE</b> </strong><span id="pmode" runat="server"></span><br>
                                                 </address>
                                             </div>
