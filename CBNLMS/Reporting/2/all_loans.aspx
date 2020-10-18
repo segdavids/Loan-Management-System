@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
       <!-- Plugins css -->
        
-
+    <title>DFD LMS | All Loans</title>
         <!-- Plugins js -->
         <script src="../assets/plugins/moment/moment.js"></script>
         <script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>

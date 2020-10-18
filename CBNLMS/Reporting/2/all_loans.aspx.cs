@@ -111,7 +111,7 @@ namespace CBNLMS.Reporting._2
                 string querey = "loanid=" + e.CommandArgument.ToString();
                 string loandetails = e.CommandArgument.ToString();
                 Session["Details"] = loandetails;
-                Response.Redirect("~/Inputing/2/loan_details.aspx?" + querey);
+                Response.Redirect("~/Reporting/2/loan_details.aspx?" + querey);
             }
         }
 
@@ -175,7 +175,7 @@ namespace CBNLMS.Reporting._2
                 string querey = "loanid=" + e.CommandArgument.ToString();
                 string loandetails = e.CommandArgument.ToString();
                 Session["Details"] = loandetails;
-                Response.Redirect("~/Inputing/2/loan_details.aspx?" + querey);
+                Response.Redirect("~/Reporting/2/loan_details.aspx?" + querey);
             }
         }
         protected void Button3_Click(object sender, EventArgs e)

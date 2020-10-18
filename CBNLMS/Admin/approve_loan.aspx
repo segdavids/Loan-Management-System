@@ -79,6 +79,7 @@
                                                                             <th>PFI</th>
                                                                             <th>LOAN AMOUNT</th>
                                                                             <th>TENURE</th>
+                                                                            <th>MORATORIUM</th>
                                                                             <th>DISBURSEMENT DATE</th>
                                                                             <th>PAYMENT MODE</th>
                                                                             <th>STATUS</th>
@@ -94,6 +95,7 @@
                                                                                         <%#(((RepeaterItem)Container).ItemIndex+1).ToString()%>
                                                                                     </td>
                                                                                     <td>
+                                                                                        <asp:Label ID="Label7" Visible="false" runat="server" Text='<%# Eval("loan_guid") %>' />
                                                                                         <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("customer_unique_id") %>' />
                                                                                     </td>
                                                                                     <td>
@@ -101,27 +103,45 @@
                                                                                     </td>
                                                                                     <td>
                                                                                         <asp:Label ID="lblContactName" runat="server" Text='<%# Eval("intervention") %>' />
+                                                                                        <asp:DropDownList ID="DropDownList15" runat="server" class="select2 form-control mb-3 custom-select" Visible="false" DataSourceID="interventions" DataTextField="acronym" DataValueField="acronym">
+
+                                                                                            <asp:ListItem></asp:ListItem>
+                                                                                        </asp:DropDownList>
+                                                                                        <asp:SqlDataSource runat="server" ID="interventions" ConnectionString='<%$ ConnectionStrings:cbndbConnectionString %>' SelectCommand="SELECT [acronym] FROM [interventions]"></asp:SqlDataSource>
                                                                                     </td>
                                                                                      <td>
                                                                                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("bank_name") %>' />
                                                                                     </td>
                                                                                     <td>
                                                                                         <asp:Label ID="lblCountry1" runat="server" Text='<%#String.Format("{0:n2}", Eval("loan_amount")) %>' />
+                                                                                        <asp:TextBox type="text" class="number form-control" runat="server" step="0.01" id="Number11" Visible="false" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend"></asp:TextBox>
                                                                                     </td>
                                                                                      <td>
                                                                                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("num_of_yrs") %>' />
+                                                                                         <asp:TextBox ID="TextBox3" runat="server" step="0.01" Visible="false" class="form-control" type="number" Placeholder="Loan Tenure in Months" TextMode="Number" ValidateRequestMode="Inherit"></asp:TextBox>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <asp:Label ID="Label8" runat="server" Text='<%# Eval("moratorium") %>' />
+                                                                                         <asp:TextBox ID="TextBox1" runat="server" step="0.01" Visible="false" class="form-control" type="number" Placeholder="Moratorium Tenure in Months" TextMode="Number" ValidateRequestMode="Inherit"></asp:TextBox>
                                                                                     </td>
                                                                                      <td>
                                                                                         <asp:Label ID="Label3" runat="server" Text='<%#string.Format("{0:dd MMM, yyyy}", Eval("start_date")) %>' />
+                                                                                          <asp:TextBox class="form-control" runat="server" type="date" visible="false" placeholder="Date Disbursed" id="Date5"></asp:TextBox>
+
                                                                                     </td>
                                                                                       <td>
                                                                                         <asp:Label ID="Label6" runat="server" Text='<%# Eval("payment_mode") %>' />
-                                                                                    </td>
+                                                                                          <asp:DropDownList ID="DropDownList1" class="select2 form-control mb-3 custom-select" Visible="false" runat="server" DataSourceID="SqlDataSource1" DataTextField="payment_mode" DataValueField="payment_mode"></asp:DropDownList>
+                                                                                          <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:cbndbConnectionString %>' SelectCommand="SELECT [payment_mode] FROM [payment_mode]"></asp:SqlDataSource>
+                                                                                      </td>
                                                                                      <td>
                                                                                         <asp:Label ID="Label5" runat="server" Text='<%# Eval("loan_status") %>' />
                                                                                     </td>
                                                                                      
                                                                                     <td>
+                                                                                        <asp:LinkButton ID="lnkEdit" class="btn btn-primary" dripicons-user-id="Linkbutton2" Text="Edit" runat="server" OnClick="OnEdit" />
+                                                                                        <asp:LinkButton ID="lnkUpdate" class="btn btn-primary" dripicons-user-id="Linkbutton2" Visible="false" OnClick="OnUpdate" runat="server" Text="Update" />
+                                                                                        <asp:LinkButton ID="lnkCancel" class="btn btn-info" dripicons-user-id="Linkbutton2" Visible="false" OnClick="OnCancel" runat="server" Text="Cancel" />
                                                                                         <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" CommandName="Approve" CommandArgument='<%# Bind("loan_guid") %>' runat="server" Text="Approve" />
                                                                                         <asp:LinkButton ID="linkbutton2" class="btn btn-danger" dripicons-user-id="Linkbutton2" CommandName="Deny" CommandArgument='<%# Bind("loan_guid") %>' runat="server" Text="Deny" />
                                                                                     </td>
