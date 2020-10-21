@@ -164,8 +164,8 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="example-text-input" >BVN</label>
-                                                                    <input id="TextBox5" runat="server" class="form-control" type="number" placeholder="Bank Verification Number" textmode="Number">
+                                                                <label for="example-text-input" >BVN*</label> <span>  | No BVN? Click here to generate BVN</span><asp:Button ID="Button9" runat="server" type="submit" class="btn btn-primary" Text="Generate" OnClick="generatebvn" />
+                                                                    <asp:TextBox id="TextBox5" runat="server" class="form-control" placeholder="Bank Verification Number"></asp:TextBox>
                                                                 </div>
                                                             </div>
                                                         <!--end col-->
@@ -224,8 +224,8 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="example-text-input" >TIN*</label>
-                                                                    <input id="TextBox10" runat="server" class="form-control" type="text" placeholder="Tax Identification Number (TIN)" textmode="SingleLine">
+                                                                <label for="example-text-input" >TIN*</label><span> | No TIN? Click here to generate TIN</span><asp:Button ID="Button10" runat="server" type="submit" class="btn btn-primary" Text="Generate" OnClick="generatetin" />
+                                                                    <asp:TextBox id="TextBox10" runat="server" class="form-control" type="text" placeholder="Tax Identification Number (TIN)" textmode="SingleLine"></asp:TextBox>
                                                                 </div>
                                                         </div>
                                                         <!--end col-->
@@ -338,4 +338,5 @@
 
         <!-- App js -->
         <script src="../assets/js/app.js"></script>
+    </label>
 </asp:Content>

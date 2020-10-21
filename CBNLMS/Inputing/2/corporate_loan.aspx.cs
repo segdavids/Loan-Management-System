@@ -35,7 +35,7 @@ namespace CBNLMS.Inputing._2
                 fillpaymentmode();
                 // poptin();
                 getWhileLoopDataind();
-                popintervention();
+              //  popintervention();
                 sector();
                 stateofbus();
                 BindGrid2();

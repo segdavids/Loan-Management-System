@@ -107,7 +107,7 @@ namespace CBNLMS.Reporting._2
             string querey = "status=approved";
             Session["ApproveReport"] = loanid;
             //  Session["customertype"] = "Individual";
-            Response.Redirect("~/Inputing/2/Approval_report.aspx?" + querey);
+            Response.Redirect("~/Reporting/2/Approval_report.aspx?" + querey);
         }
 
         protected void test2(object sender, EventArgs e)
@@ -117,7 +117,7 @@ namespace CBNLMS.Reporting._2
             string querey = "status=declined";
             Session["DeclineReport"] = loanid;
             //  Session["customertype"] = "Individual";
-            Response.Redirect("~/Inputing/2/Decline_report.aspx?" + querey);
+            Response.Redirect("~/Reporting/2/Decline_report.aspx?" + querey);
         }
 
         protected void OnEdit(object sender, EventArgs e)

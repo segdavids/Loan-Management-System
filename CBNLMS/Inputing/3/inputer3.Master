@@ -23,9 +23,85 @@
 	<link rel="stylesheet" href="css/skin_color.css">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+       <script type="text/javascript">
+
+
+        $(window).on('load', function () {
+            $("#coverScreen").hide();
+        });
+
+
+        $(document).ready(function () {
+
+
+            $("#btnClickMe").click(function () {
+                $("#coverScreen").show();
+            });
+
+        })
+    </script>
+
+    <style type="text/css">
+        .LockOn {
+            display: block;
+            visibility: visible;
+            position: absolute;
+            z-index: 999;
+            top: 0px;
+            left: 0px;
+            width: 105%;
+            height: 105%;
+            background-color: transparent;
+            vertical-align: bottom;
+            padding-top: 20%;
+            filter: alpha(opacity=75);
+            opacity: 0.75;
+            font-size: large;
+            color: blue;
+            font-style: italic;
+            font-weight: 400;
+            background-image: url("../images/loader.gif");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+      <script type="text/javascript">
+  $(document).ready(function(){
+
+
+    $('input.number').keyup(function(event){
+      // skip for arrow keys
+      if(event.which >= 37 && event.which <= 40){
+          event.preventDefault();
+      }
+      var $this = $(this);
+      var num = $this.val().replace(/,/gi, "").split("").reverse().join("");
+
+      var num2 = RemoveRougeChar(num.replace(/(.{3})/g,"$1,").split("").reverse().join(""));
+
+      // the following line has been simplified. Revision history contains original.
+      $this.val(num2);});});
+
+    function RemoveRougeChar(convertString){
+
+
+    if(convertString.substring(0,1) == ","){
+
+        return convertString.substring(1, convertString.length)            
+
+    }
+    return convertString;
+
+}
+</script>
 </head>
 <body class="hold-transition dark-skin sidebar-mini theme-success">
     <form id="form1" runat="server">
+             <div id="coverScreen" class="LockOn">
+    </div>
         <div class="wrapper">
             <header class="main-header">
                 <div class="d-flex align-items-center logo-box justify-content-between">
@@ -47,9 +123,18 @@
                 <nav class="navbar navbar-static-top pl-10">
                     <!-- Sidebar toggle button-->
                     <div class="app-menu">
-                        <ul class="header-megamenu nav">
-                            <h6 class="m-0">Last Login: <span id="lastlogin" runat="server"></span></h6>
-                        </ul>
+
+                          <ul class="header-megamenu nav">
+                        <li class="btn-group nav-item d-md-none">
+				<a href="#" class="waves-effect waves-light nav-link rounded push-btn" data-toggle="push-menu" role="button">
+					<i class="ti-menu"></i>
+			    </a>
+			</li>
+                      <li class="btn-group nav-item d-none d-xl-inline-block">
+				<h6 class="m-0">Last Login: <span id="lastlogin" runat="server"></span></h6>
+			</li>
+                            
+                       </ul> 
                     </div>
 
                     <div class="navbar-custom-menu r-side">
@@ -143,7 +228,20 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="aads_newloan.aspx" id="newloanothers"><i class="ti-new-window"></i>New Loan</a></li>
+                               <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>New Loan
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                <li><a href="aads_newloan.aspx" id="newloanothers"><i class="ti-more"></i>Individual</a></li>
+                                <li><a href="corporate_loan.aspx" id="corporate"><i class="ti-more"></i>Corporate</a></li>
+                                <li><a href="state_loan.aspx" id="state"><i class="ti-more"></i>State</a></li>
+
+                                    </ul>
+                                </li>
                                 <li><a href="aads_newrepayment.aspx"><i class="ti-file"></i>New Repayment</a></li>
                             </ul>
                         </li>
@@ -178,8 +276,103 @@
                                  <li><a href="picture_upload.aspx"><i class="ti-camera"></i>Picture Upload</a></li>
                             </ul>
                         </li>
+                           <li class="header" id="amortization">Amortization</li>
+                        <li class="treeview" id="amortizationchild">
+                            <a href="#">
+                                <i class="ti-timer"></i>
+                                <span>Schedule</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="schedule_loans.aspx" id="scheduleloan"><i class="ti-wallet"></i>By Loan</a></li>
 
+                                <li><a href="customerloans.aspx" id="schedulecustomer"><i class="ti-user"></i>By Customer</a></li>
+                            </ul>
+                        </li>
+                           <li class="header">Reporting</li>
+                        <li class="treeview" id="MetricaCRM">
+                            <a href="#">
+                                <i class="ti-bar-chart-alt"></i>
+                                <span>Reports</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu" id="reports">
+                                <li><a href="analytics_intervention.aspx"><i class="ti-dashboard"></i>Analytics(All)</a></li>
+                                <li><a href="all_summary.aspx"><i class="ti-dashboard"></i>Summary(All)</a></li>
+                                <li><a href="all_loans.aspx"><i class="ti-files"></i>All Loan Report</a></li>
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>Amortization
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id=""><a href="amortization.aspx" id=""><i class="ti-more"></i>Amortization Report</a></li>
 
+                                    </ul>
+                                </li> 
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-calendar"></i>Disbursement
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id="disreport"><a href="disbursement.aspx" id="disreportahref"><i class="ti-more"></i>Disbursement Report</a></li>
+                                        <li id="disreport"><a href="abpreport.aspx" id="disreportahref"><i class="ti-more"></i>ABP Disbursement</a></li>
+                                        <li id=""><a href="disbursevsrepayment.aspx" id=""><i class="ti-more"></i>Recovery Ratio</a></li>
+
+                                    </ul>
+                                </li> 
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-stats-up"></i>Loan Performance
+					                    <span class="pull-right-container">
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id=""><a href="loan_performance.aspx" id=""><i class="ti-more"></i>Performance Report</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="other_reports.aspx"><i class="ti-bar-chart-alt"></i>Other Special Reports</a></li>
+                                  <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-image"></i>Picture
+					                    <span class="pull-right-container">
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                <li><a href="photo_album.aspx"><i class="ti-more"></i>Photo Album</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="audit.aspx"><i class="ti-check-box"></i>Audit Report</a></li>
+                            </ul>
+                        </li>
+                          <li class="header">Loan Management</li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="ti-widget-alt"></i>
+                                <span>Loans</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="approve_loan.aspx"><i class="ti-write"></i>Approve/Deny Loan</a></li>
+                                <li><a href="schedule_loans.aspx"><i class="ti-menu-alt"></i>View All Loans</a></li>
+
+                            </ul>
+                        </li>
                         <li class="header">Configure/Manage</li>
                         <li class="treeview">
                             <a href="#">
@@ -208,12 +401,7 @@
                             </ul>
                         </li>
 
-                        <li>
-                            <a href="email_index.html">
-                                <i class="ti-envelope"></i>
-                                <span>Emails</span>
-                            </a>
-                        </li>
+                       
                     </ul>
                 </section>
                 <div class="sidebar-footer">
@@ -248,18 +436,16 @@
         </div>
 <!-- ./wrapper -->	 
     </form>
-</body>
-    <script src="js/vendors.min.js"></script>
-    <script src="../../assets/icons/feather-icons/feather.min.js"></script>
+</body>    <script src="js/vendors.min.js"></script>
+   <script src="js/vendors.min.js"></script>
+    <script src="../assets/icons/feather-icons/feather.min.js"></script>
 
-	<script src="../../assets/vendor_components/apexcharts-bundle/dist/apexcharts.js"></script>
+	<script src="../assets/vendor_components/apexcharts-bundle/dist/apexcharts.js"></script>
 	
 	<!-- Florence Admin App -->
 	<script src="js/template.js"></script>
 	<script src="js/pages/dashboard2.js"></script>
-	<script src="js/demo.js"></script>
     	<!-- Vendor JS -->
-    <script src="../assets/icons/feather-icons/feather.min.js"></script>	
     <script src="../assets/vendor_components/datatable/datatables.min.js"></script>
 	<script src="../assets/vendor_components/gallery/js/animated-masonry-gallery.js"></script>
     <script src="../assets/vendor_components/gallery/js/jquery.isotope.min.js"></script>
@@ -268,8 +454,8 @@
 	<script src="../assets/vendor_components/gallery/js/animated-masonry-gallery.js"></script>
     <script src="../assets/vendor_components/gallery/js/jquery.isotope.min.js"></script>
     <script src="../assets/vendor_components/lightbox-master/dist/ekko-lightbox.js"></script>	
+    <script src="../assets/vendor_plugins/JqueryPrintArea/demo/jquery.PrintArea.js"></script>
 	<!-- Florence Admin App -->
-	<script src="js/template.js"></script>
 	<script src="js/demo.js"></script>
 	<script src="js/pages/data-table.js"></script>
     

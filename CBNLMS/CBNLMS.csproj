@@ -10371,13 +10371,32 @@
     <Content Include="Inputing\2\viewschedule.aspx" />
     <Content Include="Inputing\3\aads_newcustomer.aspx" />
     <Content Include="Inputing\3\aads_newloan.aspx" />
+    <Content Include="Inputing\3\aads_newloan_OLD.aspx" />
+    <Content Include="Inputing\3\abpreport.aspx" />
+    <Content Include="Inputing\3\all_loans.aspx" />
+    <Content Include="Inputing\3\all_summary.aspx" />
+    <Content Include="Inputing\3\amortization.aspx" />
+    <Content Include="Inputing\3\analytics_intervention.aspx" />
+    <Content Include="Inputing\3\Approval_report.aspx" />
+    <Content Include="Inputing\3\approve_loan.aspx" />
+    <Content Include="Inputing\3\audit.aspx" />
+    <Content Include="Inputing\3\commassocdetails.aspx" />
+    <Content Include="Inputing\3\corporatedetails.aspx" />
+    <Content Include="Inputing\3\corporate_loan.aspx" />
     <Content Include="Inputing\3\css\bootstrap_extend.css" />
     <Content Include="Inputing\3\css\color_theme.css" />
     <Content Include="Inputing\3\css\skin_color.css" />
     <Content Include="Inputing\3\css\style.css" />
     <Content Include="Inputing\3\css\style_rtl.css" />
     <Content Include="Inputing\3\css\vendors_css.css" />
+    <Content Include="Inputing\3\customerdetails.aspx" />
+    <Content Include="Inputing\3\customerlist.aspx" />
+    <Content Include="Inputing\3\customerloans.aspx" />
+    <Content Include="Inputing\3\Decline_report.aspx" />
     <Content Include="Inputing\3\Default.aspx" />
+    <Content Include="Inputing\3\disbursement.aspx" />
+    <Content Include="Inputing\3\disbursevsrepayment.aspx" />
+    <Content Include="Inputing\3\intervention_details.aspx" />
     <Content Include="Inputing\3\js\demo.js" />
     <Content Include="Inputing\3\js\pages\advanced-form-element.js" />
     <Content Include="Inputing\3\js\pages\app-chat.js" />
@@ -10449,10 +10468,19 @@
     <Content Include="Inputing\3\js\template.js" />
     <Content Include="Inputing\3\js\template.min.js" />
     <Content Include="Inputing\3\js\vendors.min.js" />
+    <Content Include="Inputing\3\loan_details.aspx" />
+    <Content Include="Inputing\3\loan_performance.aspx" />
+    <Content Include="Inputing\3\manage_pictures.aspx" />
     <Content Include="Inputing\3\newcustomer.aspx" />
-    <Content Include="Inputing\3\newloan.aspx" />
     <Content Include="Inputing\3\newrepayment.aspx" />
+    <Content Include="Inputing\3\other_reports.aspx" />
+    <Content Include="Inputing\3\photo_album.aspx" />
     <Content Include="Inputing\3\picture_upload.aspx" />
+    <Content Include="Inputing\3\reportdetails.aspx" />
+    <Content Include="Inputing\3\schedule_loans.aspx" />
+    <Content Include="Inputing\3\statedetails.aspx" />
+    <Content Include="Inputing\3\state_loan.aspx" />
+    <Content Include="Inputing\3\viewschedule.aspx" />
     <Content Include="Inputing\4\aads_newcustomer.aspx" />
     <Content Include="Inputing\4\aads_newloan.aspx" />
     <Content Include="Inputing\4\css\bootstrap_extend.css" />
@@ -13185,16 +13213,37 @@
     <Content Include="Reporting\2\schedule_loans.aspx" />
     <Content Include="Reporting\2\statedetails.aspx" />
     <Content Include="Reporting\2\viewschedule.aspx" />
+    <Content Include="Reporting\3\abpreport.aspx" />
+    <Content Include="Reporting\3\all_loans.aspx" />
+    <Content Include="Reporting\3\all_summary.aspx" />
+    <Content Include="Reporting\3\amortization.aspx" />
+    <Content Include="Reporting\3\Approval_report.aspx" />
+    <Content Include="Reporting\3\approve_loan.aspx" />
+    <Content Include="Reporting\3\audit.aspx" />
     <Content Include="Reporting\3\cacs_analytics.aspx" />
     <Content Include="Reporting\3\cacs_report.aspx" />
+    <Content Include="Reporting\3\commassocdetails.aspx" />
+    <Content Include="Reporting\3\corporatedetails.aspx" />
     <Content Include="Reporting\3\css\bootstrap_extend.css" />
     <Content Include="Reporting\3\css\color_theme.css" />
     <Content Include="Reporting\3\css\skin_color.css" />
     <Content Include="Reporting\3\css\style.css" />
     <Content Include="Reporting\3\css\style_rtl.css" />
     <Content Include="Reporting\3\css\vendors_css.css" />
+    <Content Include="Reporting\3\customerdetails.aspx" />
+    <Content Include="Reporting\3\customeremail.aspx" />
+    <Content Include="Reporting\3\customerlist.aspx" />
+    <Content Include="Reporting\3\customerloans.aspx" />
+    <Content Include="Reporting\3\Decline_report.aspx" />
     <Content Include="Reporting\3\Default.aspx" />
+    <Content Include="Reporting\3\disbursement.aspx" />
+    <Content Include="Reporting\3\disbursevsrepayment.aspx" />
+    <Content Include="Reporting\3\emails.aspx" />
+    <Content Include="Reporting\3\email_template_1.aspx" />
+    <Content Include="Reporting\3\intervention_details.aspx" />
     <Content Include="Reporting\3\js\demo.js" />
+    <Content Include="Reporting\3\js\Filter.css" />
+    <Content Include="Reporting\3\js\Filter.js" />
     <Content Include="Reporting\3\js\pages\advanced-form-element.js" />
     <Content Include="Reporting\3\js\pages\app-chat.js" />
     <Content Include="Reporting\3\js\pages\app-contact.js" />
@@ -13265,12 +13314,21 @@
     <Content Include="Reporting\3\js\template.js" />
     <Content Include="Reporting\3\js\template.min.js" />
     <Content Include="Reporting\3\js\vendors.min.js" />
+    <Content Include="Reporting\3\loan_details.aspx" />
+    <Content Include="Reporting\3\loan_performance.aspx" />
     <Content Include="Reporting\3\mas_analytics.aspx" />
     <Content Include="Reporting\3\mas_report.aspx" />
+    <Content Include="Reporting\3\notification.aspx" />
+    <Content Include="Reporting\3\other_reports.aspx" />
     <Content Include="Reporting\3\pas_analytics.aspx" />
     <Content Include="Reporting\3\pas_report.aspx" />
+    <Content Include="Reporting\3\photo_album.aspx" />
     <Content Include="Reporting\3\rdf_analytics.aspx" />
     <Content Include="Reporting\3\rdf_report.aspx" />
+    <Content Include="Reporting\3\reportdetails.aspx" />
+    <Content Include="Reporting\3\schedule_loans.aspx" />
+    <Content Include="Reporting\3\statedetails.aspx" />
+    <Content Include="Reporting\3\viewschedule.aspx" />
     <Content Include="Reporting\4\agsmeeis_report.aspx" />
     <Content Include="Reporting\4\agsmeeis_analytics.aspx" />
     <Content Include="Reporting\4\cifi_analytics.aspx" />
@@ -15947,6 +16005,9 @@
     <Content Include="Reporting\2\uploads\user_creation_form1.xlsx" />
     <Content Include="Reporting\2\uploads\user_creation_form11.xlsx" />
     <Content Include="Reporting\2\Reporter2.Master" />
+    <Content Include="Reporting\3\uploads\user_creation_form.xlsx" />
+    <Content Include="Reporting\3\uploads\user_creation_form1.xlsx" />
+    <Content Include="Reporting\3\uploads\user_creation_form11.xlsx" />
     <None Include="Reporting\Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Reporting\Scripts\jquery-3.3.1.js" />
     <Content Include="Reporting\Scripts\jquery-3.3.1.min.js" />
@@ -19242,12 +19303,166 @@
     <Compile Include="Inputing\3\aads_newloan.aspx.designer.cs">
       <DependentUpon>aads_newloan.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Inputing\3\aads_newloan_OLD.aspx.cs">
+      <DependentUpon>aads_newloan_OLD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\aads_newloan_OLD.aspx.designer.cs">
+      <DependentUpon>aads_newloan_OLD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\abpreport.aspx.cs">
+      <DependentUpon>abpreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\abpreport.aspx.designer.cs">
+      <DependentUpon>abpreport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\all_loans.aspx.cs">
+      <DependentUpon>all_loans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\all_loans.aspx.designer.cs">
+      <DependentUpon>all_loans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\all_summary.aspx.cs">
+      <DependentUpon>all_summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\all_summary.aspx.designer.cs">
+      <DependentUpon>all_summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\amortization.aspx.cs">
+      <DependentUpon>amortization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\amortization.aspx.designer.cs">
+      <DependentUpon>amortization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\analytics_intervention.aspx.cs">
+      <DependentUpon>analytics_intervention.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\analytics_intervention.aspx.designer.cs">
+      <DependentUpon>analytics_intervention.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\Approval_report.aspx.cs">
+      <DependentUpon>Approval_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\Approval_report.aspx.designer.cs">
+      <DependentUpon>Approval_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\approve_loan.aspx.cs">
+      <DependentUpon>approve_loan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\approve_loan.aspx.designer.cs">
+      <DependentUpon>approve_loan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\audit.aspx.cs">
+      <DependentUpon>audit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\audit.aspx.designer.cs">
+      <DependentUpon>audit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\commassocdetails.aspx.cs">
+      <DependentUpon>commassocdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\commassocdetails.aspx.designer.cs">
+      <DependentUpon>commassocdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\corporatedetails.aspx.cs">
+      <DependentUpon>corporatedetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\corporatedetails.aspx.designer.cs">
+      <DependentUpon>corporatedetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\corporate_loan.aspx.cs">
+      <DependentUpon>corporate_loan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\corporate_loan.aspx.designer.cs">
+      <DependentUpon>corporate_loan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\customerdetails.aspx.cs">
+      <DependentUpon>customerdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\customerdetails.aspx.designer.cs">
+      <DependentUpon>customerdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\customerlist.aspx.cs">
+      <DependentUpon>customerlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\customerlist.aspx.designer.cs">
+      <DependentUpon>customerlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\customerloans.aspx.cs">
+      <DependentUpon>customerloans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\customerloans.aspx.designer.cs">
+      <DependentUpon>customerloans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\Decline_report.aspx.cs">
+      <DependentUpon>Decline_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\Decline_report.aspx.designer.cs">
+      <DependentUpon>Decline_report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inputing\3\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Inputing\3\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\disbursement.aspx.cs">
+      <DependentUpon>disbursement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\disbursement.aspx.designer.cs">
+      <DependentUpon>disbursement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\disbursevsrepayment.aspx.cs">
+      <DependentUpon>disbursevsrepayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\disbursevsrepayment.aspx.designer.cs">
+      <DependentUpon>disbursevsrepayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\intervention_details.aspx.cs">
+      <DependentUpon>intervention_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\intervention_details.aspx.designer.cs">
+      <DependentUpon>intervention_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\loan_details.aspx.cs">
+      <DependentUpon>loan_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\loan_details.aspx.designer.cs">
+      <DependentUpon>loan_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\loan_performance.aspx.cs">
+      <DependentUpon>loan_performance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\loan_performance.aspx.designer.cs">
+      <DependentUpon>loan_performance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\manage_pictures.aspx.cs">
+      <DependentUpon>manage_pictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\manage_pictures.aspx.designer.cs">
+      <DependentUpon>manage_pictures.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inputing\3\newcustomer.aspx.cs">
       <DependentUpon>newcustomer.aspx</DependentUpon>
@@ -19256,13 +19471,6 @@
     <Compile Include="Inputing\3\newcustomer.aspx.designer.cs">
       <DependentUpon>newcustomer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Inputing\3\newloan.aspx.cs">
-      <DependentUpon>newloan.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Inputing\3\newloan.aspx.designer.cs">
-      <DependentUpon>newloan.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Inputing\3\newrepayment.aspx.cs">
       <DependentUpon>newrepayment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -19270,12 +19478,61 @@
     <Compile Include="Inputing\3\newrepayment.aspx.designer.cs">
       <DependentUpon>newrepayment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Inputing\3\other_reports.aspx.cs">
+      <DependentUpon>other_reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\other_reports.aspx.designer.cs">
+      <DependentUpon>other_reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\photo_album.aspx.cs">
+      <DependentUpon>photo_album.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\photo_album.aspx.designer.cs">
+      <DependentUpon>photo_album.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inputing\3\picture_upload.aspx.cs">
       <DependentUpon>picture_upload.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Inputing\3\picture_upload.aspx.designer.cs">
       <DependentUpon>picture_upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\reportdetails.aspx.cs">
+      <DependentUpon>reportdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\reportdetails.aspx.designer.cs">
+      <DependentUpon>reportdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\schedule_loans.aspx.cs">
+      <DependentUpon>schedule_loans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\schedule_loans.aspx.designer.cs">
+      <DependentUpon>schedule_loans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\statedetails.aspx.cs">
+      <DependentUpon>statedetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\statedetails.aspx.designer.cs">
+      <DependentUpon>statedetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\state_loan.aspx.cs">
+      <DependentUpon>state_loan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\state_loan.aspx.designer.cs">
+      <DependentUpon>state_loan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inputing\3\viewschedule.aspx.cs">
+      <DependentUpon>viewschedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inputing\3\viewschedule.aspx.designer.cs">
+      <DependentUpon>viewschedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inputing\4\aads_newcustomer.aspx.cs">
       <DependentUpon>aads_newcustomer.aspx</DependentUpon>
@@ -19824,6 +20081,55 @@
     <Compile Include="Reporting\2\viewschedule.aspx.designer.cs">
       <DependentUpon>viewschedule.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\3\abpreport.aspx.cs">
+      <DependentUpon>abpreport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\abpreport.aspx.designer.cs">
+      <DependentUpon>abpreport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\all_loans.aspx.cs">
+      <DependentUpon>all_loans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\all_loans.aspx.designer.cs">
+      <DependentUpon>all_loans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\all_summary.aspx.cs">
+      <DependentUpon>all_summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\all_summary.aspx.designer.cs">
+      <DependentUpon>all_summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\amortization.aspx.cs">
+      <DependentUpon>amortization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\amortization.aspx.designer.cs">
+      <DependentUpon>amortization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\Approval_report.aspx.cs">
+      <DependentUpon>Approval_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\Approval_report.aspx.designer.cs">
+      <DependentUpon>Approval_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\approve_loan.aspx.cs">
+      <DependentUpon>approve_loan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\approve_loan.aspx.designer.cs">
+      <DependentUpon>approve_loan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\audit.aspx.cs">
+      <DependentUpon>audit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\audit.aspx.designer.cs">
+      <DependentUpon>audit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\3\cacs_analytics.aspx.cs">
       <DependentUpon>cacs_analytics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -19838,12 +20144,110 @@
     <Compile Include="Reporting\3\cacs_report.aspx.designer.cs">
       <DependentUpon>cacs_report.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\3\commassocdetails.aspx.cs">
+      <DependentUpon>commassocdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\commassocdetails.aspx.designer.cs">
+      <DependentUpon>commassocdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\corporatedetails.aspx.cs">
+      <DependentUpon>corporatedetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\corporatedetails.aspx.designer.cs">
+      <DependentUpon>corporatedetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\customerdetails.aspx.cs">
+      <DependentUpon>customerdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\customerdetails.aspx.designer.cs">
+      <DependentUpon>customerdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\customeremail.aspx.cs">
+      <DependentUpon>customeremail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\customeremail.aspx.designer.cs">
+      <DependentUpon>customeremail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\customerlist.aspx.cs">
+      <DependentUpon>customerlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\customerlist.aspx.designer.cs">
+      <DependentUpon>customerlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\customerloans.aspx.cs">
+      <DependentUpon>customerloans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\customerloans.aspx.designer.cs">
+      <DependentUpon>customerloans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\Decline_report.aspx.cs">
+      <DependentUpon>Decline_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\Decline_report.aspx.designer.cs">
+      <DependentUpon>Decline_report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\3\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Reporting\3\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\disbursement.aspx.cs">
+      <DependentUpon>disbursement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\disbursement.aspx.designer.cs">
+      <DependentUpon>disbursement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\disbursevsrepayment.aspx.cs">
+      <DependentUpon>disbursevsrepayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\disbursevsrepayment.aspx.designer.cs">
+      <DependentUpon>disbursevsrepayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\emails.aspx.cs">
+      <DependentUpon>emails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\emails.aspx.designer.cs">
+      <DependentUpon>emails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\email_template_1.aspx.cs">
+      <DependentUpon>email_template_1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\email_template_1.aspx.designer.cs">
+      <DependentUpon>email_template_1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\intervention_details.aspx.cs">
+      <DependentUpon>intervention_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\intervention_details.aspx.designer.cs">
+      <DependentUpon>intervention_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\loan_details.aspx.cs">
+      <DependentUpon>loan_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\loan_details.aspx.designer.cs">
+      <DependentUpon>loan_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\loan_performance.aspx.cs">
+      <DependentUpon>loan_performance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\loan_performance.aspx.designer.cs">
+      <DependentUpon>loan_performance.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reporting\3\mas_analytics.aspx.cs">
       <DependentUpon>mas_analytics.aspx</DependentUpon>
@@ -19859,6 +20263,20 @@
     <Compile Include="Reporting\3\mas_report.aspx.designer.cs">
       <DependentUpon>mas_report.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\3\notification.aspx.cs">
+      <DependentUpon>notification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\notification.aspx.designer.cs">
+      <DependentUpon>notification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\other_reports.aspx.cs">
+      <DependentUpon>other_reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\other_reports.aspx.designer.cs">
+      <DependentUpon>other_reports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\3\pas_analytics.aspx.cs">
       <DependentUpon>pas_analytics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -19872,6 +20290,13 @@
     </Compile>
     <Compile Include="Reporting\3\pas_report.aspx.designer.cs">
       <DependentUpon>pas_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\photo_album.aspx.cs">
+      <DependentUpon>photo_album.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\photo_album.aspx.designer.cs">
+      <DependentUpon>photo_album.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reporting\3\rdf_analytics.aspx.cs">
       <DependentUpon>rdf_analytics.aspx</DependentUpon>
@@ -19887,12 +20312,40 @@
     <Compile Include="Reporting\3\rdf_report.aspx.designer.cs">
       <DependentUpon>rdf_report.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reporting\3\reportdetails.aspx.cs">
+      <DependentUpon>reportdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\reportdetails.aspx.designer.cs">
+      <DependentUpon>reportdetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reporting\3\reporter3.Master.cs">
       <DependentUpon>reporter3.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Reporting\3\reporter3.Master.designer.cs">
       <DependentUpon>reporter3.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\schedule_loans.aspx.cs">
+      <DependentUpon>schedule_loans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\schedule_loans.aspx.designer.cs">
+      <DependentUpon>schedule_loans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\statedetails.aspx.cs">
+      <DependentUpon>statedetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\statedetails.aspx.designer.cs">
+      <DependentUpon>statedetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporting\3\viewschedule.aspx.cs">
+      <DependentUpon>viewschedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporting\3\viewschedule.aspx.designer.cs">
+      <DependentUpon>viewschedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reporting\4\agsmeeis_report.aspx.cs">
       <DependentUpon>agsmeeis_report.aspx</DependentUpon>

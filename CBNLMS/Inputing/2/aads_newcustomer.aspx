@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Inputing/2/inputer2.Master" AutoEventWireup="true" CodeBehind="aads_newcustomer.aspx.cs" Inherits="CBNLMS.Inputing._2.aads_newcustomer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+      
     <!-- Plugins css -->
         <link href="../assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
         <link href="../assets/plugins/select2/select2.min.css" rel="stylesheet" type="text/css" />
@@ -27,7 +27,14 @@
         <!-- App js -->
         <script src="../assets/js/app.js"></script>
      <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-
+    <script type="text/javascript">
+ $(document).ready(function() {
+     $('#forms').addClass('active');
+     $('#others').addClass('active');
+     $("dropothers").attr("aria-expanded","true");
+     $('#newcustomerothers').addClass('active');
+ });
+</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content-wrapper">
@@ -117,20 +124,20 @@
                                             <div class="box">
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
-                                                    <h4 class="box-title text-info"><i class="ti-user mr-15"></i>Individual Information</h4>
+                                                    <h4 class="box-title text-primary"><i class="ti-user mr-15"></i>Individual Information</h4>
                                                     <hr class="my-15">
 
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group ">
-                                                                <label for="txtNameCard" class="col-lg-3 col-form-label">First Name</label>
+                                                                <label for="txtNameCard" >First Name</label>
                                                                     <asp:TextBox ID="TextBox3" runat="server" class="form-control" type="text" Placeholder="First Name"></asp:TextBox>
                                                                 </div>
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-md-6">
                                                             <div class="form-group ">
-                                                                <label for="txtNameCard" class="col-lg-3 col-form-label">Last Name</label>
+                                                                <label for="txtNameCard" >Last Name</label>
                                                                     <input id="TextBox1" runat="server" class="form-control" type="text" placeholder="Last Name">
                                                             </div>
                                                         </div>
@@ -138,14 +145,14 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group ">
-                                                                <label for="txtNameCard" class="col-lg-3 col-form-label">Other Name</label>
+                                                                <label for="txtNameCard" ">Other Name</label>
                                                                     <input id="TextBox2" runat="server" class="form-control" type="text" placeholder="Other Name">
                                                                 </div>
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-md-6">
                                                             <div class="form-group ">
-                                                                <label for="txtNameCard" class="col-lg-3 col-form-label">Gender</label>
+                                                                <label for="txtNameCard" >Gender</label>
                                                                     <asp:DropDownList ID="DropDownList15" runat="server" class="select2 form-control mb-3 custom-select">
                                                                         <asp:ListItem>MALE</asp:ListItem>
                                                                         <asp:ListItem>FEMALE</asp:ListItem>
@@ -157,23 +164,23 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="example-text-input" class="col-sm-3 col-form-label">BVN</label>
-                                                                    <input id="TextBox5" runat="server" class="form-control" type="number" placeholder="Bank Verification Number" textmode="Number">
+                                                                <label for="example-text-input" >BVN*</label> <span>  | No BVN? Click here to generate BVN</span><asp:Button ID="Button9" runat="server" type="submit" class="btn btn-primary" Text="Generate" OnClick="generatebvn" />
+                                                                    <asp:TextBox id="TextBox5" runat="server" class="form-control" placeholder="Bank Verification Number"></asp:TextBox>
+                                                                </div>
                                                             </div>
-                                                        </div>
                                                         <!--end col-->
                                                         <div class="col-md-6">
-                                                            <div class="form-group ">
-                                                                <label for="example-text-input" class="col-sm-3 col-form-label">Phone Number</label>
+                                                            <div class="form-group">
+                                                                <label for="example-text-input">Phone Number</label>
                                                                     <input id="TextBox9" runat="server" class="form-control" type="number" placeholder="Phone Number" textmode="Number">
-                                                            </div>
+                                                                </div>
                                                         </div>
                                                         <!--end col-->
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="example-text-input" class="col-sm-3 col-form-label">Email Address</label>
+                                                                <label for="example-text-input" >Email Address</label>
                                                                     <input id="TextBox4" runat="server" class="form-control" type="email" placeholder="e.g user@email.com" textmode="Email">
                                                                 </div>
                                                         </div>
@@ -195,19 +202,19 @@
                                             <div class="box">
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
-                                                    <h4 class="box-title text-info"><i class="ti-briefcase"></i>Business Information</h4>
+                                                    <h4 class="box-title text-primary"><i class="ti-briefcase"></i>Business Information</h4>
                                                     <hr class="my-15">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="txtNameCard" class="col-lg-3 col-form-label">Organization Name</label>
+                                                                <label for="txtNameCard">Organization Name</label>
                                                                     <input id="Text2" runat="server" class="form-control" type="text" placeholder="Organization Name" textmode="SingleLine">
-                                                            </div>
+                                                                </div>
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-md-6">
-                                                            <div class="form-group ">
-                                                                <label for="txtNameCard" class="col-lg-3 col-form-label">CAC RC No.*</label>
+                                                            <div class="form-group">
+                                                                <label for="txtNameCard">CAC RC No.*</label>
                                                                     <input id="Text1" runat="server" class="form-control" type="text" placeholder="Certificate of Incorporation Number" textmode="SingleLine">
                                                                 </div>
 
@@ -216,15 +223,15 @@
                                                     <!--end col-->
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <div class="form-group ">
-                                                                <label for="example-text-input" class="col-sm-3 col-form-label">TIN*</label>
-                                                                    <input id="TextBox10" runat="server" class="form-control" type="text" placeholder="Tax Identification Number (TIN)" textmode="SingleLine">
+                                                            <div class="form-group">
+                                                                <label for="example-text-input" >TIN*</label><span> | No TIN? Click here to generate TIN</span><asp:Button ID="Button10" runat="server" type="submit" class="btn btn-primary" Text="Generate" OnClick="generatetin" />
+                                                                    <asp:TextBox id="TextBox10" runat="server" class="form-control" type="text" placeholder="Tax Identification Number (TIN)" textmode="SingleLine"></asp:TextBox>
                                                                 </div>
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-md-6">
                                                             <div class="form-group ">
-                                                                <label for="example-text-input" class="col-sm-3 col-form-label">Phone Number</label>
+                                                                <label for="example-text-input">Phone Number</label>
                                                                     <input id="phoneb" runat="server" class="form-control" type="number" placeholder="Phone Number" textmode="Number">
                                                                 </div>
                                                         </div>
@@ -234,7 +241,7 @@
 
                                                         <div class="col-md-6">
                                                             <div class="form-group ">
-                                                                <label for="example-text-input" class="col-sm-3 col-form-label">Email Address</label>
+                                                                <label for="example-text-input" >Email Address</label>
                                                                     <input id="Email1" runat="server" class="form-control" type="email" placeholder="e.g user@email.com" textmode="Email">
                                                                 </div>
                                                         </div>
@@ -257,12 +264,12 @@
                                             <div class="box">
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
-                                                    <h4 class="box-title text-info"><i class="ti-briefcase"></i>State Government Information</h4>
+                                                    <h4 class="box-title text-primary"><i class="ti-briefcase"></i>State Government Information</h4>
                                                     <hr class="my-15">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="txtNameCard" class="col-lg-3 col-form-label">State Name</label>
+                                                                <label for="txtNameCard">State Name</label>
                                                                     <asp:DropDownList ID="DropDownList10" runat="server" class="select2 form-control mb-3 custom-select">
                                                                     </asp:DropDownList>
                                                                 </div>
@@ -271,21 +278,20 @@
                                                         <!--end col-->
                                                         <div class="col-md-6">
                                                             <div class="form-group">
-                                                                <label for="example-text-input" class="col-sm-3 col-form-label">Phone Number</label>
+                                                                <label for="example-text-input" >Phone Number</label>
                                                                     <asp:TextBox ID="TextBox17" runat="server" class="form-control" type="text" Placeholder="Phone Number" TextMode="Number"></asp:TextBox>
 
-                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <!--end col-->
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group ">
-                                                                <label for="example-text-input" class="col-sm-3 col-form-label">Email Address</label>
+                                                                <label for="example-text-input" >Email Address</label>
+                                                         
                                                                     <asp:TextBox ID="TextBox18" runat="server" class="form-control" type="text" Placeholder="e.g user@email.com" TextMode="Email"></asp:TextBox>
-
-                                                                </div>
-                                            
+                                                            </div>
                                                         </div>
                                                         <!--end col-->
                                                     </div>
@@ -332,4 +338,5 @@
 
         <!-- App js -->
         <script src="../assets/js/app.js"></script>
+    </label>
 </asp:Content>

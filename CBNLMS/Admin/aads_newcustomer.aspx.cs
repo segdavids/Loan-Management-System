@@ -49,7 +49,7 @@ namespace CBNLMS
             TextBox1.Value = string.Empty;
             TextBox2.Value = string.Empty;
             TextBox4.Value = string.Empty;
-            TextBox5.Value = string.Empty;
+            TextBox5.Text = string.Empty;
             TextBox9.Value = string.Empty;
         }
 
@@ -65,7 +65,7 @@ namespace CBNLMS
                 Response.Write("<script>alert('Last Name Required!');</script>");
                 goto end;
             }
-            if (string.IsNullOrWhiteSpace(TextBox5.Value))
+            if (string.IsNullOrWhiteSpace(TextBox5.Text))
             {
                 Response.Write("<script>alert('BVN Required!');</script>");
                 goto end;
@@ -76,7 +76,7 @@ namespace CBNLMS
             string custype = "INDIVIDUAL";
             sc.Open();
             SqlCommand check = new SqlCommand("select * from all_customer where bvn = @bvn", sc);
-            check.Parameters.AddWithValue("@bvn", TextBox5.Value.Trim());
+            check.Parameters.AddWithValue("@bvn", TextBox5.Text.Trim());
             SqlDataReader rd;
             rd = check.ExecuteReader();
             int count = 0;
@@ -98,7 +98,7 @@ namespace CBNLMS
                 cmd3.Parameters.AddWithValue("@ln", TextBox1.Value.ToString());
                 cmd3.Parameters.AddWithValue("@on", TextBox2.Value.ToString());
                 cmd3.Parameters.AddWithValue("@gender", DropDownList15.SelectedItem.Text);
-                cmd3.Parameters.AddWithValue("@bvn", TextBox5.Value.ToString());
+                cmd3.Parameters.AddWithValue("@bvn", TextBox5.Text.ToString());
                 cmd3.Parameters.AddWithValue("@ph", TextBox9.Value.ToString());
                 cmd3.Parameters.AddWithValue("em", TextBox4.Value.Trim());
                 cmd3.ExecuteNonQuery();
@@ -116,7 +116,7 @@ namespace CBNLMS
                 TextBox1.Value = string.Empty;
                 TextBox2.Value = string.Empty;
                 TextBox4.Value = string.Empty;
-                TextBox5.Value = string.Empty;
+                TextBox5.Text = string.Empty;
                 TextBox9.Value = string.Empty;
 
             }
@@ -138,7 +138,7 @@ namespace CBNLMS
                 Response.Write("<script>alert('CAC No. Required!');</script>");
                 goto end;
             }
-            if (string.IsNullOrWhiteSpace(TextBox10.Value))
+            if (string.IsNullOrWhiteSpace(TextBox10.Text))
             {
                 Response.Write("<script>alert('TIN Required!');</script>");
                 goto end;
@@ -147,7 +147,7 @@ namespace CBNLMS
             TimeSpan entrytim = DateTime.Now.TimeOfDay;
             sc.Open();
             SqlCommand check = new SqlCommand("select * from all_customer where tin_no = @tin", sc);
-            check.Parameters.AddWithValue("@tin", TextBox10.Value.Trim());
+            check.Parameters.AddWithValue("@tin", TextBox10.Text.Trim());
             SqlDataReader rd;
             rd = check.ExecuteReader();
             int count = 0;
@@ -167,7 +167,7 @@ namespace CBNLMS
                 cmd3.Parameters.AddWithValue("@ctype", custype);
                 cmd3.Parameters.AddWithValue("@on", Text2.Value.ToString());
                 cmd3.Parameters.AddWithValue("@cac", Text1.Value.ToString());
-                cmd3.Parameters.AddWithValue("@tn", TextBox10.Value.ToString());
+                cmd3.Parameters.AddWithValue("@tn", TextBox10.Text.ToString());
                 cmd3.Parameters.AddWithValue("@ph", phoneb.Value.ToString());
                 cmd3.Parameters.AddWithValue("em", Email1.Value.Trim());
                 cmd3.ExecuteNonQuery();
@@ -183,7 +183,7 @@ namespace CBNLMS
                 Response.Write("<script>alert('Customer Record Added Successfully');</script>");
                 Text2.Value = string.Empty;
                 Text1.Value = string.Empty;
-                TextBox10.Value = string.Empty;
+                TextBox10.Text = string.Empty;
                 phoneb.Value = string.Empty;
                 Email1.Value = string.Empty;
 
@@ -196,7 +196,7 @@ namespace CBNLMS
         {
             Text2.Value = string.Empty;
             Text1.Value = string.Empty;
-            TextBox10.Value = string.Empty;
+            TextBox10.Text = string.Empty;
             phoneb.Value = string.Empty;
             Email1.Value = string.Empty;
         }
@@ -270,6 +270,24 @@ namespace CBNLMS
             sc.Close();
         }
 
-        
+        protected void generatebvn(object sender, EventArgs e)
+        {
+            TextBox5.Text = string.Empty;
+            string basebvn = "AUTO-BVN-";
+            Random rand = new Random(1000000);
+            int randomno  = rand.Next(000000000, 999999999);
+            string  final = basebvn + randomno.ToString();
+            TextBox5.Text = final;
+        }
+
+        protected void generatetin(object sender, EventArgs e)
+        {
+            TextBox5.Text = string.Empty;
+            string basebvn = "AUTO-TIN-";
+            Random rand = new Random(1000000);
+            int randomno = rand.Next(100000000, 199999999);
+            string final = basebvn + randomno.ToString();
+            TextBox10.Text = final;
+        }
     }
 }

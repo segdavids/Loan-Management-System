@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Inputing/2/inputer2.Master" AutoEventWireup="true" CodeBehind="intervention_details.aspx.cs" Inherits="CBNLMS.Inputing._2.intervention_details" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <title>DFD LMS | State Details </title>
+    <title>DFD LMS | Intervention Details </title>
        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type='text/javascript'>
 function yearnowget() {

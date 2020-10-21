@@ -32,7 +32,7 @@ namespace CBNLMS.Inputing._2
                     // poptin();
                     popstate();
                     getWhileLoopDataind();
-                    popintervention();
+                 //   popintervention();
                     sector();
                     stateofbus();
           

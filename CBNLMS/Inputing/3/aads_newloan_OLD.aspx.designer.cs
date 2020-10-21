@@ -10,7 +10,7 @@
 namespace CBNLMS.Inputing._3 {
     
     
-    public partial class newloan {
+    public partial class aads_newloanOLD {
         
         /// <summary>
         /// FileUpload1 control.
@@ -20,6 +20,24 @@ namespace CBNLMS.Inputing._3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        
+        /// <summary>
+        /// Div2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div2;
+        
+        /// <summary>
+        /// Span1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span1;
         
         /// <summary>
         /// Button6 control.
@@ -49,13 +67,13 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList6;
         
         /// <summary>
-        /// DropDownList8 control.
+        /// TextBox4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList8;
+        protected global::System.Web.UI.WebControls.TextBox TextBox4;
         
         /// <summary>
         /// DropDownList9 control.
@@ -67,6 +85,15 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList9;
         
         /// <summary>
+        /// DropDownList2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        
+        /// <summary>
         /// DropDownList11 control.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,24 @@ namespace CBNLMS.Inputing._3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList11;
+        
+        /// <summary>
+        /// DropDownList19 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList19;
+        
+        /// <summary>
+        /// DropDownList20 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList20;
         
         /// <summary>
         /// Number1 control.
@@ -139,6 +184,15 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number3;
         
         /// <summary>
+        /// loan_purpose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea loan_purpose;
+        
+        /// <summary>
         /// Number4 control.
         /// </summary>
         /// <remarks>
@@ -184,15 +238,6 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.WebControls.Button Button9;
         
         /// <summary>
-        /// Button11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button11;
-        
-        /// <summary>
         /// DropDownList1 control.
         /// </summary>
         /// <remarks>
@@ -202,13 +247,13 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// DropDownList3 control.
+        /// customertin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.TextBox customertin;
         
         /// <summary>
         /// DropDownList4 control.
@@ -220,6 +265,15 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
         
         /// <summary>
+        /// DropDownList7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList7;
+        
+        /// <summary>
         /// DropDownList5 control.
         /// </summary>
         /// <remarks>
@@ -227,6 +281,24 @@ namespace CBNLMS.Inputing._3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+        
+        /// <summary>
+        /// DropDownList21 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList21;
+        
+        /// <summary>
+        /// DropDownList22 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList22;
         
         /// <summary>
         /// Number6 control.
@@ -292,6 +364,15 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number8;
         
         /// <summary>
+        /// Textarea1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea Textarea1;
+        
+        /// <summary>
         /// Number9 control.
         /// </summary>
         /// <remarks>
@@ -337,15 +418,6 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.WebControls.Button Button10;
         
         /// <summary>
-        /// Button12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button12;
-        
-        /// <summary>
         /// DropDownList13 control.
         /// </summary>
         /// <remarks>
@@ -373,6 +445,15 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList16;
         
         /// <summary>
+        /// DropDownList14 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList14;
+        
+        /// <summary>
         /// DropDownList17 control.
         /// </summary>
         /// <remarks>
@@ -380,6 +461,24 @@ namespace CBNLMS.Inputing._3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList17;
+        
+        /// <summary>
+        /// DropDownList23 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList23;
+        
+        /// <summary>
+        /// DropDownList24 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList24;
         
         /// <summary>
         /// Number11 control.
@@ -445,6 +544,15 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number13;
         
         /// <summary>
+        /// Textarea2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea Textarea2;
+        
+        /// <summary>
         /// Number14 control.
         /// </summary>
         /// <remarks>
@@ -490,39 +598,21 @@ namespace CBNLMS.Inputing._3 {
         protected global::System.Web.UI.WebControls.Button Button13;
         
         /// <summary>
-        /// Button14 control.
+        /// Repeater2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button14;
+        protected global::System.Web.UI.WebControls.Repeater Repeater2;
         
         /// <summary>
-        /// Button15 control.
+        /// Repeater1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button15;
-        
-        /// <summary>
-        /// Button16 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button16;
-        
-        /// <summary>
-        /// Button17 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button17;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
     }
 }

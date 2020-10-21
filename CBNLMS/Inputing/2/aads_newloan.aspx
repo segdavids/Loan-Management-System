@@ -177,6 +177,12 @@
                                             <div class="form-group ">
                                                <label>Intervention</label>
                                                 <asp:DropDownList ID="DropDownList6" runat="server" class="select2 form-control mb-3 custom-select">
+                                                    <asp:ListItem>RSSF</asp:ListItem>
+                                                    <asp:ListItem>RSSF-DCRR</asp:ListItem>
+                                                    <asp:ListItem>SMERRF</asp:ListItem>
+                                                    <asp:ListItem>TSIF</asp:ListItem>
+                                                    <asp:ListItem>CBIF</asp:ListItem>
+                                                    <asp:ListItem>HSF</asp:ListItem>
                                                 </asp:DropDownList>
                                             </div>
                                         </div>
