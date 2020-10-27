@@ -60,7 +60,7 @@ namespace CBNLMS.Inputing._7
                 Repeater1.DataSource = ds;
                 Repeater1.DataBind();
                 //GET COUNT OF LOANS ENTRD
-                SqlCommand img = new SqlCommand("select sum(case when activity like '%loan%' then 1 else 0 end) as loancreation, sum(case when activity like '%customer creation%' then 1 else 0 end) as customercreated, sum(case when activity like '%Upload%' then 1 else 0 end) as picsuploaded from cbndb.dbo.user_activity where user_id='" + emailz + "'", constr);
+                SqlCommand img = new SqlCommand("  select sum(case when activity like '%loan%' then 1 else 0 end) as loancreation, sum(case when activity like '%customer creation%' then 1 else 0 end) as customercreated, sum(case when activity like '%Upload%' then 1 else 0 end) as picsuploaded from cbndb.dbo.user_activity where user_id='" + emailz + "'", constr);
                 SqlParameter paramID = new SqlParameter();
                 img.CommandType = CommandType.Text;
                 SqlDataReader sdrpopulate = img.ExecuteReader();

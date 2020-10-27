@@ -204,7 +204,7 @@ namespace CBNLMS.Inputing._7
                         if (!FileUpload2.HasFile)
                         {
                             sc.Open();
-                            string useractivity = "Uploaded 1 Picture for: State - "+state+", Season - "+season+", Activity - "+activity+", Commodity - "+commodity+" ";
+                            string useractivity = "Uploaded 1 Picture for: State - " + state + ", Season - " + season + ", Activity - " + activity + ", Commodity - " + commodity + " ";
                             SqlCommand cmd3 = new SqlCommand("insert into user_activity (user_id,activity,date_time) values(@user,@activity,@datetime)", sc);
                             cmd3.Parameters.AddWithValue("@user", emailz);
                             cmd3.Parameters.AddWithValue("@activity", useractivity);

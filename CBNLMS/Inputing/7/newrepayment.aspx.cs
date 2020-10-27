@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CBNLMS.Inputing._7
 {
-    public partial class newrepayment : System.Web.UI.Page
+    public partial class cbif_newrepayment : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

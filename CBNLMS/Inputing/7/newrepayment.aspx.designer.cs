@@ -11,7 +11,7 @@ namespace CBNLMS.Inputing._7
 {
 
 
-    public partial class newrepayment
+    public partial class cbif_newrepayment
     {
     }
 }
