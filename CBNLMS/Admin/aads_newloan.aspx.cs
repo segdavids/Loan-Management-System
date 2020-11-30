@@ -150,7 +150,7 @@ namespace CBNLMS
             DropDownList9.DataBind();
        
             sc.Close();
-        }
+        }               
         public void factype()
         {
             sc.Open();

@@ -1,7 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" CodeBehind="reportdetails.aspx.cs" Inherits="CBNLMS.Admin.reportdetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" CodeBehind="dis_by_bank.aspx.cs" Inherits="CBNLMS.Admin.dis_by_bank" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-      <title>DFD LMS | State Details </title>
-
+     <title>DFD LMS | Disbursement by Bank </title>
       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
      <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
@@ -31,7 +30,7 @@
 
            $.ajax({
                 type: "POST",
-                url: "reportdetails.aspx/GetPieloanstat",
+                url: "dis_by_bank.aspx/GetPieloanstat",
                 data: '{}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -99,7 +98,7 @@
 
  $.ajax({
             type: "POST",
-            url: "reportdetails.aspx/disvsout",
+            url: "dis_by_bank.aspx/disvsout",
             data: '{}',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -142,7 +141,7 @@
 
            $.ajax({
             type: "POST",
-            url: "reportdetails.aspx/getmodel",
+            url: "dis_by_bank.aspx/getmodel",
             data: '{}',
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -202,7 +201,7 @@
           };
            $.ajax({
                 type: "POST",
-                url: "reportdetails.aspx/getseason",
+                url: "dis_by_bank.aspx/getseason",
                 data: '{}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -252,7 +251,7 @@
 
            $.ajax({
                 type: "POST",
-                url: "reportdetails.aspx/factype",
+                url: "dis_by_bank.aspx/factype",
                 data: '{}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -315,7 +314,7 @@
         };
            $.ajax({
                 type: "POST",
-                url: "reportdetails.aspx/GetSector",
+                url: "dis_by_bank.aspx/GetSector",
                 data: '{}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -377,7 +376,7 @@
             };
             $.ajax({
                 type: "POST",
-                url: "reportdetails.aspx/Getanchor",
+                url: "dis_by_bank.aspx/Getanchor",
                 data: '{}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -445,7 +444,7 @@
 };
             $.ajax({
                 type: "POST",
-                url: "reportdetails.aspx/Getanchor2",
+                url: "dis_by_bank.aspx/Getanchor2",
                 data: '{}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -492,13 +491,12 @@
     }
     return vars;
 }
-            var me = getUrlVars()["state"];
-             $('#div_img').css('background-image', 'url(../images/states/'+me+'_BACK.jpg)');
+            var me = getUrlVars()["bank"];
+             $('#div_img').css('background-image', 'url(../images/bank/'+me+'_BACK.jpg)');
             console.log(me);
  });
 </script>
 
-   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="content-wrapper">
@@ -507,13 +505,14 @@
 		<div class="content-header">
 			<div class="d-flex align-items-center">
 				<div class="mr-auto">
-					<h3 class="page-title"><span id="test" runat="server"></span> State Report</h3>
+					<h3 class="page-title"><span id="test" runat="server"></span> - Bank Report</h3>
 					<div class="d-inline-block align-items-center">
 						<nav>
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="Default.aspx"><i class="mdi mdi-home-outline"></i></a></li>
 								<li class="breadcrumb-item" aria-current="page">Reports</li>
-								<li class="breadcrumb-item" aria-current="page">State</li>
+								<li class="breadcrumb-item" aria-current="page">Disbursement</li>
+								<li class="breadcrumb-item" aria-current="page">Bank</li>
 								<li class="breadcrumb-item active" aria-current="page">Details</li>
 							</ol>
 						</nav>
@@ -618,26 +617,64 @@
                         <div class="col-xl-12 col-12">
                             <div class="box">
                                 <div class="box-header">
-                                    <h4 class="box-title">Loan Report by PFI </h4>
+                                        <h4 class="box-title" style="color: green">DISBURSEMENT | INTERVENTION</h4>
                                 </div>
                                 <div class="box-body">
                                     <div class="table-responsive" style="height: ">
-                                        <table id="example5" class="table table-hover table-striped table-bordered display" style="width: 100%">
+                                            <table id="example5" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                             <thead>
                                                 <tr>
-                                                    <th>PFI</th>
-                                                    <th>No. of Loans</th>
-                                                    <th>Total Loan Amt(₦)</th>
-                                                    <th>Interest Due(₦)</th>
-                                                    <th>Interest Paid(₦)</th>
-                                                    <th>No. of Loans Outstanding</th>
-                                                    <th>Amount Outstanding(₦)</th>
+                                                    <th>S/N</th>
+                                                    <th>INTERVENTION</th>
+                                                    <th>NO. of PROJECTS</th>
+                                                    <th>DISBURSEMENT AMT(₦)</th>
+                                                    <th>INTEREST DUE(₦)</th>
+                                                    <th>INTEREST PAID(₦)</th>
+                                                    <th>AMOUNT OUTSTANDING(₦)</th>
+                                                    <th>LOANS OUTSTANDING</th>
+                                                    <th>DETAILS</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopData2()%>
-                                            </tbody>
-                                        </table>
+                                                  <asp:Repeater ID="Repeater3" runat="server" OnItemCommand="Repeater1_OnItemCommand" OnItemDataBound="Repeater1_ItemDataBound">
+                                                        <ItemTemplate>
+                                                            <tr>
+                                                               <td>
+                                                                    <%#(((RepeaterItem)Container).ItemIndex+1).ToString()%>
+                                                                </td>
+                                                                <td>
+                                                                    <asp:Label ID="lblCustomerId" runat="server" Text='<%# Eval("intervention") %>' />
+                                                                </td>
+                                                                    <td>
+                                                                        <asp:Label ID="Label42" runat="server" Text='<%#  String.Format("{0:n0}", Eval("noofloans")) %>' />
+                                                                    </td>
+                                                                <td>
+                                                                    <asp:Label ID="Label4" runat="server" Text='<%#  String.Format("{0:n2}", Eval("loanamount")) %>' />
+                                                                </td>
+                                                                <td>
+                                                                    <asp:Label ID="Label77" runat="server" Text='<%#  String.Format("{0:n2}", Eval("interest_due")) %>' />
+                                                                </td> 
+                                                                <td>
+                                                                    <asp:Label ID="intpaidlbl" runat="server" Text='<%#  String.Format("{0:n2}", Eval("interest_paid")) %>' />
+                                                                </td>
+                                                                <td>
+                                                                    <asp:Label ID="amtoutstandinglbl" runat="server" Text='<%#  String.Format("{0:n2}", Eval("outstandingamt")) %>' />
+                                                                </td>
+                                                                <td>
+                                                                    <asp:Label ID="lblContactName" runat="server" Text='<%#  String.Format("{0:n0}", Eval("num")) %>' />
+                                                                </td>
+
+                                                                <td>
+                                                                   <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" Text="DETAILS" runat="server" OnClick="interbybank" OnClientClick="window.document.forms[0].target='_blank';" />
+
+<%--                                                                    <asp:LinkButton ID="linkbutton" class="btn btn-primary " dripicons-user-id="Linkbutton2" CommandName="DETAILS" CommandArgument='<%# Bind("bank_name") %>' runat="server" Text="DETAILS" OnClientClick="targetMeBlank();" />--%>
+                                                                </td>
+                                                            </tr>
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>
+                                                </tbody>
+                                               
+                                            </table>
                                     </div>
                                 </div>
                             </div>
@@ -662,7 +699,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatapfitype()%>
+<%--                                                <%=getWhileLoopDatapfitype()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -689,7 +726,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatabysector()%>
+<%--                                                <%=getWhileLoopDatabysector()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -715,7 +752,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatabysseason()%>
+<%--                                                <%=getWhileLoopDatabysseason()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -741,7 +778,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatabycommodity()%>
+<%--                                                <%=getWhileLoopDatabycommodity()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -767,7 +804,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatabyAnchor()%>
+<%--                                                <%=getWhileLoopDatabyAnchor()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -855,7 +892,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopData2all()%>
+<%--                                                <%=getWhileLoopData2all()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -883,7 +920,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatapfitypeall()%>
+<%--                                                <%=getWhileLoopDatapfitypeall()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -910,7 +947,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatabysectorall()%>
+<%--                                                <%=getWhileLoopDatabysectorall()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -936,7 +973,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatabysseasonall()%>
+<%--                                                <%=getWhileLoopDatabysseasonall()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -962,7 +999,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatabycommodityall()%>
+<%--                                                <%=getWhileLoopDatabycommodityall()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -988,7 +1025,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%=getWhileLoopDatabyAnchorall()%>
+<%--                                                <%=getWhileLoopDatabyAnchorall()%>--%>
                                             </tbody>
                                         </table>
                                     </div>
@@ -1156,7 +1193,7 @@
 				 <div class="box box-widget widget-user">
 					<!-- Add the bg color to the header using any of the bg-* classes -->
 					<div class="widget-user-header bg-black" id="div_img">
-					  <h3 class="widget-user-username" style="color:black"><span id="statename" runat="server"> </span> STATE</h3>
+					  <h3 class="widget-user-username" style="color:black"><span id="statename" runat="server"> </span> BANK</h3>
 					  <h6 class="widget-user-desc"></h6>
 					</div>
 					<div class="widget-user-image">

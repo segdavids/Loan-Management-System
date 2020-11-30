@@ -500,6 +500,14 @@ namespace CBNLMS.Admin
             Session["Intervention"] = customerId;
             Response.Redirect("~/Admin/intervention_details.aspx?" + querey);
         }
+        protected void bankdet(object sender, EventArgs e)
+        {
+            RepeaterItem item = (sender as LinkButton).Parent as RepeaterItem;
+            string customerId = (item.FindControl("lblCustomerId") as Label).Text.Trim();
+            string querey = "bank=" + customerId;
+            Session["Bank"] = customerId;
+            Response.Redirect("~/Admin/dis_by_bank.aspx?" + querey);
+        }
             protected void Repeater1_OnItemCommand(object source, RepeaterCommandEventArgs e)
         {
 

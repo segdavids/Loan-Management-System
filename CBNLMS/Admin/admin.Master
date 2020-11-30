@@ -342,43 +342,46 @@
                                 <li><a href="all_loans.aspx"><i class="ti-files"></i>All Loan Report</a></li>
                                 <li class="treeview">
                                     <a href="#">
-                                        <i class="ti-menu-alt"></i>Amortization
+                                        <i class="ti-menu-alt"></i>ABP Reports
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id=""><a href="abpamortization.aspx" id="abpamortization"><i class="ti-more"></i>Amortization Report</a></li>
+                                        <li id="abpdisreport"><a href="abpreport.aspx" id="abpdisreportahref"><i class="ti-more"></i>ABP Disbursement</a></li>
+
+                                    </ul>
+                                </li>   
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>Other Interventions
 					<span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                                     </a>
                                     <ul class="treeview-menu">
                                         <li id=""><a href="amortization.aspx" id="amortiztionreport"><i class="ti-more"></i>Amortization Report</a></li>
-
+                                          <li id="disreport"><a href="disbursement.aspx" id="disreportahref"><i class="ti-more"></i>Disbursement Report</a></li>
+                                        <li id=""><a href="disbursevsrepayment.aspx" id=""><i class="ti-more"></i>Recovery Ratio</a></li>
+                                        <li id=""><a href="loan_performance.aspx" id=""><i class="ti-more"></i>Performance Report</a></li>
                                     </ul>
-                                </li> 
-                                 <li class="treeview">
+                                </li>  
+                              
+                                
+                                   <li class="treeview">
                                     <a href="#">
-                                        <i class="ti-calendar"></i>Disbursement
+                                        <i class="ti-bar-chart-alt"></i>Other Special Reports
 					<span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <li id="disreport"><a href="disbursement.aspx" id="disreportahref"><i class="ti-more"></i>Disbursement Report</a></li>
-                                        <li id="disreport"><a href="abpreport.aspx" id="disreportahref"><i class="ti-more"></i>ABP Disbursement</a></li>
-                                        <li id=""><a href="disbursevsrepayment.aspx" id=""><i class="ti-more"></i>Recovery Ratio</a></li>
+                                <li><a href="other_reports.aspx"></a></li>
+                                        <li id=""><a href="due_date.aspx" id=""><i class="ti-more"></i>Due Date Report</a></li>
 
-                                    </ul>
-                                </li> 
-                                  <li class="treeview">
-                                    <a href="#">
-                                        <i class="ti-stats-up"></i>Loan Performance
-					                    <span class="pull-right-container">
-                                            <i class="fa fa-angle-right pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li id=""><a href="loan_performance.aspx" id=""><i class="ti-more"></i>Performance Report</a></li>
-
-                                    </ul>
-                                </li>
-                                <li><a href="other_reports.aspx"><i class="ti-bar-chart-alt"></i>Other Special Reports</a></li>
+                                        </ul>
+                                       </li>
                                 <li><a href="photo_album.aspx"><i class="ti-image"></i>Photo Album</a></li>
                                 <li><a href="audit.aspx"><i class="ti-check-box"></i>Audit Report</a></li>
                             </ul>

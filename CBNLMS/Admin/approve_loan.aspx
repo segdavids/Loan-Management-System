@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" CodeBehind="approve_loan.aspx.cs" Inherits="CBNLMS.approve_loan" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" MaintainScrollPositionOnPostback="true" CodeBehind="approve_loan.aspx.cs" Inherits="CBNLMS.approve_loan" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <title>DFD LMS | Loan Approval Desk</title>

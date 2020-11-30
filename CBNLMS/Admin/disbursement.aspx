@@ -590,7 +590,7 @@
                                                         <th>BANK NAME</th>
                                                         <th>AMOUNT DISBURSED(₦)</th>
                                                         <th>NO. OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </thead>
 
@@ -612,7 +612,9 @@
                                                                 </td>
 
                                                                 <td>
-                                                                    <asp:LinkButton ID="linkbutton" class="btn btn-primary " dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("bank_name") %>' runat="server" Text="Details" OnClientClick="targetMeBlank();" />
+                                                                   <asp:LinkButton ID="linkbutton" class="btn btn-primary" dripicons-user-id="Linkbutton2" Text="DETAILS" runat="server" OnClick="bankdet" OnClientClick="window.document.forms[0].target='_blank';" />
+
+<%--                                                                    <asp:LinkButton ID="linkbutton" class="btn btn-primary " dripicons-user-id="Linkbutton2" CommandName="DETAILS" CommandArgument='<%# Bind("bank_name") %>' runat="server" Text="DETAILS" OnClientClick="targetMeBlank();" />--%>
                                                                 </td>
                                                             </tr>
                                                         </ItemTemplate>
@@ -624,7 +626,7 @@
                                                         <th>BANK</th>
                                                         <th>AMOUNT DISBURSED</th>
                                                         <th>NO OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -651,7 +653,7 @@
                                                         <th>INTERVENTION</th>
                                                         <th>AMOUNT DISBURSED(₦)</th>
                                                         <th>NO. OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </thead>
 
@@ -673,7 +675,7 @@
                                                                 </td>
 
                                                                 <td>
-                                                                   <asp:LinkButton ID="intdet" class="btn btn-primary" dripicons-user-id="Linkbutton2" Text="Details" runat="server" OnClick="interventiondet" OnClientClick="window.document.forms[0].target='_blank';" />
+                                                                   <asp:LinkButton ID="intdet" class="btn btn-primary" dripicons-user-id="Linkbutton2" Text="DETAILS" runat="server" OnClick="interventiondet" OnClientClick="window.document.forms[0].target='_blank';" />
                                                                 </td>
                                                             </tr>
                                                         </ItemTemplate>
@@ -685,7 +687,7 @@
                                                         <th>INTERVENTION</th>
                                                         <th>AMOUNT DISBURSED</th>
                                                         <th>NO OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -712,7 +714,7 @@
                                                         <th>GEO-POLITICAL ZONE</th>
                                                         <th>AMOUNT DISBURSED(₦)</th>
                                                         <th>NO. OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </thead>
 
@@ -734,7 +736,7 @@
                                                                 </td>
 
                                                                 <td>
-                                                                    <asp:LinkButton ID="linkbutton" class="btn btn-primary " dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("bus_geozone") %>' runat="server" Text="Details" OnClientClick="targetMeBlank();" />
+                                                                    <asp:LinkButton ID="linkbutton" class="btn btn-primary " dripicons-user-id="Linkbutton2" CommandName="DETAILS" CommandArgument='<%# Bind("bus_geozone") %>' runat="server" Text="DETAILS" OnClientClick="targetMeBlank();" />
                                                                 </td>
                                                             </tr>
                                                         </ItemTemplate>
@@ -746,7 +748,7 @@
                                                         <th>GEO-POLITICAL ZONE</th>
                                                         <th>AMOUNT DISBURSED</th>
                                                         <th>NO OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -773,7 +775,7 @@
                                                         <th>SECTOR</th>
                                                         <th>AMOUNT DISBURSED(₦)</th>
                                                         <th>NO. OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </thead>
 
@@ -795,7 +797,7 @@
                                                                 </td>
 
                                                                 <td>
-                                                                    <asp:LinkButton ID="linkbutton" class="btn btn-primary " dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("sector") %>' runat="server" Text="Details" OnClientClick="targetMeBlank();" />
+                                                                    <asp:LinkButton ID="linkbutton" class="btn btn-primary " dripicons-user-id="Linkbutton2" CommandName="DETAILS" CommandArgument='<%# Bind("sector") %>' runat="server" Text="DETAILS" OnClientClick="targetMeBlank();" />
                                                                 </td>
                                                             </tr>
                                                         </ItemTemplate>
@@ -807,7 +809,7 @@
                                                         <th>SECTOR</th>
                                                         <th>AMOUNT DISBURSED</th>
                                                         <th>NO OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -834,7 +836,7 @@
                                                         <th>YEAR</th>
                                                         <th>AMOUNT DISBURSED(₦)</th>
                                                         <th>NO. OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </thead>
 
@@ -856,7 +858,7 @@
                                                                 </td>
 
                                                                 <td>
-                                                                    <asp:LinkButton ID="linkbutton" class="btn btn-primary " dripicons-user-id="Linkbutton2" CommandName="Details" CommandArgument='<%# Bind("year") %>' runat="server" Text="Details" OnClientClick="targetMeBlank();" />
+                                                                    <asp:LinkButton ID="linkbutton" class="btn btn-primary " dripicons-user-id="Linkbutton2" CommandName="DETAILS" CommandArgument='<%# Bind("year") %>' runat="server" Text="DETAILS" OnClientClick="targetMeBlank();" />
                                                                 </td>
                                                             </tr>
                                                         </ItemTemplate>
@@ -868,7 +870,7 @@
                                                         <th>YEAR</th>
                                                         <th>AMOUNT DISBURSED</th>
                                                         <th>NO OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -895,7 +897,7 @@
                                                         <th>STATE</th>
                                                         <th>AMOUNT DISBURSED(₦)</th>
                                                         <th>NO. OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </thead>
 
@@ -916,7 +918,7 @@
                                                                     <asp:Label ID="lblContactName" runat="server" Text='<%#  String.Format("{0:n0}", Eval("noofrec")) %>' />
                                                                 </td> 
                                                                 <td>
-                                                                   <asp:LinkButton ID="lnkEdit" class="btn btn-primary" dripicons-user-id="Linkbutton2" Text="Details" runat="server" OnClick="statedetails" OnClientClick="window.document.forms[0].target='_blank';" />
+                                                                   <asp:LinkButton ID="lnkEdit" class="btn btn-primary" dripicons-user-id="Linkbutton2" Text="DETAILS" runat="server" OnClick="statedetails" OnClientClick="window.document.forms[0].target='_blank';" />
                                                                 </td>
 
                                                              
@@ -930,7 +932,7 @@
                                                         <th>STATE</th>
                                                         <th>AMOUNT DISBURSED</th>
                                                         <th>NO OF RECIPIENT</th>
-                                                        <th>Details</th>
+                                                        <th>DETAILS</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>

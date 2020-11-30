@@ -112,6 +112,7 @@
     <Content Include="Admin\aads_newcustomer.aspx" />
     <Content Include="Admin\aads_newloan.aspx" />
     <Content Include="Admin\aads_newrepayment.aspx" />
+    <Content Include="Admin\abpamortization.aspx" />
     <Content Include="Admin\abpreport.aspx" />
     <Content Include="Admin\abp_analyticsw.aspx" />
     <Content Include="Admin\abp_newcustomer.aspx" />
@@ -133,6 +134,7 @@
     <Content Include="Admin\customer_upload.aspx" />
     <Content Include="Admin\disbursement.aspx" />
     <Content Include="Admin\disbursevsrepayment.aspx" />
+    <Content Include="Admin\dis_by_bank.aspx" />
     <Content Include="Admin\emails.aspx" />
     <Content Include="Admin\email_template_1.aspx" />
     <Content Include="Admin\intervention_details.aspx" />
@@ -18562,6 +18564,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\abpamortization.aspx.cs">
+      <DependentUpon>abpamortization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\abpamortization.aspx.designer.cs">
+      <DependentUpon>abpamortization.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\abpreport.aspx.cs">
       <DependentUpon>abpreport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -18771,6 +18780,13 @@
     </Compile>
     <Compile Include="Admin\disbursevsrepayment.aspx.designer.cs">
       <DependentUpon>disbursevsrepayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\dis_by_bank.aspx.cs">
+      <DependentUpon>dis_by_bank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\dis_by_bank.aspx.designer.cs">
+      <DependentUpon>dis_by_bank.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\emails.aspx.cs">
       <DependentUpon>emails.aspx</DependentUpon>

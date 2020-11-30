@@ -184,7 +184,7 @@ namespace CBNLMS.Admin
                 int nsp = reader.GetInt32(7);
 
 
-                htmlStr += "<tr><td>" + bussec + "</td><td>" + ne + "</td><td>" + nc + "</td><td>" + sw + "</td><td>" + ss + "</td><td>" + nw + "</td><td>" + se + "</td><td>" + nsp + "</td></tr>";
+                htmlStr += "<tr onclick='window.location = 'test.aspx'; '><td>" + bussec + "</td><td>" + ne + "</td><td>" + nc + "</td><td>" + sw + "</td><td>" + ss + "</td><td>" + nw + "</td><td>" + se + "</td><td>" + nsp + "</td></tr>";
             }
 
             sc.Close();
