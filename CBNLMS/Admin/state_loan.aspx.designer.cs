@@ -103,6 +103,51 @@ namespace CBNLMS.Admin {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList24;
         
         /// <summary>
+        /// Number12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number12;
+        
+        /// <summary>
+        /// reporttodiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl reporttodiv;
+        
+        /// <summary>
+        /// Text1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        
+        /// <summary>
+        /// Number1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number1;
+        
+        /// <summary>
+        /// wcortlamount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wcortlamount;
+        
+        /// <summary>
         /// Number11 control.
         /// </summary>
         /// <remarks>
@@ -112,13 +157,13 @@ namespace CBNLMS.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlInputText Number11;
         
         /// <summary>
-        /// Number12 control.
+        /// wcortltenure control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Number12;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wcortltenure;
         
         /// <summary>
         /// TextBox3 control.

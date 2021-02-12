@@ -257,7 +257,7 @@ namespace CBNLMS.Admin
                 {
                     geozone = "NORTH EAST";
                 }
-                else if (selected == "PLATEAU" || selected == "NASSARAWA" || selected == "NIGER" || selected == "BENUE" || selected == "ABUJA-FCT" || selected == "KOGI" || selected == "KWARA")
+                else if (selected == "PLATEAU" || selected == "NASSARAWA" || selected == "NIGER" || selected == "BENUE" || selected == "FEDERAL CAPITAL TERRITORY" || selected == "KOGI" || selected == "KWARA")
                 {
                     geozone = "NORTH CENTRAL";
                 }
@@ -474,8 +474,51 @@ namespace CBNLMS.Admin
                 end:
                 { }
             }
+        protected void facilitytypechanged(object sender, EventArgs e)
+        {
+            wcplustl();
 
-            protected void schedule_state(object sender, EventArgs e)
+        }
+        public void wcplustl()
+        {
+            if (DropDownList17.SelectedItem.Text == "WORKING CAPITAL + TERM LOAN")
+            {
+                reporttodiv.Visible = true;
+                wcortlamount.InnerHtml = "Term Loan Amount Disbursed";
+                Number11.Attributes.Add("Placeholder", "Enter the Term Loan Amount Disbursed");
+                wcortltenure.InnerHtml = "Term Loan Tenure(Months)";
+                TextBox3.Attributes.Add("Placeholder", "Term Loan Tenure in Months");
+
+            }
+            else if (DropDownList17.SelectedItem.Text == "WORKING CAPITAL")
+            {
+                reporttodiv.Visible = false;
+                Number13.Disabled = true;
+                wcortlamount.InnerHtml = "Working Capital Amount Disbursed";
+                Number11.Attributes.Add("Placeholder", "Enter the Working Capital Amount Disbursed");
+                wcortltenure.InnerHtml = "Working Capital Loan Tenure(Months)";
+                TextBox3.Attributes.Add("Placeholder", "Working Capital Loan Tenure in Months");
+            }
+            else if (DropDownList17.SelectedItem.Text == "TERM LOAN")
+            {
+                reporttodiv.Visible = false;
+                Number13.Disabled = false;
+                wcortlamount.InnerHtml = "Term Loan Amount Disbursed";
+                Number11.Attributes.Add("Placeholder", "Enter the Term Loan Amount Disbursed");
+                wcortltenure.InnerHtml = "Term Loan Tenure(Months)";
+                TextBox3.Attributes.Add("Placeholder", "Term Loan Tenure in Months");
+            }
+            else
+            {
+                reporttodiv.Visible = false;
+                wcortlamount.InnerHtml = "Amount Disbursed";
+                Number11.Attributes.Add("Placeholder", "Enter the Loan Amount Disbursed");
+                wcortltenure.InnerHtml = "Loan Tenure(Months)";
+                TextBox3.Attributes.Add("Placeholder", "Loan Tenure in Months");
+            }
+        }
+
+        protected void schedule_state(object sender, EventArgs e)
             {
 
             }

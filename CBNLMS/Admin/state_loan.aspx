@@ -221,7 +221,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Facility Type</label>
-                                                    <asp:DropDownList ID="DropDownList17" runat="server" class="select2 form-control mb-3 custom-select">
+                                                    <asp:DropDownList ID="DropDownList17" runat="server" class="select2 form-control mb-3 custom-select" AutoPostBack="True" OnSelectedIndexChanged="facilitytypechanged">
                                                     </asp:DropDownList>
                                                 </div>
                                         </div>
@@ -244,24 +244,40 @@
                                                 </div>
                                         </div>
                                         <!--end col-->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Amount Disbursed</label>
-                                                    <input type="text" required class="number form-control" runat="server" step="0.01" id="Number11" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--end col-->
-                              <div class="row">
-                                        <div class="col-md-6">
+                                       <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Interest Rate</label>
                                                     <input type="number" class="form-control" runat="server" id="Number12" step="0.01" placeholder="CBN Intererst Rate in %" aria-describedby="inputGroupPrepend">
                                                 </div>
                                             </div>
+                                        </div>
+                                        <!--end col-->
+                                             <div id="reporttodiv" runat="server" class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>Working Capital Amount Disbursed</label>
+                                                        <input  class="number form-control" type="text" runat="server" step="0.01" id="Text1" onfocus="javascript:removeSeparator();" onblur="javascript:showSeparator();" placeholder="Working Capital Amount Disbursed" aria-describedby="inputGroupPrepend">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                    <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>Working Capital Tenure(Months)</label>
+                                                        <input id="Number1" runat="server" step="0.01" class="form-control" type="number" style="color: white" placeholder="Working Capital Tenure in Months" textmode="Number" validaterequestmode="Inherit">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                              <div class="row"> <div class="col-md-6">
+                                            <div class="form-group">
+                                                        <label id="wcortlamount" runat="server">Amount Disbursed</label>
+                                                    <input type="text" required class="number form-control" runat="server" step="0.01" id="Number11" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
+                                                </div>
+                                            </div>
+                                        
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Loan tenure(Months)</label>
+                                                        <label id="wcortltenure" runat="server">Loan tenure(Months)</label>
                                                     <asp:TextBox ID="TextBox3" runat="server" step="0.01" class="form-control" type="number" Placeholder="Tenure in Months" TextMode="Number" ValidateRequestMode="Inherit"></asp:TextBox>
                                                 </div>
                                             </div>

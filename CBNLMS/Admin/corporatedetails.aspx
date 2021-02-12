@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/admin.Master" AutoEventWireup="true" CodeBehind="corporatedetails.aspx.cs" Inherits="CBNLMS.corporatedetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>DFD LMS | Customer Details</title>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript">
  $(document).ready(function() {
@@ -38,7 +39,7 @@
                               <div class="col-12">
                      <div class="box box-default">
                          <div class="box-header with-border">
-                             <h4 class="box-title">CUstomer Deatails</h4>
+                             <h4 class="box-title">Obligor Deatails</h4>
                          </div>
                          <!-- /.box-header -->
                          <div class="box-body">

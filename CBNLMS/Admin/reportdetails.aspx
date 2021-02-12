@@ -14,7 +14,7 @@
            legend: {textStyle: {color: '#b1b1b1'}},
 
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                animation: {
                    duration: 1000,
@@ -64,7 +64,7 @@
             },
              chartArea: {width: '80%', height:'75%'},
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
             },
                 chartArea: {
       backgroundColor: 'transparent'
@@ -132,7 +132,7 @@
            legend: {textStyle: {color: '#b1b1b1'}},
 
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                 animation: {
   duration: 1000,
@@ -182,7 +182,7 @@
             backgroundColor: 'transparent',
               datalessRegionColor: 'transparent',
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
              },
 
                  animation: {
@@ -235,7 +235,7 @@
            legend: {textStyle: {color: '#b1b1b1'}},
 
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                animation: {
                    duration: 1000,
@@ -281,7 +281,7 @@
          backgroundColor: 'transparent',
               datalessRegionColor: 'transparent',
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
              },
 
                  animation: {
@@ -348,7 +348,7 @@
                 chartArea: { width: '70%', height: '70%' },
                 isStacked: true,
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                 animation: {
                     startup: true,
@@ -410,7 +410,7 @@
                 chartArea: {width: '70%', height:'70%'},
         isStacked: true,
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
           pieSliceText: 'label',
           slices: {  4: {offset: 0.2},
@@ -473,6 +473,7 @@
           //  console.log(value2);
             
             $('#name3int').text(gettext);
+            $('#name4int').text(gettext);
             $('#name4').text(gettext);
             $('#name5').text(gettext);
             $('#name6').text(gettext);
@@ -572,10 +573,10 @@
                                     <div class="row py-40 px-20">
                                         <div class="col-xl-3 col-md-12 col-12">
                                             <div>
-                                                <h4 class="font-weight-500 text-white"><span id="totloanint" runat="server"></span></h4>
+                                                <h4 class="font-weight-500 text-black"><span id="totloanint" runat="server"></span></h4>
                                                 <p>Total Loan Disbursed - <span id="name3int"></span></p>
                                                 <div class="progress progress-xs mt-10 mb-0 max-w-p90">
-                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -590,7 +591,7 @@
                                         </div>
                                         <div class="col-xl-3 col-lg-6 col-md-12 col-12">
                                             <div>
-                                                <h4 id="totbenefint" runat="server" class="font-weight-500 text-white"></h4>
+                                                <h4 id="totbenefint" runat="server" class="font-weight-500 text-black"></h4>
                                                 <p>BENEFICIARIES</p>
                                                 <div class="progress progress-xs mt-10 mb-0 max-w-p90">
                                                     <div class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
@@ -600,7 +601,7 @@
 
                                         <div class="col-xl-3 col-md-12 col-12">
                                             <div>
-                                                <h4 class="font-weight-500 text-white"><span id="banksint" runat="server"></span></h4>
+                                                <h4 class="font-weight-500 text-black"><span id="banksint" runat="server"></span></h4>
                                                 <p>PFIs</p>
                                                 <div class="progress progress-xs mt-10 mb-0 max-w-p90">
                                                     <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
@@ -793,7 +794,7 @@
 							<div class="row py-40 px-20">
 								<div class="col-xl-3 col-md-6 col-12">
 									<div>
-										<h5 class="font-weight-500 text-white"><span id="totloan" runat="server"></span></h5>
+										<h5 class="font-weight-500 text-black"><span id="totloan" runat="server"></span></h5>
 										<p>Total Loan Disbursed - <span id="name3"></span></p>
 										<div class="progress progress-xs mt-10 mb-0 max-w-p90">
 										  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
@@ -811,7 +812,7 @@
 								</div>
 								<div class="col-xl-3 col-md-6 col-12">
 									<div>
-										<h5 id="totbenef" runat="server"  class="font-weight-500 text-white"></h5>
+										<h5 id="totbenef" runat="server"  class="font-weight-500 text-black"></h5>
 										<p>BENEFICIARIES</p>
 										<div class="progress progress-xs mt-10 mb-0 max-w-p90">
 										  <div class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
@@ -821,7 +822,7 @@
 								
 								<div class="col-xl-3 col-md-6 col-12">
 									<div>
-										<h5 class="font-weight-500 text-white"><span id="banks" runat="server"></span> </h5>
+										<h5 class="font-weight-500 text-black"><span id="banks" runat="server"></span> </h5>
 										<p>PFIs</p>
 										<div class="progress progress-xs mt-10 mb-0 max-w-p90">
 										  <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
@@ -1291,7 +1292,7 @@
  
   <aside class="control-sidebar control-sidebar-light">
 	  
-	<div class="rpanel-title"><span class="pull-right btn btn-circle btn-danger"><i class="ion ion-close text-white" data-toggle="control-sidebar"></i></span> </div>  <!-- Create the tabs -->
+	<div class="rpanel-title"><span class="pull-right btn btn-circle btn-danger"><i class="ion ion-close text-black" data-toggle="control-sidebar"></i></span> </div>  <!-- Create the tabs -->
     <ul class="nav nav-tabs control-sidebar-tabs">
       <li class="nav-item"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="mdi mdi-message-text"></i></a></li>
       <li class="nav-item"><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="mdi mdi-playlist-check"></i></a></li>

@@ -1,0 +1,532 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="management.Master.cs" Inherits="CBNLMS.management" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+   <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+<meta name="googlebot" content="noindex">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../images/favicon.ico">
+
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    
+	<!-- Vendors Style-->
+	<link rel="stylesheet" href="css/vendors_css.css">
+	  
+    <link href="js/filter.css" rel="stylesheet">
+<script src="js/filter.js"></script>
+	<!-- Style-->  
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/skin_color.css">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+       <script type="text/javascript">
+
+
+        $(window).on('load', function () {
+            $("#coverScreen").hide();
+        });
+
+
+        $(document).ready(function () {
+
+
+            $("#btnClickMe").click(function () {
+                $("#coverScreen").show();
+            });
+
+        })
+    </script>
+
+    <style type="text/css">
+        .LockOn {
+            display: block;
+            visibility: visible;
+            position: absolute;
+            z-index: 999;
+            top: 0px;
+            left: 0px;
+            width: 105%;
+            height: 105%;
+            background-color: transparent;
+            vertical-align: bottom;
+            padding-top: 20%;
+            filter: alpha(opacity=75);
+            opacity: 0.75;
+            font-size: large;
+            color: blue;
+            font-style: italic;
+            font-weight: 400;
+            background-image: url("../images/loader.gif");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+      <script type="text/javascript">
+  $(document).ready(function(){
+
+
+    $('input.number').keyup(function(event){
+      // skip for arrow keys
+      if(event.which >= 37 && event.which <= 40){
+          event.preventDefault();
+      }
+      var $this = $(this);
+      var num = $this.val().replace(/,/gi, "").split("").reverse().join("");
+
+      var num2 = RemoveRougeChar(num.replace(/(.{3})/g,"$1,").split("").reverse().join(""));
+
+      // the following line has been simplified. Revision history contains original.
+      $this.val(num2);});});
+
+    function RemoveRougeChar(convertString){
+
+
+    if(convertString.substring(0,1) == ","){
+
+        return convertString.substring(1, convertString.length)            
+
+    }
+    return convertString;
+
+}
+</script>
+</head>
+<body class="light-skin sidebar-mini theme-success sidebar-collapse">
+    
+    <form id="form1" runat="server">
+         <div id="coverScreen" class="LockOn">
+    </div>
+        <div class="wrapper">
+            <header class="main-header">
+                <div class="d-flex align-items-center logo-box justify-content-between">
+                    <a href="#" class="waves-effect waves-light nav-link rounded d-none d-md-inline-block mx-10 push-btn" data-toggle="push-menu" role="button">
+                        <i class="ti-menu"></i>
+                    </a>
+                    <!-- Logo -->
+                    <a href="Default.aspx" class="logo">
+                        <!-- logo-->
+                        <div class="logo-lg">
+                            <span class="light-logo">
+                                <img src="../images/logo-dark-text.png" alt="logo"></span>
+                            <span class="dark-logo">
+                                <img src="../images/logo-light-text.png" alt="logo"></span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top pl-10">
+                    <!-- Sidebar toggle button-->
+                    <div class="app-menu">
+
+                          <ul class="header-megamenu nav">
+                        <li class="btn-group nav-item d-md-none">
+				<a href="#" class="waves-effect waves-light nav-link rounded push-btn" data-toggle="push-menu" role="button">
+					<i class="ti-menu"></i>
+			    </a>
+			</li>
+                      <li class="btn-group nav-item d-none d-xl-inline-block">
+				<h6 class="m-0">Last Login: <span id="lastlogin" runat="server"></span></h6>
+			</li>
+                            
+                       </ul> 
+                    </div>
+
+                    <div class="navbar-custom-menu r-side">
+                        <ul class="nav navbar-nav">
+                            <li class="btn-group nav-item d-lg-inline-flex d-none">
+                                <a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link rounded full-screen" title="Full Screen">
+                                    <i class="ti-fullscreen"></i>
+                                </a>
+                            </li>
+                            <li class="btn-group d-lg-inline-flex d-none">
+                                <div class="app-menu">
+                                    <div class="search-bx mx-5">
+                                        <div>
+                                            <div class="input-group">
+                                                <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+                                                <div class="input-group-append">
+                                                    <button class="btn" type="submit" id="button-addon3"><i class="ti-search"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Notifications -->
+
+
+                            <!-- User Account-->
+
+                            <li class="dropdown user user-menu">
+
+                                <a href="#" class="waves-effect waves-light dropdown-toggle" data-toggle="dropdown" title="User">
+                                    <i class="ti-user"></i>
+                                </a>
+                                <ul class="dropdown-menu animated flipInX">
+                                    <li class="user-body">
+                                        <a class="dropdown-item" href="#"><i class="ti-user text-muted mr-2"></i>Profile</a>
+
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="../index.aspx"><i class="ti-lock text-muted mr-2"></i>Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- Control Sidebar Toggle Button -->
+
+
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar-->
+                <section class="sidebar">
+                    <div class="user-profile px-10 py-15">
+                        <div class="d-flex align-items-center">
+                            <div class="image">
+                                <img src="../images/avatar/1.jpg" class="avatar avatar-lg" alt="User Image">
+                            </div>
+                            <div class="info ml-10">
+                                <p class="mb-0">Welcome</p>
+                                <h5 class="mb-0"><span class="ml-1 nav-user-name hidden-sm" id="user" runat="server"></span></h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- sidebar menu-->
+                    <ul class="sidebar-menu" data-widget="tree">
+                        <li class="treeview" id="menutreeopen">
+                            <a href="Default.aspx">
+                                <i class="ti-dashboard"></i>
+                                <span>Analytics</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu" id="tree2">
+                                <li><a href="Default.aspx"  runat="server"><i class="ti-bar-chart-alt"></i><span id="aadsana"></span></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="header" id="forms">Forms</li>
+                        <li class="treeview" id="main_menu_side_nav">
+                            <a href="#">
+                                <i class="ti-layout-grid2"></i>
+                                <span>ABP Forms</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="abp_newcustomer.aspx" id="newcustomerabp"><i class="ti-user"></i>New Customer</a></li>
+                                  <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>New Loan
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                <li><a href="abp_newloan.aspx" id="abpanchor"><i class="ti-more"></i>Anchor</a></li>
+                                <li><a href="comm_assc_loan.aspx" id="commass"><i class="ti-more"></i>Comm. Association</a></li>
+                                <li><a href="abp_state_loan.aspx" id="stateabp"><i class="ti-more"></i>State</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="abp_newrepayment.aspx"><i class="ti-file"></i>New Repayment</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview" id="others">
+                            <a href="#" id="dropothers">
+                                <i class="ti-file"></i>
+                                <span>Other Intervention</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="aads_newcustomer.aspx" id="newcustomerothers"><i class="ti-user"></i>New Customer</a></li>
+
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>New Loan
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                <li><a href="aads_newloan.aspx" id="newloanothers"><i class="ti-more"></i>Individual</a></li>
+                                <li><a href="corporate_loan.aspx" id="corporate"><i class="ti-more"></i>Corporate</a></li>
+                                <li><a href="state_loan.aspx" id="state"><i class="ti-more"></i>State</a></li>
+
+                                    </ul>
+                                </li>
+
+
+                                <li><a href="aads_newrepayment.aspx"><i class="ti-file"></i>New Repayment</a></li>
+                            </ul>
+                        </li>
+                    
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="ti-camera"></i>
+                                <span>Picture Upload</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                 <li><a href="customer_upload.aspx"><i class="ti-user"></i>Upload Customer Picture</a></li>
+
+                                 <li><a href="picture_upload.aspx"><i class="ti-cloud-up"></i>Upload Season Picture</a></li>
+
+                               
+                            </ul>
+                        </li>
+                            <li class="treeview">
+                            <a href="#">
+                                <i class="ti-files"></i>
+                                <span>Other Forms</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="loan_form.aspx"><i class="ti-file"></i>Loan Form</a></li>
+                                <li><a href="Add_Dfo.aspx" id="dfoform"><i class="ti-file"></i>DFO Form</a></li>
+                                <li><a href="agsmeis_data.aspx" id="agsmeisform"><i class="ti-file"></i>Agsmeis Form</a></li>
+                                <li><a href="Repayment_Form.aspx" id="repaymentform"><i class="ti-file"></i>Old Repayment Form</a></li>
+                                <li><a href="new_edis.aspx" id="ediform"><i class="ti-file"></i>EDI Form</a></li>
+                            </ul>
+                        </li>
+                        <li class="header" id="amortization">Amortization</li>
+                        <li class="treeview" id="amortizationchild">
+                            <a href="#">
+                                <i class="ti-timer"></i>
+                                <span>Schedule</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="schedule_loans.aspx" id="scheduleloan"><i class="ti-wallet"></i>By Loan</a></li>
+
+                                <li><a href="customerloans.aspx" id="schedulecustomer"><i class="ti-user"></i>By Customer</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="header">Reporting</li>
+                        <li class="treeview" id="MetricaCRM">
+                            <a href="#">
+                                <i class="ti-bar-chart-alt"></i>
+                                <span>Reports</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu" id="reports">
+                                <li><a href="all_summary.aspx"><i class="ti-dashboard"></i>Summary(All)</a></li>
+                                <li><a href="all_loans.aspx"><i class="ti-files"></i>All Loan Report</a></li>
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>ABP Reports
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id=""><a href="abpamortization.aspx" id="abpamortization"><i class="ti-more"></i>Amortization Report</a></li>
+                                        <li id="abpdisreport"><a href="abpreport.aspx" id="abpdisreportahref"><i class="ti-more"></i>ABP Disbursement</a></li>
+
+                                    </ul>
+                                </li>   
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-menu-alt"></i>Other Interventions
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li id=""><a href="amortization.aspx" id="amortiztionreport"><i class="ti-more"></i>Amortization Report</a></li>
+                                          <li id="disreport"><a href="disbursement.aspx" id="disreportahref"><i class="ti-more"></i>Disbursement Report</a></li>
+                                        <li id=""><a href="disbursevsrepayment.aspx" id=""><i class="ti-more"></i>Recovery Ratio</a></li>
+                                        <li id=""><a href="loan_performance.aspx" id=""><i class="ti-more"></i>Performance Report</a></li>
+                                    </ul>
+                                </li>  
+                              
+                                
+                                   <li class="treeview">
+                                    <a href="#">
+                                        <i class="ti-bar-chart-alt"></i>Other Special Reports
+					<span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                <li><a href="other_reports.aspx"></a></li>
+                                        <li id=""><a href="due_date.aspx" id=""><i class="ti-more"></i>Due Date Report</a></li>
+
+                                        </ul>
+                                       </li>
+                                <li><a href="photo_album.aspx"><i class="ti-image"></i>Photo Album</a></li>
+                                <li><a href="audit.aspx"><i class="ti-check-box"></i>Audit Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="ti-panel"></i>
+                                <span>Configuration</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="ti-settings"></i>Cofigure Report</a></li>
+                                <li><a href="#"><i class="ti-filter"></i>Search Parameters</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="header">Loan Management</li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="ti-widget-alt"></i>
+                                <span>Loans</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="approve_loan.aspx"><i class="ti-write"></i>Approve/Deny Loan</a></li>
+                                <li><a href="schedule_loans.aspx"><i class="ti-menu-alt"></i>View All Loans</a></li>
+
+                            </ul>
+                        </li>
+                         <li class="header">CUSTOMER</li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="ti-user"></i>
+                                <span>Customer</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="customerlist.aspx"><i class="ti-menu-alt"></i>View All</a></li>
+                                <li><a href="customeremail.aspx"><i class="ti-email"></i>Send Email</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="header">Configure/Manage</li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="ti-briefcase"></i>
+                                <span>Manage</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="users.aspx"><i class="ti-user"></i>Manage Users</a></li>
+                                <li><a href="manage_pictures.aspx"><i class="ti-camera"></i>Manage Pictures</a></li>
+                                <li><a href="manage_interventions.aspx"><i class="ti-harddrives"></i>Manage Interventions</a></li>
+                                <li><a href="manage_office.aspx"><i class="ti-location-pin"></i>Manage Office Location</a></li>
+                                <li><a href="states.aspx"><i class="ti-map"></i>Manage States</a></li>
+                                <li><a href="banks.aspx"><i class="ti-home"></i>Manage Banks</a></li>
+                                <li><a href="seasons.aspx"><i class="wi wi-day-rain"> </i>   Manage Season</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="ti-settings"></i>
+                                <span>Configure</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="notification.aspx"><i class="ti-bell"></i>Notifications</a></li>
+                                <li><a href="emails.aspx"><i class="ti-envelope"></i>Configure Email</a></li>
+                            </ul>
+                        </li>
+
+                      
+                    </ul>
+                </section>
+                <div class="sidebar-footer">
+                    <!-- item-->
+                    <a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Settings" aria-describedby="tooltip92529"><i class="ti-settings"></i></a>
+                    <!-- item-->
+                    <a href="mailbox_inbox.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i class="ti-email"></i></a>
+                    <!-- item-->
+                    <a href="../Index.aspx" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ti-lock"></i></a>
+                </div>
+            </aside>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <footer class="main-footer">
+                <div class="pull-right d-none d-sm-inline-block">
+                    <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Data Networks Infrastructure Limited.</a>
+                        </li>
+                    </ul>
+                </div>
+                &copy; 2020. All Rights Reserved.
+            </footer>
+
+            <!-- Control Sidebar -->
+
+            <!-- /.control-sidebar -->
+
+
+
+        </div>
+<!-- ./wrapper -->	 
+    </form>
+</body>
+
+	
+
+    <script src="js/vendors.min.js"></script>
+    <script src="../assets/icons/feather-icons/feather.min.js"></script>
+
+	<script src="../assets/vendor_components/apexcharts-bundle/dist/apexcharts.js"></script>
+	
+	<!-- Florence Admin App -->
+	<script src="js/template.js"></script>
+	<script src="js/pages/dashboard2.js"></script>
+    	<!-- Vendor JS -->
+    <script src="../assets/vendor_components/datatable/datatables.min.js"></script>
+	<script src="../assets/vendor_components/gallery/js/animated-masonry-gallery.js"></script>
+    <script src="../assets/vendor_components/gallery/js/jquery.isotope.min.js"></script>
+    	<script src="../assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
+	<script src="../assets/vendor_components/gallery/js/animated-masonry-gallery.js"></script>
+    <script src="../assets/vendor_components/gallery/js/jquery.isotope.min.js"></script>
+    <script src="../assets/vendor_components/lightbox-master/dist/ekko-lightbox.js"></script>	
+    <script src="../assets/vendor_plugins/JqueryPrintArea/demo/jquery.PrintArea.js"></script>
+	<!-- Florence Admin App -->
+	<script src="js/demo.js"></script>
+	<script src="js/pages/data-table.js"></script>
+    
+    
+</html>

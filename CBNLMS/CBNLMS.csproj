@@ -13057,6 +13057,87 @@
     <Content Include="Admin\manage_cacs.aspx" />
     <Content Include="Admin\manage_edis.aspx" />
     <Content Include="js\jquery.validate.min.js" />
+    <Content Include="Management\css\bootstrap_extend.css" />
+    <Content Include="Management\css\color_theme.css" />
+    <Content Include="Management\css\skin_color.css" />
+    <Content Include="Management\css\style.css" />
+    <Content Include="Management\css\style_rtl.css" />
+    <Content Include="Management\css\vendors_css.css" />
+    <Content Include="Management\Default.aspx" />
+    <Content Include="Management\js\demo.js" />
+    <Content Include="Management\js\Filter.css" />
+    <Content Include="Management\js\Filter.js" />
+    <Content Include="Management\js\pages\advanced-form-element.js" />
+    <Content Include="Management\js\pages\app-chat.js" />
+    <Content Include="Management\js\pages\app-contact.js" />
+    <Content Include="Management\js\pages\app-ticket.js" />
+    <Content Include="Management\js\pages\c3-axis.js" />
+    <Content Include="Management\js\pages\c3-bar-pie.js" />
+    <Content Include="Management\js\pages\c3-data.js" />
+    <Content Include="Management\js\pages\c3-line.js" />
+    <Content Include="Management\js\pages\c3-multi-xy-line.js" />
+    <Content Include="Management\js\pages\c3-stap-line.js" />
+    <Content Include="Management\js\pages\calculate.js" />
+    <Content Include="Management\js\pages\calendar.js" />
+    <Content Include="Management\js\pages\chart-dash1-int.js" />
+    <Content Include="Management\js\pages\chart-dash3-int.js" />
+    <Content Include="Management\js\pages\chart-int.js" />
+    <Content Include="Management\js\pages\chart-widgets.js" />
+    <Content Include="Management\js\pages\chartjs-int.js" />
+    <Content Include="Management\js\pages\component-animations-css3.js" />
+    <Content Include="Management\js\pages\component-rating-init.js" />
+    <Content Include="Management\js\pages\coundown-timer.js" />
+    <Content Include="Management\js\pages\custom-scroll.js" />
+    <Content Include="Management\js\pages\dashboard.js" />
+    <Content Include="Management\js\pages\dashboard2.js" />
+    <Content Include="Management\js\pages\data-table.js" />
+    <Content Include="Management\js\pages\date-paginator.js" />
+    <Content Include="Management\js\pages\echart-bar.js" />
+    <Content Include="Management\js\pages\echart-line-charts.js" />
+    <Content Include="Management\js\pages\echart-pie-doghnut.js" />
+    <Content Include="Management\js\pages\ecommerce_details.js" />
+    <Content Include="Management\js\pages\editable-tables.js" />
+    <Content Include="Management\js\pages\editor.js" />
+    <Content Include="Management\js\pages\extra_taskboard.js" />
+    <Content Include="Management\js\pages\form-code-editor.js" />
+    <Content Include="Management\js\pages\form-compose.js" />
+    <Content Include="Management\js\pages\form-validation.js" />
+    <Content Include="Management\js\pages\form-x-editable.js" />
+    <Content Include="Management\js\pages\formatter.js" />
+    <Content Include="Management\js\pages\fullscreen.js" />
+    <Content Include="Management\js\pages\gallery.js" />
+    <Content Include="Management\js\pages\gridstackjs.js" />
+    <Content Include="Management\js\pages\icons.js" />
+    <Content Include="Management\js\pages\invoice.js" />
+    <Content Include="Management\js\pages\list.js" />
+    <Content Include="Management\js\pages\mailbox.js" />
+    <Content Include="Management\js\pages\media.js" />
+    <Content Include="Management\js\pages\nestable.js" />
+    <Content Include="Management\js\pages\notification.js" />
+    <Content Include="Management\js\pages\pace.js" />
+    <Content Include="Management\js\pages\peity.js" />
+    <Content Include="Management\js\pages\project-table.js" />
+    <Content Include="Management\js\pages\range-sliders.init.js" />
+    <Content Include="Management\js\pages\sampledata1.js" />
+    <Content Include="Management\js\pages\sampledata2.js" />
+    <Content Include="Management\js\pages\slider.js" />
+    <Content Include="Management\js\pages\statistic.js" />
+    <Content Include="Management\js\pages\steps.js" />
+    <Content Include="Management\js\pages\timeline.js" />
+    <Content Include="Management\js\pages\toastr.js" />
+    <Content Include="Management\js\pages\validation.js" />
+    <Content Include="Management\js\pages\weather.js" />
+    <Content Include="Management\js\pages\widget-blog.js" />
+    <Content Include="Management\js\pages\widget-chartist.js" />
+    <Content Include="Management\js\pages\widget-charts2.js" />
+    <Content Include="Management\js\pages\widget-charts3.js" />
+    <Content Include="Management\js\pages\widget-flot-charts.js" />
+    <Content Include="Management\js\pages\widget-inline-charts.js" />
+    <Content Include="Management\js\pages\widget-morris-charts.js" />
+    <Content Include="Management\js\template.js" />
+    <Content Include="Management\js\template.min.js" />
+    <Content Include="Management\js\vendors.min.js" />
+    <Content Include="Management\viewschedule.aspx" />
     <Content Include="Reporting\1\aads_analytics.aspx" />
     <Content Include="Reporting\1\aads_report.aspx" />
     <Content Include="Reporting\1\abp_report.aspx" />
@@ -16072,6 +16153,43 @@
     <Content Include="Reporting\7\uploads\user_creation_form.xlsx" />
     <Content Include="Reporting\7\uploads\user_creation_form1.xlsx" />
     <Content Include="Reporting\7\uploads\user_creation_form11.xlsx" />
+    <Content Include="Management\css\bootstrap_extend.css.map" />
+    <Content Include="Management\css\color_theme.css.map" />
+    <Content Include="Management\css\skin_color.css.map" />
+    <Content Include="Management\css\style.css.map" />
+    <Content Include="Management\css\style_rtl.css.map" />
+    <Content Include="Management\css\vendors_css.css.map" />
+    <Content Include="Management\scss\_app.scss" />
+    <Content Include="Management\scss\_boxes.scss" />
+    <Content Include="Management\scss\_charts.scss" />
+    <Content Include="Management\scss\_form_element.scss" />
+    <Content Include="Management\scss\_header.scss" />
+    <Content Include="Management\scss\_layout.scss" />
+    <Content Include="Management\scss\_mixin.scss" />
+    <Content Include="Management\scss\_padding_margin.scss" />
+    <Content Include="Management\scss\_pages.scss" />
+    <Content Include="Management\scss\_perfect-scrollbar.scss" />
+    <Content Include="Management\scss\_projects.scss" />
+    <Content Include="Management\scss\_reset_basic.scss" />
+    <Content Include="Management\scss\_responsive.scss" />
+    <Content Include="Management\scss\_sidebar.scss" />
+    <Content Include="Management\scss\_ui_element.scss" />
+    <Content Include="Management\scss\_variable.scss" />
+    <Content Include="Management\scss\_waves.scss" />
+    <Content Include="Management\scss\_width_height.scss" />
+    <Content Include="Management\scss\color_skin\_theme_danger.scss" />
+    <Content Include="Management\scss\color_skin\_theme_info.scss" />
+    <Content Include="Management\scss\color_skin\_theme_primary.scss" />
+    <Content Include="Management\scss\color_skin\_theme_secondary.scss" />
+    <Content Include="Management\scss\color_skin\_theme_success.scss" />
+    <Content Include="Management\scss\color_skin\_theme_warning.scss" />
+    <Content Include="Management\scss\color_theme.scss" />
+    <Content Include="Management\scss\css" />
+    <Content Include="Management\scss\skin_color.scss" />
+    <Content Include="Management\scss\style.scss" />
+    <Content Include="Management\scss\style_rtl.scss" />
+    <Content Include="Management\scss\vendors_css.scss" />
+    <Content Include="Management\management.Master" />
     <None Include="Reporting\Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Reporting\Scripts\jquery-3.3.1.js" />
     <Content Include="Reporting\Scripts\jquery-3.3.1.min.js" />
@@ -20116,6 +20234,27 @@
     <Compile Include="Admin\manage_edis.aspx.designer.cs">
       <DependentUpon>manage_edis.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Management\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management\management.Master.cs">
+      <DependentUpon>management.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\management.Master.designer.cs">
+      <DependentUpon>management.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Management\viewschedule.aspx.cs">
+      <DependentUpon>viewschedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management\viewschedule.aspx.designer.cs">
+      <DependentUpon>viewschedule.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporting\1\aads_analytics.aspx.cs">
       <DependentUpon>aads_analytics.aspx</DependentUpon>
@@ -21152,6 +21291,8 @@
     <Folder Include="Inputing\5\images\" />
     <Folder Include="Inputing\6\images\" />
     <Folder Include="Inputing\7\images\" />
+    <Folder Include="Management\images\" />
+    <Folder Include="Management\uploads\" />
     <Folder Include="Reporting\1\images\" />
     <Folder Include="Reporting\2\images\" />
     <Folder Include="Reporting\3\images\" />

@@ -608,16 +608,26 @@ namespace CBNLMS.Admin
                     con.Open();
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {
-                        while (sdr.Read())
+                        if (!sdr.HasRows)
                         {
                             chartData.Add(new object[]
-                            {
-                        sdr["quarterman"], sdr["sumloan"]
-                            });
+                                {
+                        "Q1", 0
+                                });
                         }
+                        else
+                        {
+                            while (sdr.Read())
+                            {
+                                chartData.Add(new object[]
+                                {
+                        sdr["quarterman"], sdr["sumloan"]
+                                });
+                            }
+                        }
+                        con.Close();
+                        return chartData;
                     }
-                    con.Close();
-                    return chartData;
                 }
             }
         }

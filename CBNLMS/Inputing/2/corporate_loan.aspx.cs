@@ -279,7 +279,7 @@ namespace CBNLMS.Inputing._2
                 {
                     geozone = "NORTH EAST";
                 }
-                else if (selected == "PLATEAU" || selected == "NASSARAWA" || selected == "NIGER" || selected == "BENUE" || selected == "ABUJA-FCT" || selected == "KOGI" || selected == "KWARA")
+                else if (selected == "PLATEAU" || selected == "NASSARAWA" || selected == "NIGER" || selected == "BENUE" || selected == "FEDERAL CAPITAL TERRITORY" || selected == "KOGI" || selected == "KWARA")
                 {
                     geozone = "NORTH CENTRAL";
                 }

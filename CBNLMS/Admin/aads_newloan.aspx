@@ -33,6 +33,7 @@
      $('#newloanothers').addClass('active');
  });
 </script>
+   
     <style type="text/css">
     .modal1
     {
@@ -223,7 +224,7 @@
                                          <div class="col-md-6">
                                             <div class="form-group ">
                                               <label>Facility Type</label>
-                                                <asp:DropDownList ID="DropDownList11" runat="server" class="select2 form-control mb-3 custom-select">
+                                                <asp:DropDownList ID="DropDownList11" runat="server" class="select2 form-control mb-3 custom-select" AutoPostBack="True" OnSelectedIndexChanged="facilitytypechanged">
                                                     </asp:DropDownList>
                                             </div>
 
@@ -247,24 +248,41 @@
                                                     </div>
                                                 </div>
                                                 <!--end col-->
-                                                <div class="col-md-6">
-                                                    <div class="form-group ">
-                                                        <label>Amount Disbursed</label>
-                                                        <input required class="number form-control" type="text" runat="server" step="0.01" id="Number1" onfocus="javascript:removeSeparator();" onblur="javascript:showSeparator();" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
-                                                    </div>
-                                                </div>
-                                                <!--end col-->
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
+                                              <div class="col-md-6">
                                                     <div class="form-group ">
                                                         <label>Interest Rate</label>
                                                         <input type="number" class="form-control" runat="server" id="Number2" step="0.01" placeholder="CBN Intererst Rate in %" aria-describedby="inputGroupPrepend">
                                                     </div>
                                                 </div>
+                                            </div>
+                                              <div id="reporttodiv" runat="server" class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group ">
-                                                        <label>Loan Tenure(Months)</label>
+                                                        <label>Working Capital Amount Disbursed</label>
+                                                        <input  class="number form-control" type="text" runat="server" step="0.01" id="Text1" onfocus="javascript:removeSeparator();" onblur="javascript:showSeparator();" placeholder="Working Capital Amount Disbursed" aria-describedby="inputGroupPrepend">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                    <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label>Working Capital Tenure(Months)</label>
+                                                        <input id="Number6" runat="server" step="0.01" class="form-control" type="number" style="color: white" placeholder="Working Capital Tenure in Months" textmode="Number" validaterequestmode="Inherit">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                            </div>
+                                            <div class="row">
+                                                
+                                                  <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label id="wcortlamount" runat="server">Amount Disbursed</label>
+                                                        <input required class="number form-control" type="text" runat="server" step="0.01" id="Number1" onfocus="javascript:removeSeparator();" onblur="javascript:showSeparator();" placeholder="Amount Disbursed" aria-describedby="inputGroupPrepend">
+                                                    </div>
+                                                </div>
+                                                <!--end col-->
+                                                <div class="col-md-6">
+                                                    <div class="form-group ">
+                                                        <label id="wcortltenure" runat="server">Loan Tenure(Months)</label>
                                                         <input id="TextBox1" required runat="server" step="0.01" class="form-control" type="number" style="color: white" placeholder="Tenure in Months" textmode="Number" validaterequestmode="Inherit">
                                                     </div>
                                                 </div>
@@ -281,7 +299,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group ">
                                                         <label>Moratorium(Months)</label>
-                                                        <input type="number" required class="form-control" runat="server" step="0.01" id="Number3" placeholder="Moratorium in months" aria-describedby="inputGroupPrepend">
+                                                        <input type="number" class="form-control" runat="server" step="0.01" id="Number3" placeholder="Moratorium in months" aria-describedby="inputGroupPrepend">
                                                     </div>
                                                 </div>
                                             </div>

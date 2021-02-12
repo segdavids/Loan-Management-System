@@ -279,7 +279,7 @@ namespace CBNLMS
         [WebMethod]
         public static List<object> disvsout()
         {
-            string query = "select (case when DATEPART(YYYY, start_date) is null then DATEPART(YYYY, 1900) else DATEPART(YYYY, start_date) end) as year, sum(case when loan_amount is null then 0 else loan_amount end) as loanamt, sum(case when principal_due is null then 0 else principal_due end) as prindue from [cbndb].[dbo].[all_loans] where intervention='" + drop + "' group by DATEPART(YYYY, start_date)";
+            string query = "select (case when DATEPART(YYYY, start_date) is null then DATEPART(YYYY, 1900) else DATEPART(YYYY, start_date) end) as year, sum(case when loan_amount is null then 0 else loan_amount end) as loanamt, sum(case when principal_due is null then 0 else principal_due end) as prindue from [cbndb].[dbo].[all_loans] where intervention='" + drop + "' group by DATEPART(YYYY, start_date) ORDER BY DATEPART(YYYY, start_date) asc";
             List<object> chartData = new List<object>();
             chartData.Add(new object[]
             {
@@ -572,16 +572,26 @@ namespace CBNLMS
                     con.Open();
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {
-                        while (sdr.Read())
+                        if (!sdr.HasRows)
                         {
                             chartData.Add(new object[]
-                            {
-                        sdr["quarterman"], sdr["sumloan"]
-                            });
+                                {
+                        "Q1", 0
+                                });
                         }
+                        else
+                        {
+                            while (sdr.Read())
+                            {
+                                chartData.Add(new object[]
+                                {
+                        sdr["quarterman"], sdr["sumloan"]
+                                });
+                            }
+                        }
+                        con.Close();
+                        return chartData;
                     }
-                    con.Close();
-                    return chartData;
                 }
             }
         }

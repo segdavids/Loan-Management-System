@@ -5,6 +5,8 @@
 <html xmlns="https//www.w3.org/1999/xhtml">
 <head runat="server">
      <meta charset="utf-8" />
+    <meta name="robots" content="noindex">
+<meta name="googlebot" content="noindex">
         <title>DFD LMS- Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A premium admin dashboard template by Mannatthemes" name="description" />

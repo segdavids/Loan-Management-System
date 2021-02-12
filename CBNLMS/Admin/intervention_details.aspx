@@ -80,7 +80,7 @@ function yearnowget() {
          backgroundColor: 'transparent',
               datalessRegionColor: 'transparent',
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
              },
 
                  animation: {
@@ -155,7 +155,7 @@ function yearnowget() {
              backgroundColor: 'transparent',
               datalessRegionColor: 'transparent',
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
              },
 
                  animation: {
@@ -204,7 +204,7 @@ function yearnowget() {
            legend: {textStyle: {color: '#b1b1b1'}},
 
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                animation: {
                    duration: 1000,
@@ -255,7 +255,7 @@ function yearnowget() {
            legend: {textStyle: {color: '#b1b1b1'}},
 
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                animation: {
                    duration: 1000,
@@ -370,7 +370,7 @@ function yearnowget() {
             },
              chartArea: {width: '80%', height:'75%'},
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
             },
                 chartArea: {
       backgroundColor: 'transparent'
@@ -440,7 +440,7 @@ function yearnowget() {
             isStacked: true,
              chartArea: {width: '70%', height:'70%'},
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                   animation: {
          startup : true,
@@ -504,7 +504,7 @@ function yearnowget() {
            legend: {textStyle: {color: '#b1b1b1'}},
 
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                 animation: {
   duration: 1000,
@@ -568,7 +568,7 @@ function yearnowget() {
            legend: {textStyle: {color: '#b1b1b1'}},
 
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                 animation: {
   duration: 1000,
@@ -621,7 +621,7 @@ function yearnowget() {
 
               chartArea: {width: '70%', height:'75%'},
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
             },
                 chartArea: {
       backgroundColor: 'transparent'
@@ -687,7 +687,7 @@ function yearnowget() {
             backgroundColor: 'transparent',
               datalessRegionColor: 'transparent',
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
              },
 
                  animation: {
@@ -739,7 +739,7 @@ function yearnowget() {
             },
              chartArea: {width: '80%', height:'75%'},
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
             },
                 chartArea: {
       backgroundColor: 'transparent'
@@ -824,7 +824,7 @@ function yearnowget() {
                 chartArea: {width: '70%', height:'90%'},
         isStacked: true,
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
           pieSliceText: 'label',
           slices: {  4: {offset: 0.2},
@@ -889,7 +889,7 @@ function yearnowget() {
         isStacked: true,
 colors: ['red','green'],
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                            legend: {textStyle: {color: '#b1b1b1'}},
 
@@ -959,7 +959,7 @@ colors: ['red','green'],
 
               chartArea: {width: '70%', height:'75%'},
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
             },
                 chartArea: {
       backgroundColor: 'transparent'
@@ -1031,11 +1031,11 @@ colors: ['red','green'],
            var options = {
             is3D: true,
                pieSliceText: 'label',
-           chartArea: { width: '85%', height: '90%' },
+           chartArea: { width: '80%', height: '85%' },
            legend: {textStyle: {color: '#b1b1b1'}},
 
                 backgroundColor: {
-                    fill: '#272e48'
+                    fill: 'transparent'
                 },
                animation: {
                    duration: 1000,
@@ -1098,7 +1098,7 @@ colors: ['red','green'],
 		<section class="content">
             <div class="col-md-6">
                 <div class="form-group row">
-                    <label class="col-sm-3 col-form-label text-right" style="color: white">Select a Report to View</label>
+                    <label class="col-sm-3 col-form-label text-right" style="color: black">Select a Report to View</label>
                     <div class="col-sm-3">
 
                         <asp:DropDownList ID="DropDownList9" runat="server" class="select2 form-control mb-3 custom-select" AutoPostBack="True" OnSelectedIndexChanged="DropDownList9_SelectedIndexChanged">
@@ -1188,7 +1188,7 @@ colors: ['red','green'],
 							<div class="row py-40 px-20">
 								<div class="col-xl-3 col-md-6 col-12">
 									<div>
-										<h3 class="font-weight-500 text-white"><span id="totloan" runat="server"></span></h3>
+										<h3 class="font-weight-500 text-primary"><span id="totloan" runat="server"></span></h3>
 										<p>Total Loan Disbursed - <span id="name3"></span></p>
 										<div class="progress progress-xs mt-10 mb-0 max-w-p90">
 										  <div class="progress-bar bg-primary" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
@@ -1206,7 +1206,7 @@ colors: ['red','green'],
 								</div>
 								<div class="col-xl-3 col-md-6 col-12">
 									<div>
-										<h3 id="totbenef" runat="server"  class="font-weight-500 text-white"></h3>
+										<h3 id="totbenef" runat="server"  class="font-weight-500 text-black"></h3>
 										<p>BENEFICIARIES</p>
 										<div class="progress progress-xs mt-10 mb-0 max-w-p90">
 										  <div class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
@@ -1216,10 +1216,10 @@ colors: ['red','green'],
 								
 								<div class="col-xl-3 col-md-6 col-12">
 									<div>
-										<h3 class="font-weight-500 text-white"><span id="banks" runat="server"></span> </h3>
+										<h3 class="font-weight-500 text-black"><span id="banks" runat="server"></span> </h3>
 										<p>PFIs</p>
 										<div class="progress progress-xs mt-10 mb-0 max-w-p90">
-										  <div class="progress-bar bg-warning" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+										  <div class="progress-bar bg-info" role="progressbar" style="width: 100%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
 										</div>
 									</div>
 								</div>

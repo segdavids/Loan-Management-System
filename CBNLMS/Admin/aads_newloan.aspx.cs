@@ -29,13 +29,13 @@ namespace CBNLMS
                 repaymentwindow.Visible = false;
                 factype();
                 fillpaymentmode();
-             
-           
+
+                wcplustl();
                 getWhileLoopDataind();
                 popintervention();
                 sector();
                 stateofbus();
-           
+
                 BindGrid1();
             }
         }
@@ -111,10 +111,10 @@ namespace CBNLMS
             DropDownList6.DataValueField = "acronym";
 
             DropDownList6.DataBind();
-       
+
             sc.Close();
         }
-      
+
         //public void poptin()
         //{
         //    sc.Open();
@@ -130,7 +130,7 @@ namespace CBNLMS
         //    DropDownList3.DataBind();
         //    sc.Close();
         //}
-    
+
         public void popbank()
         {
             sc.Open();
@@ -139,18 +139,18 @@ namespace CBNLMS
             DataTable ds = new DataTable();
             da.Fill(ds);  // fill dataset
             DropDownList9.DataSource = ds;
-          
-            DropDownList9.DataBind();
-       
-            DropDownList9.DataTextField = "bank";
-       
-            DropDownList9.DataValueField = "bank";
-      
 
             DropDownList9.DataBind();
-       
+
+            DropDownList9.DataTextField = "bank";
+
+            DropDownList9.DataValueField = "bank";
+
+
+            DropDownList9.DataBind();
+
             sc.Close();
-        }               
+        }
         public void factype()
         {
             sc.Open();
@@ -159,14 +159,14 @@ namespace CBNLMS
             DataTable ds = new DataTable();
             da.Fill(ds);  // fill dataset
             DropDownList11.DataSource = ds;
-       
+
             DropDownList11.DataBind();
-      
+
             DropDownList11.DataTextField = "facility_type";
             DropDownList11.DataValueField = "facility_type";
-        
+
             DropDownList11.DataBind();
-     
+
             sc.Close();
         }
 
@@ -179,230 +179,449 @@ namespace CBNLMS
             da2.Fill(ds2);  // fill dataset
 
             DropDownList12.DataSource = ds2;
-         
-            DropDownList12.DataBind();
-       
-            DropDownList12.DataTextField = "payment_mode";
-      
-            DropDownList12.DataValueField = "payment_mode";
-       
 
             DropDownList12.DataBind();
-        
+
+            DropDownList12.DataTextField = "payment_mode";
+
+            DropDownList12.DataValueField = "payment_mode";
+
+
+            DropDownList12.DataBind();
+
             sc.Close();
         }
 
-     
+
 
         protected void clear_ind(object sender, EventArgs e)
         {
 
         }
 
-       
 
-
-      
-
-     
-
-        protected void add_ind(object sender, EventArgs e)
+        public void termloan()
         {
-            try {
+            try
+            {
                 System.Threading.Thread.Sleep(1000);
                 string geozone;
-            if (string.IsNullOrWhiteSpace(Number1.Value))
-            {
-                Response.Write("<script>alert('Loan Amount Required!');</script>");
-                goto end;
-            }
-            if (string.IsNullOrWhiteSpace(Number2.Value))
-            {
-                Response.Write("<script>alert('Interest Rate Required!');</script>");
-                goto end;
-            }
-            if (string.IsNullOrWhiteSpace(TextBox4.Text))
-            {
-                Response.Write("<script>alert('Kindly Select a customer');</script>");
-                goto end;
-            }
-            if (string.IsNullOrWhiteSpace(TextBox1.Value))
-            {
-                Response.Write("<script>alert('Loan Tenure Required!');</script>");
-                goto end;
-            }
-            if (string.IsNullOrWhiteSpace(Date1.Value))
-            {
-                Response.Write("<script>alert('Date Disbursed Required!');</script>");
-                goto end;
-            }
-          
-            if (string.IsNullOrWhiteSpace(Number3.Value))
-            {
-                Response.Write("<script>alert('Moratorium Required!');</script>");
-                goto end;
-            }
-            string selected = DropDownList20.SelectedItem.Text;
-            if (selected=="EKITI"|| selected == "OGUN" || selected == "ONDO" || selected == "OSUN" || selected == "OYO" || selected == "LAGOS")
-            {
-                geozone = "SOUTH WEST";
-            }
-            else if (selected == "EDO" || selected == "RIVERS" || selected == "CROSS RIVER" || selected == "DELTA" || selected == "AKWA IBOM" || selected == "BAYELSA")
-            {
-                geozone = "SOUTH SOUTH";
-            }
-            else if (selected == "ANAMBRA" || selected == "ABIA" || selected == "IMO" || selected == "EBONYI" || selected == "ENUGU")
-            {
-                geozone = "SOUTH EAST";
-            }
-            else if (selected == "SOKOTO" || selected == "ZAMFARA" || selected == "JIGAWA" || selected == "KADUNA" || selected == "KANO" || selected == "KATSINA" || selected == "KEBBI")
-            {
-                geozone = "NORTH WEST";
-            }
-            else if (selected == "BAUCHI" || selected == "ADAMAWA" || selected == "BORNO" || selected == "TARABA" || selected == "YOBE" || selected == "GOMBE" )
-            {
-                geozone = "NORTH EAST";
-            }
-            else if (selected == "PLATEAU" || selected == "NASSARAWA" || selected == "NIGER" || selected == "BENUE" || selected == "ABUJA-FCT" || selected == "KOGI" || selected == "KWARA")
-            {
-                geozone = "NORTH CENTRAL";
-            }
-            else
-            {
-                Response.Write("<script>alert('Selected State of business is not valid');</script>");
-                goto end;
-            }
-
-            double moratorium = 0;
-            double PaymentAmount = 0;
-            double LoanAmount = Convert.ToDouble(Number1.Value);
-              //string tenurestring = String.Format("{0:#,##0.00}", TextBox1.Value.ToString().Trim());
-            double tenure = Convert.ToDouble(TextBox1.Value);
-                double NumberOfYears = Math.Round((tenure/12), 2); ;
-               // string temp = String.Format("{0:#,##0.00}", tempyear.ToString());
-           // double NumberOfYears = Convert.ToDouble(temp);
-            moratorium = Convert.ToDouble(Number3.Value)/12;
-            double NumberOfPayments = (NumberOfYears - moratorium) * 12;
-            PaymentAmount = (LoanAmount) / (NumberOfPayments);
-            PaymentAmount = Math.Round(PaymentAmount, 2);
-            string cust_id = TextBox4.Text.ToString();
-            DateTime entrydate = DateTime.Now;
-            TimeSpan entrytim = DateTime.Now.TimeOfDay;
-            DateTime disdate = DateTime.Parse(Date1.Value.ToString());
-
-            DateTime expdate = disdate.AddMonths(Convert.ToInt32(tenure));
-            DateTime firstrepaymentdate = disdate.AddMonths(Convert.ToInt32(Number3.Value));
-            sc.Open();
-            SqlCommand check = new SqlCommand("select first_name,last_name,(case when other_name is null then '.' else other_name end), customer_type from all_customer where bvn = @bvn", sc);
-            check.Parameters.AddWithValue("@bvn", cust_id);
-            SqlDataReader rd = check.ExecuteReader();
-            while (rd.Read())
-            {
-                string fname = rd.GetString(0);
-                string lname = rd.GetString(1);
-                string oname = rd.GetString(2);
-                string fullname = "" + fname + " " + lname + " " + oname + "";
-                string ctype = rd.GetString(3);
-                Guid loanguid = Guid.NewGuid();
-                string loanstatus = "Pending";
-                SqlCommand cmd3 = new SqlCommand("insert into all_loans (loan_guid,customer_unique_id,customer_name,customer_type,intervention,bank,bank_name,facility_type,bus_stat,bus_geozone,sector,payment_mode,loan_amount,interest_rate,num_of_yrs,moratorium,start_date,payment_amt,month_inst,num_of_inst,first_repayment_date,exp_date,loan_purpose,loan_status,date_created,time_created) values(@lguid,@custid,@fullname,@ctype,@intervention,@bank,@bank_name,@fact,@busstate,@buszone,@sector,@pmode,@lamt,@intr,@tenure,@mora,@sd,@payamt,@moins,@norep,@first_repayment_date,@ed,@loan_purpose,@status,@entrydate,@entrytime)", sc);
-                cmd3.Parameters.AddWithValue("@lguid", loanguid);
-                cmd3.Parameters.AddWithValue("@custid", cust_id);
-                cmd3.Parameters.AddWithValue("@fullname", fullname);
-                cmd3.Parameters.AddWithValue("@ctype", ctype);
-                cmd3.Parameters.AddWithValue("@intervention", DropDownList6.SelectedItem.Text);
-                cmd3.Parameters.AddWithValue("@bank", DropDownList9.SelectedItem.Text);
-                cmd3.Parameters.AddWithValue("@bank_name", DropDownList2.SelectedItem.Text);
-                cmd3.Parameters.AddWithValue("@fact", DropDownList11.SelectedItem.Text);
-                cmd3.Parameters.AddWithValue("@busstate", DropDownList20.SelectedItem.Text);
-                cmd3.Parameters.AddWithValue("@buszone", geozone);
-                cmd3.Parameters.AddWithValue("@sector", DropDownList19.SelectedItem.Text);
-                cmd3.Parameters.AddWithValue("@pmode", DropDownList12.SelectedItem.Text);
-                cmd3.Parameters.AddWithValue("@lamt", LoanAmount);
-                cmd3.Parameters.AddWithValue("@intr", Convert.ToDouble(Number2.Value));
-                cmd3.Parameters.AddWithValue("@tenure", NumberOfYears);
-                cmd3.Parameters.AddWithValue("@mora", Convert.ToDouble(Number3.Value));
-                cmd3.Parameters.AddWithValue("@sd", disdate);
-                cmd3.Parameters.AddWithValue("@payamt", PaymentAmount);
-                cmd3.Parameters.AddWithValue("@moins", PaymentAmount);
-                cmd3.Parameters.AddWithValue("@norep", NumberOfPayments);
-                cmd3.Parameters.AddWithValue("@first_repayment_date", firstrepaymentdate);
-                cmd3.Parameters.AddWithValue("@ed", expdate);
-                cmd3.Parameters.AddWithValue("@loan_purpose", loan_purpose.Value);
-                cmd3.Parameters.AddWithValue("@status", loanstatus);
-                cmd3.Parameters.AddWithValue("@entrydate", entrydate);
-                cmd3.Parameters.AddWithValue("@entrytime", entrytim);
-
-                cmd3.ExecuteNonQuery();
-
-                SqlCommand getlid = new SqlCommand("select loan_id from all_loans where loan_guid = '"+ loanguid + "'", sc);
-                //getlid.Parameters.AddWithValue("@loanguid", loanguid);
-                SqlDataReader rdlid = getlid.ExecuteReader();
-                while (rdlid.Read())
+                if (string.IsNullOrWhiteSpace(Number1.Value))
                 {
-                    int loanuniqueid = rdlid.GetInt32(0);
-                    //CREATE AMORTIZATION SCHEDULE
-                    double intrate = ((Convert.ToDouble(Number2.Value)) / 100);
-                    int rep_mo = 0; double cummulative_principal = 0; double principal = 0; double month_int = 0; double total_month = 0; double cumm_amt_due = 0; DateTime mo_from; DateTime month_to; int no_of_monthdays;
-                    mo_from = firstrepaymentdate;
-                    for (int i = 0; i <= (NumberOfPayments); i++)
+                    Response.Write("<script>alert('Loan Amount Required!');</script>");
+                    goto end;
+                }
+                if (string.IsNullOrWhiteSpace(Number2.Value))
+                {
+                    Response.Write("<script>alert('Interest Rate Required!');</script>");
+                    goto end;
+                }
+                if (string.IsNullOrWhiteSpace(TextBox4.Text))
+                {
+                    Response.Write("<script>alert('Kindly Select a customer');</script>");
+                    goto end;
+                }
+                if (string.IsNullOrWhiteSpace(TextBox1.Value))
+                {
+                    Response.Write("<script>alert('Loan Tenure Required!');</script>");
+                    goto end;
+                }
+                if (string.IsNullOrWhiteSpace(Date1.Value))
+                {
+                    Response.Write("<script>alert('Date Disbursed Required!');</script>");
+                    goto end;
+                }
+
+                if (string.IsNullOrWhiteSpace(Number3.Value))
+                {
+                    Response.Write("<script>alert('Moratorium Required!');</script>");
+                    goto end;
+                }
+                string selected = DropDownList20.SelectedItem.Text;
+                if (selected == "EKITI" || selected == "OGUN" || selected == "ONDO" || selected == "OSUN" || selected == "OYO" || selected == "LAGOS")
+                {
+                    geozone = "SOUTH WEST";
+                }
+                else if (selected == "EDO" || selected == "RIVERS" || selected == "CROSS RIVER" || selected == "DELTA" || selected == "AKWA IBOM" || selected == "BAYELSA")
+                {
+                    geozone = "SOUTH SOUTH";
+                }
+                else if (selected == "ANAMBRA" || selected == "ABIA" || selected == "IMO" || selected == "EBONYI" || selected == "ENUGU")
+                {
+                    geozone = "SOUTH EAST";
+                }
+                else if (selected == "SOKOTO" || selected == "ZAMFARA" || selected == "JIGAWA" || selected == "KADUNA" || selected == "KANO" || selected == "KATSINA" || selected == "KEBBI")
+                {
+                    geozone = "NORTH WEST";
+                }
+                else if (selected == "BAUCHI" || selected == "ADAMAWA" || selected == "BORNO" || selected == "TARABA" || selected == "YOBE" || selected == "GOMBE")
+                {
+                    geozone = "NORTH EAST";
+                }
+                else if (selected == "PLATEAU" || selected == "NASSARAWA" || selected == "NIGER" || selected == "BENUE" || selected == "FEDERAL CAPITAL TERRITORY" || selected == "KOGI" || selected == "KWARA")
+                {
+                    geozone = "NORTH CENTRAL";
+                }
+                else
+                {
+                    Response.Write("<script>alert('Selected State of business is not valid');</script>");
+                    goto end;
+                }
+
+                double moratorium = 0;
+                double PaymentAmount = 0;
+                double LoanAmount = Convert.ToDouble(Number1.Value);
+                //string tenurestring = String.Format("{0:#,##0.00}", TextBox1.Value.ToString().Trim());
+                double tenure = Convert.ToDouble(TextBox1.Value);
+                double NumberOfYears = Math.Round((tenure / 12), 2); ;
+                // string temp = String.Format("{0:#,##0.00}", tempyear.ToString());
+                // double NumberOfYears = Convert.ToDouble(temp);
+                moratorium = Convert.ToDouble(Number3.Value) / 12;
+                double NumberOfPayments = (NumberOfYears - moratorium) * 12;
+                PaymentAmount = (LoanAmount) / (NumberOfPayments);
+                PaymentAmount = Math.Round(PaymentAmount, 2);
+                string cust_id = TextBox4.Text.ToString();
+                DateTime entrydate = DateTime.Now;
+                TimeSpan entrytim = DateTime.Now.TimeOfDay;
+                DateTime disdate = DateTime.Parse(Date1.Value.ToString());
+
+                DateTime expdate = disdate.AddMonths(Convert.ToInt32(tenure));
+                DateTime firstrepaymentdate = disdate.AddMonths(Convert.ToInt32(Number3.Value));
+                sc.Open();
+                SqlCommand check = new SqlCommand("select first_name,last_name,(case when other_name is null then '.' else other_name end), customer_type from all_customer where bvn = @bvn", sc);
+                check.Parameters.AddWithValue("@bvn", cust_id);
+                SqlDataReader rd = check.ExecuteReader();
+                while (rd.Read())
+                {
+                    string fname = rd.GetString(0);
+                    string lname = rd.GetString(1);
+                    string oname = rd.GetString(2);
+                    string fullname = "" + fname + " " + lname + " " + oname + "";
+                    string ctype = rd.GetString(3);
+                    Guid loanguid = Guid.NewGuid();
+                    string loanstatus = "Pending";
+                    SqlCommand cmd3 = new SqlCommand("insert into all_loans (loan_guid,customer_unique_id,customer_name,customer_type,intervention,bank,bank_name,facility_type,bus_stat,bus_geozone,sector,payment_mode,loan_amount,interest_rate,num_of_yrs,moratorium,start_date,payment_amt,month_inst,num_of_inst,first_repayment_date,exp_date,loan_purpose,loan_status,date_created,time_created) values(@lguid,@custid,@fullname,@ctype,@intervention,@bank,@bank_name,@fact,@busstate,@buszone,@sector,@pmode,@lamt,@intr,@tenure,@mora,@sd,@payamt,@moins,@norep,@first_repayment_date,@ed,@loan_purpose,@status,@entrydate,@entrytime)", sc);
+                    cmd3.Parameters.AddWithValue("@lguid", loanguid);
+                    cmd3.Parameters.AddWithValue("@custid", cust_id);
+                    cmd3.Parameters.AddWithValue("@fullname", fullname);
+                    cmd3.Parameters.AddWithValue("@ctype", ctype);
+                    cmd3.Parameters.AddWithValue("@intervention", DropDownList6.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@bank", DropDownList9.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@bank_name", DropDownList2.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@fact", DropDownList11.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@busstate", DropDownList20.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@buszone", geozone);
+                    cmd3.Parameters.AddWithValue("@sector", DropDownList19.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@pmode", DropDownList12.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@lamt", LoanAmount);
+                    cmd3.Parameters.AddWithValue("@intr", Convert.ToDouble(Number2.Value));
+                    cmd3.Parameters.AddWithValue("@tenure", NumberOfYears);
+                    cmd3.Parameters.AddWithValue("@mora", Convert.ToDouble(Number3.Value));
+                    cmd3.Parameters.AddWithValue("@sd", disdate);
+                    cmd3.Parameters.AddWithValue("@payamt", PaymentAmount);
+                    cmd3.Parameters.AddWithValue("@moins", PaymentAmount);
+                    cmd3.Parameters.AddWithValue("@norep", NumberOfPayments);
+                    cmd3.Parameters.AddWithValue("@first_repayment_date", firstrepaymentdate);
+                    cmd3.Parameters.AddWithValue("@ed", expdate);
+                    cmd3.Parameters.AddWithValue("@loan_purpose", loan_purpose.Value);
+                    cmd3.Parameters.AddWithValue("@status", loanstatus);
+                    cmd3.Parameters.AddWithValue("@entrydate", entrydate);
+                    cmd3.Parameters.AddWithValue("@entrytime", entrytim);
+
+                    cmd3.ExecuteNonQuery();
+
+                    SqlCommand getlid = new SqlCommand("select loan_id from all_loans where loan_guid = '" + loanguid + "'", sc);
+                    //getlid.Parameters.AddWithValue("@loanguid", loanguid);
+                    SqlDataReader rdlid = getlid.ExecuteReader();
+                    while (rdlid.Read())
                     {
-                        rep_mo = rep_mo + 1;
-                       // DateTime tempmoto = mo_from.AddDays(-1);
-                        month_to = mo_from.AddMonths(1);
-                       // string yearstr = mo_from.ToString("YYYY");
-                        //int yearint = mo_from.Year;
-                       // string monthstr = mo_from.ToString("MM");
-                        //int monthint = Convert.ToInt32(monthstr);
-                        no_of_monthdays = DateTime.DaysInMonth(mo_from.Year, mo_from.Month);
-                        cummulative_principal = cummulative_principal + PaymentAmount;
-                        if (DateTime.IsLeapYear(mo_from.Year))
+                        int loanuniqueid = rdlid.GetInt32(0);
+                        //CREATE AMORTIZATION SCHEDULE
+                        double intrate = ((Convert.ToDouble(Number2.Value)) / 100);
+                        int rep_mo = 0; double cummulative_principal = 0; double principal = 0; double month_int = 0; double total_month = 0; double cumm_amt_due = 0; DateTime mo_from; DateTime month_to; int no_of_monthdays;
+                        mo_from = firstrepaymentdate;
+                        for (int i = 0; i <= (NumberOfPayments); i++)
                         {
-                            month_int = LoanAmount - (cummulative_principal * intrate * no_of_monthdays / 366);
-                        }
-                        else
-                        {
-                            month_int = LoanAmount - (cummulative_principal * intrate * no_of_monthdays / 365);
-                        }
-                        total_month = PaymentAmount + month_int;
-                        cumm_amt_due = total_month + cumm_amt_due;
-                        SqlCommand createschedule = new SqlCommand("insert into amortization_Schedule (amortization_id,loan_id,customer_unique_id,row_month,date_from,date_to,no_of_mo_days,principal_rep_mo,cbn_int,month_int,mo_total,cumm_amt_due,date_of_creation) values(@amoid,@loanid,@custid,@rowmonth,@datefrom,@dateto,@noofmonthdays,@princrepmo,@intr,@moint,@motot,@cummamtdue,@dateofcr)", sc);
-                        createschedule.Parameters.AddWithValue("@amoid", loanguid);
-                        createschedule.Parameters.AddWithValue("@loanid", loanuniqueid);
-                        createschedule.Parameters.AddWithValue("@custid", cust_id);
-                        createschedule.Parameters.AddWithValue("@rowmonth", rep_mo);
-                        createschedule.Parameters.AddWithValue("@datefrom", mo_from);
-                        createschedule.Parameters.AddWithValue("@dateto", month_to);
-                        createschedule.Parameters.AddWithValue("@noofmonthdays", no_of_monthdays);
-                        createschedule.Parameters.AddWithValue("@princrepmo", PaymentAmount);
-                        createschedule.Parameters.AddWithValue("@intr", Convert.ToDouble(Number2.Value));
-                        createschedule.Parameters.AddWithValue("@moint", month_int);
-                        createschedule.Parameters.AddWithValue("@motot", total_month);
-                        createschedule.Parameters.AddWithValue("@cummamtdue", cumm_amt_due);
-                        createschedule.Parameters.AddWithValue("@dateofcr", entrydate);
-                        createschedule.ExecuteNonQuery();
-                        mo_from = month_to;
+                            rep_mo = rep_mo + 1;
+                            // DateTime tempmoto = mo_from.AddDays(-1);
+                            month_to = mo_from.AddMonths(1);
+                            // string yearstr = mo_from.ToString("YYYY");
+                            //int yearint = mo_from.Year;
+                            // string monthstr = mo_from.ToString("MM");
+                            //int monthint = Convert.ToInt32(monthstr);
+                            no_of_monthdays = DateTime.DaysInMonth(mo_from.Year, mo_from.Month);
+                            cummulative_principal = cummulative_principal + PaymentAmount;
+                            if (DateTime.IsLeapYear(mo_from.Year))
+                            {
+                                month_int = LoanAmount - (cummulative_principal * intrate * no_of_monthdays / 366);
+                            }
+                            else
+                            {
+                                month_int = LoanAmount - (cummulative_principal * intrate * no_of_monthdays / 365);
+                            }
+                            total_month = PaymentAmount + month_int;
+                            cumm_amt_due = total_month + cumm_amt_due;
+                            SqlCommand createschedule = new SqlCommand("insert into amortization_Schedule (amortization_id,loan_id,customer_unique_id,row_month,date_from,date_to,no_of_mo_days,principal_rep_mo,cbn_int,month_int,mo_total,cumm_amt_due,date_of_creation) values(@amoid,@loanid,@custid,@rowmonth,@datefrom,@dateto,@noofmonthdays,@princrepmo,@intr,@moint,@motot,@cummamtdue,@dateofcr)", sc);
+                            createschedule.Parameters.AddWithValue("@amoid", loanguid);
+                            createschedule.Parameters.AddWithValue("@loanid", loanuniqueid);
+                            createschedule.Parameters.AddWithValue("@custid", cust_id);
+                            createschedule.Parameters.AddWithValue("@rowmonth", rep_mo);
+                            createschedule.Parameters.AddWithValue("@datefrom", mo_from);
+                            createschedule.Parameters.AddWithValue("@dateto", month_to);
+                            createschedule.Parameters.AddWithValue("@noofmonthdays", no_of_monthdays);
+                            createschedule.Parameters.AddWithValue("@princrepmo", PaymentAmount);
+                            createschedule.Parameters.AddWithValue("@intr", Convert.ToDouble(Number2.Value));
+                            createschedule.Parameters.AddWithValue("@moint", month_int);
+                            createschedule.Parameters.AddWithValue("@motot", total_month);
+                            createschedule.Parameters.AddWithValue("@cummamtdue", cumm_amt_due);
+                            createschedule.Parameters.AddWithValue("@dateofcr", entrydate);
+                            createschedule.ExecuteNonQuery();
+                            mo_from = month_to;
 
-                    } }
-            }
-            sc.Close();
+                        }
+                    }
+                }
+                sc.Close();
 
-            Response.Write("<script>alert('Loan Record Added Successfully and Schedule Created!');</script>");
-            Number1.Value = string.Empty;
-            Number2.Value = string.Empty;
-            TextBox1.Value = string.Empty;
-            Date1.Value = string.Empty;
-           // Date4.Value = string.Empty;
-            Number3.Value = string.Empty;
-            TextBox4.Text = string.Empty;
-            loan_purpose.Value = string.Empty;
-            end:
-            { }
+                Response.Write("<script>alert('Loan Record Added Successfully and Schedule Created!');</script>");
+                Number1.Value = string.Empty;
+                Number2.Value = string.Empty;
+                TextBox1.Value = string.Empty;
+                Date1.Value = string.Empty;
+                // Date4.Value = string.Empty;
+                Number3.Value = string.Empty;
+                TextBox4.Text = string.Empty;
+                loan_purpose.Value = string.Empty;
+                end:
+                { }
             }
             catch (Exception err)
             {
                 alert.Visible = true;
                 alert.InnerHtml = err.Message;
+            }
+        }
+
+        public void workingcapital()
+        {
+            try
+            {
+
+                System.Threading.Thread.Sleep(1000);
+                string geozone;
+                if (string.IsNullOrWhiteSpace(Number1.Value))
+                {
+                    Response.Write("<script>alert('Loan Amount Required!');</script>");
+                    goto end;
+                }
+                if (string.IsNullOrWhiteSpace(Number2.Value))
+                {
+                    Response.Write("<script>alert('Interest Rate Required!');</script>");
+                    goto end;
+                }
+                if (string.IsNullOrWhiteSpace(TextBox4.Text))
+                {
+                    Response.Write("<script>alert('Kindly Select a customer');</script>");
+                    goto end;
+                }
+                if (string.IsNullOrWhiteSpace(TextBox1.Value))
+                {
+                    Response.Write("<script>alert('Loan Tenure Required!');</script>");
+                    goto end;
+                }
+                if ( Convert.ToInt32(TextBox1.Value)>24)
+                {
+                    Response.Write("<script>alert('Working Capital Tenure Cannot be more than 2 years!');</script>");
+                    goto end;
+                }
+                if (string.IsNullOrWhiteSpace(Date1.Value))
+                {
+                    Response.Write("<script>alert('Date Disbursed Required!');</script>");
+                    goto end;
+                }
+
+             
+                string selected = DropDownList20.SelectedItem.Text;
+                if (selected == "EKITI" || selected == "OGUN" || selected == "ONDO" || selected == "OSUN" || selected == "OYO" || selected == "LAGOS")
+                {
+                    geozone = "SOUTH WEST";
+                }
+                else if (selected == "EDO" || selected == "RIVERS" || selected == "CROSS RIVER" || selected == "DELTA" || selected == "AKWA IBOM" || selected == "BAYELSA")
+                {
+                    geozone = "SOUTH SOUTH";
+                }
+                else if (selected == "ANAMBRA" || selected == "ABIA" || selected == "IMO" || selected == "EBONYI" || selected == "ENUGU")
+                {
+                    geozone = "SOUTH EAST";
+                }
+                else if (selected == "SOKOTO" || selected == "ZAMFARA" || selected == "JIGAWA" || selected == "KADUNA" || selected == "KANO" || selected == "KATSINA" || selected == "KEBBI")
+                {
+                    geozone = "NORTH WEST";
+                }
+                else if (selected == "BAUCHI" || selected == "ADAMAWA" || selected == "BORNO" || selected == "TARABA" || selected == "YOBE" || selected == "GOMBE")
+                {
+                    geozone = "NORTH EAST";
+                }
+                else if (selected == "PLATEAU" || selected == "NASSARAWA" || selected == "NIGER" || selected == "BENUE" || selected == "FEDERAL CAPITAL TERRITORY" || selected == "KOGI" || selected == "KWARA")
+                {
+                    geozone = "NORTH CENTRAL";
+                }
+                else
+                {
+                    Response.Write("<script>alert('Selected State of business is not valid');</script>");
+                    goto end;
+                }
+
+                int moratorium = 0;
+                double PaymentAmount = 0;
+                double LoanAmount = Convert.ToDouble(Number1.Value);
+                //string tenurestring = String.Format("{0:#,##0.00}", TextBox1.Value.ToString().Trim());
+                double tenure = Convert.ToDouble(TextBox1.Value);
+                double NumberOfYears = Math.Round((tenure / 12), 2); ;
+                // string temp = String.Format("{0:#,##0.00}", tempyear.ToString());
+                // double NumberOfYears = Convert.ToDouble(temp);
+              //  moratorium = Convert.ToDouble(Number3.Value) / 12;
+                double NumberOfPayments = (NumberOfYears - moratorium) * 12;
+                PaymentAmount = (LoanAmount) / (NumberOfPayments);
+                PaymentAmount = Math.Round(PaymentAmount, 2);
+                string cust_id = TextBox4.Text.ToString();
+                DateTime entrydate = DateTime.Now;
+                TimeSpan entrytim = DateTime.Now.TimeOfDay;
+                DateTime disdate = DateTime.Parse(Date1.Value.ToString());
+
+                DateTime expdate = disdate.AddMonths(Convert.ToInt32(tenure));
+                DateTime firstrepaymentdate = disdate.AddMonths(moratorium);
+                sc.Open();
+                SqlCommand check = new SqlCommand("select first_name,last_name,(case when other_name is null then '.' else other_name end), customer_type from all_customer where bvn = @bvn", sc);
+                check.Parameters.AddWithValue("@bvn", cust_id);
+                SqlDataReader rd = check.ExecuteReader();
+                while (rd.Read())
+                {
+                    string fname = rd.GetString(0);
+                    string lname = rd.GetString(1);
+                    string oname = rd.GetString(2);
+                    string fullname = "" + fname + " " + lname + " " + oname + "";
+                    string ctype = rd.GetString(3);
+                    Guid loanguid = Guid.NewGuid();
+                    string loanstatus = "Pending";
+                    SqlCommand cmd3 = new SqlCommand("insert into all_loans (loan_guid,customer_unique_id,customer_name,customer_type,intervention,bank,bank_name,facility_type,bus_stat,bus_geozone,sector,payment_mode,loan_amount,interest_rate,num_of_yrs,moratorium,start_date,payment_amt,month_inst,num_of_inst,first_repayment_date,exp_date,loan_purpose,loan_status,date_created,time_created) values(@lguid,@custid,@fullname,@ctype,@intervention,@bank,@bank_name,@fact,@busstate,@buszone,@sector,@pmode,@lamt,@intr,@tenure,@mora,@sd,@payamt,@moins,@norep,@first_repayment_date,@ed,@loan_purpose,@status,@entrydate,@entrytime)", sc);
+                    cmd3.Parameters.AddWithValue("@lguid", loanguid);
+                    cmd3.Parameters.AddWithValue("@custid", cust_id);
+                    cmd3.Parameters.AddWithValue("@fullname", fullname);
+                    cmd3.Parameters.AddWithValue("@ctype", ctype);
+                    cmd3.Parameters.AddWithValue("@intervention", DropDownList6.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@bank", DropDownList9.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@bank_name", DropDownList2.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@fact", DropDownList11.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@busstate", DropDownList20.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@buszone", geozone);
+                    cmd3.Parameters.AddWithValue("@sector", DropDownList19.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@pmode", DropDownList12.SelectedItem.Text);
+                    cmd3.Parameters.AddWithValue("@lamt", LoanAmount);
+                    cmd3.Parameters.AddWithValue("@intr", Convert.ToDouble(Number2.Value));
+                    cmd3.Parameters.AddWithValue("@tenure", NumberOfYears);
+                    cmd3.Parameters.AddWithValue("@mora", moratorium);
+                    cmd3.Parameters.AddWithValue("@sd", disdate);
+                    cmd3.Parameters.AddWithValue("@payamt", PaymentAmount);
+                    cmd3.Parameters.AddWithValue("@moins", PaymentAmount);
+                    cmd3.Parameters.AddWithValue("@norep", 1);
+                    cmd3.Parameters.AddWithValue("@first_repayment_date", firstrepaymentdate);
+                    cmd3.Parameters.AddWithValue("@ed", expdate);
+                    cmd3.Parameters.AddWithValue("@loan_purpose", loan_purpose.Value);
+                    cmd3.Parameters.AddWithValue("@status", loanstatus);
+                    cmd3.Parameters.AddWithValue("@entrydate", entrydate);
+                    cmd3.Parameters.AddWithValue("@entrytime", entrytim);
+
+                    cmd3.ExecuteNonQuery();
+
+                    SqlCommand getlid = new SqlCommand("select loan_id from all_loans where loan_guid = '" + loanguid + "'", sc);
+                    //getlid.Parameters.AddWithValue("@loanguid", loanguid);
+                    SqlDataReader rdlid = getlid.ExecuteReader();
+                    while (rdlid.Read())
+                    {
+                        int loanuniqueid = rdlid.GetInt32(0);
+                        //CREATE AMORTIZATION SCHEDULE
+                        double intrate = ((Convert.ToDouble(Number2.Value)) / 100);
+                        int rep_mo = 0; double cummulative_principal = 0; double principal = 0; double month_int = 0; double total_month = 0; double cumm_amt_due = 0; DateTime mo_from; DateTime month_to; int no_of_monthdays;
+                        mo_from = firstrepaymentdate;
+                       
+                            rep_mo = rep_mo + 1;
+                            // DateTime tempmoto = mo_from.AddDays(-1);
+                            month_to = mo_from.AddMonths(1);
+                            // string yearstr = mo_from.ToString("YYYY");
+                            //int yearint = mo_from.Year;
+                            // string monthstr = mo_from.ToString("MM");
+                            //int monthint = Convert.ToInt32(monthstr);
+                            no_of_monthdays = DateTime.DaysInMonth(mo_from.Year, mo_from.Month);
+                            cummulative_principal = cummulative_principal + PaymentAmount;
+                            if (DateTime.IsLeapYear(mo_from.Year))
+                            {
+                                month_int = LoanAmount - (cummulative_principal * intrate * no_of_monthdays / 366);
+                            }
+                            else
+                            {
+                                month_int = LoanAmount - (cummulative_principal * intrate * no_of_monthdays / 365);
+                            }
+                            total_month = PaymentAmount + month_int;
+                            cumm_amt_due = LoanAmount + (intrate*LoanAmount);
+                        double interest = intrate * LoanAmount;
+                            SqlCommand createschedule = new SqlCommand("insert into amortization_Schedule (amortization_id,loan_id,customer_unique_id,row_month,date_from,date_to,no_of_mo_days,principal_rep_mo,cbn_int,month_int,mo_total,cumm_amt_due,date_of_creation) values(@amoid,@loanid,@custid,@rowmonth,@datefrom,@dateto,@noofmonthdays,@princrepmo,@intr,@moint,@motot,@cummamtdue,@dateofcr)", sc);
+                            createschedule.Parameters.AddWithValue("@amoid", loanguid);
+                            createschedule.Parameters.AddWithValue("@loanid", loanuniqueid);
+                            createschedule.Parameters.AddWithValue("@custid", cust_id);
+                            createschedule.Parameters.AddWithValue("@rowmonth", rep_mo);
+                            createschedule.Parameters.AddWithValue("@datefrom", mo_from);
+                            createschedule.Parameters.AddWithValue("@dateto", expdate);
+                            createschedule.Parameters.AddWithValue("@noofmonthdays", no_of_monthdays);
+                            createschedule.Parameters.AddWithValue("@princrepmo", LoanAmount);
+                            createschedule.Parameters.AddWithValue("@intr", Convert.ToDouble(Number2.Value));
+                            createschedule.Parameters.AddWithValue("@moint", interest);
+                            createschedule.Parameters.AddWithValue("@motot", cumm_amt_due);
+                            createschedule.Parameters.AddWithValue("@cummamtdue", cumm_amt_due);
+                            createschedule.Parameters.AddWithValue("@dateofcr", entrydate);
+                            createschedule.ExecuteNonQuery();
+                           // mo_from = month_to;
+
+                        
+                    }
+                }
+                sc.Close();
+
+                Response.Write("<script>alert('Loan Record Added Successfully and Schedule Created!');</script>");
+                Number1.Value = string.Empty;
+                Number2.Value = string.Empty;
+                TextBox1.Value = string.Empty;
+                Date1.Value = string.Empty;
+                // Date4.Value = string.Empty;
+                Number3.Value = string.Empty;
+                TextBox4.Text = string.Empty;
+                loan_purpose.Value = string.Empty;
+                end:
+                { }
+            }
+            catch (Exception err)
+            {
+                alert.Visible = true;
+                alert.InnerHtml = err.Message;
+            }
+        }
+
+
+
+
+        protected void add_ind(object sender, EventArgs e)
+        {
+            if (DropDownList11.SelectedItem.Value == "WORKING CAPITAL")
+            {
+                workingcapital();
+            }
+            if (DropDownList11.SelectedItem.Value == "TERM LOAN")
+            {
+                termloan();
+            }
+            else
+            {
+               
             }
         }
 
@@ -423,19 +642,39 @@ namespace CBNLMS
                 goto end;
             }
 
-
-            if (string.IsNullOrWhiteSpace(Number3.Value))
+            if (DropDownList11.SelectedItem.Value == "TERM LOAN")
             {
-                Response.Write("<script>alert('Moratorium Required!');</script>");
-                goto end;
+                if (string.IsNullOrWhiteSpace(Number3.Value))
+                {
+                    Response.Write("<script>alert('Moratorium Required!');</script>");
+                    goto end;
+                }
+            }
+            if (DropDownList11.SelectedItem.Value == "WORKING CAPITAL")
+            {
+                if (Convert.ToInt32(TextBox1.Value) > 24)
+                {
+                    Response.Write("<script>alert('Working Capital Tenure Cannot be more than 2 years!');</script>");
+                    goto end;
+                }
+            }
+            else
+            {
+
             }
             double moratorium = 0;
             double PaymentAmount = 0;
             double LoanAmount = Convert.ToDouble(Number1.Value);
-            double NumberOfYears = Convert.ToDouble(TextBox1.Value)/12;
+            double NumberOfYears = Convert.ToDouble(TextBox1.Value) / 12;
 
-
-            moratorium = Convert.ToDouble(Number3.Value)/12;
+            if (DropDownList11.SelectedItem.Value == "TERM LOAN")
+            {
+                moratorium = Convert.ToDouble(Number3.Value) / 12;
+            }
+            else
+            {
+               
+            }
             double NumberOfPayments = (NumberOfYears - moratorium) * 12;
             PaymentAmount = (LoanAmount) / (NumberOfPayments);
             PaymentAmount = Math.Round(PaymentAmount, 2);
@@ -456,8 +695,12 @@ namespace CBNLMS
                 {
 
                 }
-
-                moratorium = Convert.ToDouble(Number3.Value)/12;
+                if (DropDownList11.SelectedItem.Value == "TERM LOAN")
+                {
+                    moratorium = Convert.ToDouble(Number3.Value) / 12;
+                }
+                else { moratorium = 0; }
+               // moratorium = Convert.ToDouble(Number3.Value) / 12;
                 NumberOfPayments = (NumberOfYears - moratorium) * 12;
                 PaymentAmount = (LoanAmount) / (NumberOfPayments);
                 PaymentAmount = Math.Round(PaymentAmount, 2);
@@ -474,15 +717,15 @@ namespace CBNLMS
             { }
         }
 
-      
-    
+
+
 
         protected void scehdule_corp(object sender, EventArgs e)
         {
 
         }
 
-     
+
 
         protected void schedule_state(object sender, EventArgs e)
         {
@@ -533,7 +776,50 @@ namespace CBNLMS
 
         }
 
-        protected void DropDownList9_SelectedIndexChanged(object sender, EventArgs e)
+        protected void facilitytypechanged(object sender, EventArgs e)
+        {
+            wcplustl();
+
+        }
+        public void wcplustl()
+            {
+            if (DropDownList11.SelectedItem.Text == "WORKING CAPITAL + TERM LOAN")
+            {
+                reporttodiv.Visible = true;
+                wcortlamount.InnerHtml = "Term Loan Amount Disbursed";
+                Number1.Attributes.Add("Placeholder", "Enter the Term Loan Amount Disbursed");
+                wcortltenure.InnerHtml = "Term Loan Tenure(Months)";
+                TextBox1.Attributes.Add("Placeholder", "Term Loan Tenure in Months");
+
+            }
+            else if (DropDownList11.SelectedItem.Text == "WORKING CAPITAL")
+            {
+                reporttodiv.Visible = false;
+                Number3.Disabled = true;
+                wcortlamount.InnerHtml = "Working Capital Amount Disbursed";
+                Number1.Attributes.Add("Placeholder", "Enter the Working Capital Amount Disbursed");
+                wcortltenure.InnerHtml = "Working Capital Loan Tenure(Months)";
+                TextBox1.Attributes.Add("Placeholder", "Working Capital Loan Tenure in Months");
+            }
+            else if(DropDownList11.SelectedItem.Text == "TERM LOAN")
+            {
+                reporttodiv.Visible = false;
+                Number3.Disabled = false;
+                wcortlamount.InnerHtml = "Term Loan Amount Disbursed";
+                Number1.Attributes.Add("Placeholder", "Enter the Term Loan Amount Disbursed");
+                wcortltenure.InnerHtml = "Term Loan Tenure(Months)";
+                TextBox1.Attributes.Add("Placeholder", "Term Loan Tenure in Months");
+            }
+            else
+            {
+                reporttodiv.Visible = false;
+                wcortlamount.InnerHtml = "Amount Disbursed";
+                Number1.Attributes.Add("Placeholder", "Enter the Loan Amount Disbursed");
+                wcortltenure.InnerHtml = "Loan Tenure(Months)";
+                TextBox1.Attributes.Add("Placeholder", "Loan Tenure in Months");
+            }
+        }
+            protected void DropDownList9_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (DropDownList9.SelectedItem.Value=="DMBs")
             {

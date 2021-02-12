@@ -5,6 +5,8 @@
 <html>
 <head runat="server">
    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+<meta name="googlebot" content="noindex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -101,8 +103,9 @@
 }
 </script>
 </head>
-<body class="hold-transition dark-skin sidebar-mini theme-success">
-    
+<%--<body class="hold-transition dark-skin sidebar-mini theme-success">--%>
+<body class="light-skin sidebar-mini theme-success sidebar-collapse">
+
     <form id="form1" runat="server">
          <div id="coverScreen" class="LockOn">
     </div>
